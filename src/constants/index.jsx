@@ -19,15 +19,15 @@ import {
 } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
 
+// Оставляем только одну картинку, которую используем для Lumo Music Player.
+// Если у вас есть реальная картинка Lumo, используйте её вместо project1.jpeg.
 import projectImage1 from "../assets/project1.jpeg";
-import projectImage2 from "../assets/project2.jpeg";
-import projectImage3 from "../assets/project3.jpeg";
-import projectImage4 from "../assets/project4.jpeg";
-import projectImage5 from "../assets/project5.jpeg";
-import projectImage6 from "../assets/project6.jpeg";
 
+/**
+ * Ссылки в навигации (без ссылки GitHub, только основные секции, кроме Projects).
+ * Ссылку Projects будете добавлять непосредственно в NavBar, указывая #lumo-music-player
+ */
 export const NAVIGATION_LINKS = [
-  // { label: "Projects", href: "#projects" },
   { label: "Bio", href: "#bio" },
   { label: "Skills", href: "#skills" },
   { label: "Work Experience", href: "#work-experience" },
@@ -35,6 +35,7 @@ export const NAVIGATION_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
+// Настройки для "шапки" (Hero-секция)
 export const HERO = {
   name: "Ilya Hvostenko",
   greet: "Hello there! 👋🏻",
@@ -42,12 +43,14 @@ export const HERO = {
       "I am a passionate frontend developer with a knack for creating beautiful and functional user interfaces. I like transforming ideas into engaging web experiences for over a decade.",
 };
 
+// Краткая биография
 export const BIO = [
   "I’m a full stack developer with a strong frontend orientation. My main expertise lies in building responsive, accessible, and visually engaging web applications using React, TypeScript, and modern styling tools like Tailwind and SCSS.",
   "I began my development journey in backend Java, but quickly gravitated toward frontend, where I enjoy translating complex logic into elegant user interfaces. At Elpisor LTD, I worked on both frontend and backend for StockStats and Edutreck CRM, giving me hands-on experience across the entire development lifecycle.",
   "I’m passionate about clean code, reusable components, and delivering intuitive user experiences. I stay current with frontend trends and love collaborating with teams to ship production-grade features that users love.",
 ];
 
+// Основные навыки
 export const SKILLS = [
   {
     icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />,
@@ -101,57 +104,23 @@ export const SKILLS = [
   },
 ];
 
+/**
+ * Единственный проект – Lumo Music Player
+ * ID: "lumo-music-player" (Если в компоненте Projects вы используете другие механизмы,
+ * можно оставить id как число. Главное, чтобы <section id="lumo-music-player" /> совпадало
+ * с якорем #lumo-music-player в NavBar.)
+ */
 export const PROJECTS = [
   {
-    id: 1,
-    name: "Personal Portfolio",
-    description:
-        "A personal portfolio website built with React and Tailwind CSS to showcase my skills, projects, and contact information.",
+    id: "lumo-music-player",
+    name: "Lumo Music Player",
+    description: "A feature-rich music player built with React. Enjoy your favorite tracks with a sleek UI and easy playlist management.",
     image: projectImage1,
-    githubLink: "https://github.com/user/personal-portfolio",
-  },
-  {
-    id: 2,
-    name: "E-Commerce Platform",
-    description:
-        "An e-commerce web application developed using Next.js and Stripe for payment integration, featuring a comprehensive product catalog, shopping cart, and checkout system.",
-    image: projectImage2,
-    githubLink: "https://github.com/user/ecommerce-platform",
-  },
-  {
-    id: 3,
-    name: "Task Management Tool",
-    description:
-        "A task management application built with React and Redux for efficient task tracking and team collaboration, including features like project boards, task assignment, and progress tracking.",
-    image: projectImage3,
-    githubLink: "https://github.com/user/task-management-tool",
-  },
-  {
-    id: 4,
-    name: "Weather App",
-    description:
-        "A weather application that uses the OpenWeatherMap API to fetch and display current weather data and forecasts for various locations, built with React and styled-components.",
-    image: projectImage4,
-    githubLink: "https://github.com/user/weather-app",
-  },
-  {
-    id: 5,
-    name: "Blog Platform",
-    description:
-        "A blogging platform developed with Next.js and Markdown for creating, editing, and publishing blog posts. It features a rich text editor, tag system, and user authentication.",
-    image: projectImage5,
-    githubLink: "https://github.com/user/blog-platform",
-  },
-  {
-    id: 6,
-    name: "Chat Application",
-    description:
-        "A real-time chat application using Firebase for backend services, including user authentication, chat rooms, and instant messaging features. Built with React and Firebase.",
-    image: projectImage6,
-    githubLink: "https://github.com/user/chat-application",
+    githubLink: "https://github.com/ilyajavadeveloper/Lumo-music-app.git",
   },
 ];
 
+// Опыт работы
 export const EXPERIENCES = [
   {
     title: "Full Stack Developer",
@@ -162,6 +131,7 @@ export const EXPERIENCES = [
   },
 ];
 
+// Образование
 export const EDUCATION = [
   {
     degree: "Java Full Stack Developer",
@@ -179,6 +149,7 @@ export const EDUCATION = [
   },
 ];
 
+// Социальные ссылки
 export const SOCIAL_MEDIA_LINKS = [
   {
     href: "https://x.com/",

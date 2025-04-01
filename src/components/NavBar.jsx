@@ -5,20 +5,30 @@ import { Menu, X } from "lucide-react";
 const NavBar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    // Добавляем единственную новую ссылку "Projects", ведущую к #lumo-music-player
+    const EXTENDED_NAVIGATION_LINKS = [
+        ...NAVIGATION_LINKS,
+        { label: "Projects", href: "#lumo-music-player" },
+    ];
+
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     const handleLinkClick = (e, href) => {
-        e.preventDefault();
-        setIsMobileMenuOpen(false);
-        const id = href.replace("#", "");
-        const targetElement = document.getElementById(id);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            setIsMobileMenuOpen(false);
+            const id = href.replace("#", "");
+            const targetElement = document.getElementById(id);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         }
+        // Если захотите добавить внешние ссылки, они будут открываться обычным образом
     };
 
+    // При загрузке проверяем, нет ли hash в URL, чтобы сразу прокрутить
     useEffect(() => {
         const hash = window.location.hash;
         if (hash) {
@@ -40,7 +50,7 @@ const NavBar = () => {
 
                 {/* Десктопное меню */}
                 <div className="hidden lg:flex gap-6">
-                    {NAVIGATION_LINKS.map((link, index) => (
+                    {EXTENDED_NAVIGATION_LINKS.map((link, index) => (
                         <a
                             key={index}
                             href={link.href}
@@ -52,7 +62,7 @@ const NavBar = () => {
                     ))}
                 </div>
 
-                {/* Кнопка открытия мобильного меню */}
+                {/* Кнопка открытия/закрытия мобильного меню */}
                 <button className="lg:hidden text-white" onClick={toggleMobileMenu}>
                     {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
                 </button>
@@ -61,7 +71,7 @@ const NavBar = () => {
             {/* Мобильное меню */}
             {isMobileMenuOpen && (
                 <div className="absolute top-16 left-0 right-0 bg-black/90 text-white py-6 px-4 flex flex-col items-center gap-6 lg:hidden">
-                    {NAVIGATION_LINKS.map((link, index) => (
+                    {EXTENDED_NAVIGATION_LINKS.map((link, index) => (
                         <a
                             key={index}
                             href={link.href}

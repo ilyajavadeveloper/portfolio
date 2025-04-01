@@ -20,11 +20,12 @@ function App() {
             <div className='relative z-10 flex flex-col items-center p-4 space-y-8 container mx-auto'>
                 <NavBar />
                 <Hero />
-               {/*<Projects projects={PROJECTS} /> */}
+
                 <Bio/>
                 <Skills/>
                 <WorkExperience />
                 <EducationSection />
+                <Projects projects={PROJECTS} />
                 <ContactForm/>
                 <Footer/>
 
