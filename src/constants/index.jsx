@@ -112,15 +112,35 @@ export const SKILLS = [
  */
 export const PROJECTS = [
   {
-    id: "lumo-music-player",
-    name: "Lumo Music Player",
-    description: "A feature-rich music player built with React. Enjoy your favorite tracks with a sleek UI and easy playlist management.",
-    image: projectImage1,
-    githubLink: "https://github.com/ilyajavadeveloper/Lumo-music-app.git",
+    id: 1,
+    name: "Maestro Studio",
+    description:
+      "Лендинг реальной семейной фотостудии и digital marketing агентства. Акцент на визуал, атмосферу и презентацию услуг.",
+    link: "https://maestro-studio-phi.vercel.app/",
+    image:
+      "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+  },
+  {
+    id: 2,
+    name: "Maestro Web",
+    description:
+      "Визитка и промо-сайт для студии, которая создаёт лендинги и бизнес-сайты под ключ. Чистый интерфейс и современный дизайн.",
+    link: "https://maestro-web-nine.vercel.app/",
+    image:
+      "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+  },
+  {
+    id: 3,
+    name: "Lev Group",
+    description:
+      "Сайт действующей компании по комплексному обслуживанию зданий. Выполнен в строгом корпоративном стиле с мультиязычной поддержкой.",
+    link: "https://lev-group.vercel.app/",
+    image:
+      "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
 ];
 
-// Опыт работы
+
 export const EXPERIENCES = [
   {
     title: "Full Stack Developer",
