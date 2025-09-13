@@ -104,12 +104,7 @@ export const SKILLS = [
   },
 ];
 
-/**
- * Единственный проект – Lumo Music Player
- * ID: "lumo-music-player" (Если в компоненте Projects вы используете другие механизмы,
- * можно оставить id как число. Главное, чтобы <section id="lumo-music-player" /> совпадало
- * с якорем #lumo-music-player в NavBar.)
- */
+
 export const PROJECTS = [
   {
     id: 1,
@@ -137,6 +132,24 @@ export const PROJECTS = [
     link: "https://lev-group.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+  },
+  {
+    id: 4,
+    name: "Lila",
+    description:
+      "Современный лендинг с анимациями и адаптивным дизайном. Реализован на React и развернут на Vercel.",
+    link: "https://lila-neon.vercel.app/",
+    image:
+      "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+  },
+  {
+    id: 5,
+    name: "Hutzahav",
+    description:
+      "Креативный лендинг с современным UI и анимациями. Оптимизирован под разные устройства и развернут на Vercel.",
+    link: "https://hutzaav2.vercel.app/",
+    image:
+      "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
 ];
 
