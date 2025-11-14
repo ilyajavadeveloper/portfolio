@@ -8,7 +8,11 @@ import {
   FaJava,
   FaNodeJs,
 } from "react-icons/fa";
-import { RiReactjsLine } from "react-icons/ri";
+
+import {
+  RiReactjsLine
+} from "react-icons/ri";
+
 import {
   SiTypescript,
   SiMongodb,
@@ -16,17 +20,24 @@ import {
   SiSpring,
   SiHibernate,
   SiMysql,
+  SiNextdotjs,
+  SiExpo,
+  SiThreedotjs,
+  SiFramer,
+  SiTailwindcss,
+  SiVite,
+  SiWebpack,
+  SiGit,
+  SiAppwrite
 } from "react-icons/si";
+
 import { DiRedis } from "react-icons/di";
 
-// Оставляем только одну картинку, которую используем для Lumo Music Player.
-// Если у вас есть реальная картинка Lumo, используйте её вместо project1.jpeg.
+// Если не используешь — можешь удалить
 import projectImage1 from "../assets/project1.jpeg";
 
-/**
- * Ссылки в навигации (без ссылки GitHub, только основные секции, кроме Projects).
- * Ссылку Projects будете добавлять непосредственно в NavBar, указывая #lumo-music-player
- */
+// ================= NAVIGATION =================
+
 export const NAVIGATION_LINKS = [
   { label: "Bio", href: "#bio" },
   { label: "Skills", href: "#skills" },
@@ -35,177 +46,198 @@ export const NAVIGATION_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-// Настройки для "шапки" (Hero-секция)
+// ================= HERO =================
+
 export const HERO = {
   name: "Ilya Hvostenko",
   greet: "Hello there! 👋🏻",
   description:
-      "I am a passionate frontend developer with a knack for creating beautiful and functional user interfaces. I like transforming ideas into engaging web experiences for over a decade.",
+      "Frontend is my craft, design is my language. I build interfaces that feel alive — fast, modern and emotionally engaging. Combining React, Next.js, mobile development and 3D graphics, I turn complex ideas into smooth, interactive digital experiences.",
 };
 
-// Краткая биография
+
+// ================= BIO =================
+
 export const BIO = [
-  "I’m a full stack developer with a strong frontend orientation. My main expertise lies in building responsive, accessible, and visually engaging web applications using React, TypeScript, and modern styling tools like Tailwind and SCSS.",
-  "I began my development journey in backend Java, but quickly gravitated toward frontend, where I enjoy translating complex logic into elegant user interfaces. At Elpisor LTD, I worked on both frontend and backend for StockStats and Edutreck CRM, giving me hands-on experience across the entire development lifecycle.",
-  "I’m passionate about clean code, reusable components, and delivering intuitive user experiences. I stay current with frontend trends and love collaborating with teams to ship production-grade features that users love.",
+  "I’m a full-stack developer with a strong focus on modern frontend engineering. My main stack includes React, Next.js, React Native, TypeScript, Tailwind, Three.js and advanced UI/animation tooling.",
+  "I originally started with backend development in Java, Spring and databases, but quickly shifted toward frontend where I found my flow — turning complex logic into intuitive, aesthetic interfaces.",
+  "I’ve built real-world products at Elpisor LTD (CRMs, analytics platforms) and continued sharpening my skills through independent projects, mobile apps and 3D interfaces with Three.js.",
+  "Clean code, reusable components, smooth animations and delightful UX — that’s what I aim for every time. I'm constantly learning, improving and pushing my craft forward.",
 ];
 
-// Основные навыки
+// ================= SKILLS =================
+
 export const SKILLS = [
-  {
-    icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />,
-    name: "React",
-    experience: "3+ years",
-  },
-  {
-    icon: <SiTypescript className="text-2xl text-blue-500 lg:text-4xl" />,
-    name: "TypeScript",
-    experience: "3+ years",
-  },
-  {
-    icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />,
-    name: "JavaScript",
-    experience: "3+ years",
-  },
-  {
-    icon: <FaJava className="text-4xl text-red-500 lg:text-5xl" />,
-    name: "Java",
-    experience: "3+ years",
-  },
-  {
-    icon: <SiSpring className="text-4xl text-green-700 lg:text-5xl" />,
-    name: "Spring",
-    experience: "3+ years",
-  },
-  {
-    icon: <SiHibernate className="text-4xl text-purple-600 lg:text-5xl" />,
-    name: "Hibernate",
-    experience: "3+ years",
-  },
-  {
-    icon: <SiMysql className="text-4xl text-blue-600 lg:text-5xl" />,
-    name: "MySQL",
-    experience: "3+ years",
-  },
-  {
-    icon: <SiMongodb className="text-4xl text-green-600 lg:text-5xl" />,
-    name: "MongoDB",
-    experience: "3+ years",
-  },
-  {
-    icon: <DiRedis className="text-4xl text-red-600 lg:text-5xl" />,
-    name: "Redis",
-    experience: "3+ years",
-  },
-  {
-    icon: <FaNodeJs className="text-4xl text-green-600 lg:text-5xl" />,
-    name: "Node.js",
-    experience: "3+ years",
-  },
+  // Frontend Core
+  { icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />, name: "React", experience: "3+ years" },
+  { icon: <SiNextdotjs className="text-4xl text-white lg:text-5xl" />, name: "Next.js", experience: "2+ years" },
+  { icon: <RiReactjsLine className="text-4xl text-cyan-300 lg:text-5xl" />, name: "React Native", experience: "2+ years" },
+  { icon: <SiExpo className="text-4xl text-black lg:text-5xl" />, name: "Expo", experience: "2+ years" },
+  { icon: <SiThreedotjs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Three.js", experience: "1.5+ years" },
+
+  // UI / Motion
+  { icon: <SiFramer className="text-4xl text-pink-400 lg:text-5xl" />, name: "Framer Motion", experience: "2+ years" },
+  { icon: <SiTailwindcss className="text-4xl text-sky-400 lg:text-5xl" />, name: "Tailwind CSS", experience: "3+ years" },
+
+  // Languages & Core Skills
+  { icon: <SiTypescript className="text-4xl text-blue-500 lg:text-5xl" />, name: "TypeScript", experience: "3+ years" },
+  { icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />, name: "JavaScript", experience: "3+ years" },
+
+  // State Management (Zustand → без иконки)
+  { icon: <FaNodeJs className="text-4xl text-lime-400 lg:text-5xl" />, name: "Zustand (State Management)", experience: "2+ years" },
+
+  // Tooling
+  { icon: <SiVite className="text-4xl text-purple-300 lg:text-5xl" />, name: "Vite", experience: "2+ years" },
+  { icon: <SiWebpack className="text-4xl text-blue-300 lg:text-5xl" />, name: "Webpack", experience: "2+ years" },
+  { icon: <SiGit className="text-4xl text-orange-600 lg:text-5xl" />, name: "Git & GitHub", experience: "4+ years" },
+
+  // Backend
+  { icon: <FaJava className="text-4xl text-red-500 lg:text-5xl" />, name: "Java", experience: "3+ years" },
+  { icon: <SiSpring className="text-4xl text-green-700 lg:text-5xl" />, name: "Spring Boot", experience: "3+ years" },
+  { icon: <SiHibernate className="text-4xl text-purple-600 lg:text-5xl" />, name: "Hibernate", experience: "3+ years" },
+  { icon: <SiMysql className="text-4xl text-blue-600 lg:text-5xl" />, name: "MySQL", experience: "3+ years" },
+  { icon: <SiMongodb className="text-4xl text-green-600 lg:text-5xl" />, name: "MongoDB", experience: "3+ years" },
+  { icon: <DiRedis className="text-4xl text-red-600 lg:text-5xl" />, name: "Redis", experience: "3+ years" },
+  { icon: <FaNodeJs className="text-4xl text-green-600 lg:text-5xl" />, name: "Node.js", experience: "3+ years" },
+
+  // Tools
+  { icon: <SiAppwrite className="text-4xl text-red-400 lg:text-5xl" />, name: "Appwrite", experience: "1+ year" },
 ];
 
+// ================= PROJECTS =================
 
 export const PROJECTS = [
   {
     id: 1,
     name: "Maestro Studio",
-    description:
-      "Лендинг реальной семейной фотостудии и digital marketing агентства. Акцент на визуал, атмосферу и презентацию услуг.",
+    description: "Лендинг семейной фотостудии и digital-агентства с акцентом на визуал и атмосферу.",
     link: "https://maestro-studio-phi.vercel.app/",
-    image:
-      "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image: "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 2,
     name: "Maestro Web",
-    description:
-      "Визитка и промо-сайт для студии, которая создаёт лендинги и бизнес-сайты под ключ. Чистый интерфейс и современный дизайн.",
+    description: "Промо-сайт студии по созданию лендингов и бизнес-сайтов. Чистый UX/UI.",
     link: "https://maestro-web-nine.vercel.app/",
-    image:
-      "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image: "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 3,
     name: "Lev Group",
-    description:
-      "Сайт действующей компании по комплексному обслуживанию зданий. Выполнен в строгом корпоративном стиле с мультиязычной поддержкой.",
+    description: "Корпоративный сайт действующей компании по обслуживанию зданий. Мультиязычность, строгий стиль.",
     link: "https://lev-group.vercel.app/",
-    image:
-      "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image: "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 4,
     name: "Lila",
-    description:
-      "Современный лендинг с анимациями и адаптивным дизайном. Реализован на React и развернут на Vercel.",
+    description: "Современный лендинг с анимациями и адаптивным UI.",
     link: "https://lila-neon.vercel.app/",
-    image:
-      "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image: "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 5,
     name: "Hutzahav",
-    description:
-      "Креативный лендинг с современным UI и анимациями. Оптимизирован под разные устройства и развернут на Vercel.",
+    description: "Креативный лендинг с глубокими UI-эффектами и плавной анимацией.",
     link: "https://hutzaav2.vercel.app/",
-    image:
-      "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image: "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
+  {
+    id: 6,
+    name: "Apple Three.js Showcase",
+    description:
+        "Интерактивная 3D-модель MacBook с анимациями, сменой текстур, освещением и видео-текстурами. Полный Three.js + React-Fiber стек.",
+    link: "https://macbook-apple-app.vercel.app/",
+    image:
+        "https://api.microlink.io/?url=https://macbook-apple-app.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+    altImage:
+        "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/apple-three-js&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+  }
+
 ];
 
+// ================= EXPERIENCE =================
 
 export const EXPERIENCES = [
   {
+    title: "Terminal Operations System Specialist",
+    company: "Ashdod Port — TOS Division",
+    duration: "2024 – Present",
+    description:
+        "Managing enterprise-grade Terminal Operating Systems (TOS). Overseeing vessel workflow, yard planning, container routing, crane operations and real-time logistics in Israel’s busiest port. Ensuring operational accuracy, data integrity and smooth cargo movement across the terminal.",
+  },
+
+  {
     title: "Full Stack Developer",
     company: "Elpisor LTD",
-    duration: "2022 - Present",
+    duration: "2022 – 2023",
     description:
-        "Developed frontend and backend for Edutreck CRM using React, TypeScript, and Java Spring Boot. Implemented scalable RESTful APIs, user authentication, and interactive UI components. Created StockStats – a real-time stock analytics tool with data visualization and backend services. Improved system efficiency, API performance, and reduced user-side errors by over 60%.",
+        "Developed Edutreck CRM and StockStats analytics. Built REST APIs, authentication, dashboards and data-driven UI. Improved performance, optimized UX flow and delivered production features with React, TS, Node, Java and Spring.",
+  },
+
+  {
+    title: "Software Engineering Student & Independent Developer",
+    company: "Self-Driven + Tel-Ran College",
+    duration: "2021 – 2023",
+    description:
+        "Studied Java, Spring, databases, algorithms, cloud and frontend engineering. Built multiple full-stack and 3D projects (React, TypeScript, Three.js, Expo). Strengthened problem-solving, architecture thinking and real production workflows.",
+  },
+
+  {
+    title: "Operations & Intelligence Coordinator (חמ״ל קמ\"ציה)",
+    company: "IDF — 916 Battalion, Navy",
+    duration: "2018 – 2021",
+    description:
+        "Worked in the Navy operational command center. Managed encrypted communication, scheduling, manpower, real-time monitoring and mission-level operational flow. Supported coastal security units and coordinated high-priority responses.",
   },
 ];
 
-// Образование
+// ================= EDUCATION =================
+
 export const EDUCATION = [
+  {
+    degree: "Full Israeli Bagrut",
+    institution: "Israel Ministry of Education",
+    duration: "Completed",
+    description: "Completed full Bagrut matriculation with strong performance in technology-oriented subjects.",
+  },
+  {
+    degree: "Military Service — Naval Operations & Intelligence",
+    institution: "IDF — חיל הים (חמ\"ל קמ\"ציה)",
+    duration: "2018 – 2021",
+    description:
+        "Full combat-support naval service. Operational intelligence workflow, secure communication, scheduling, coordination and mission execution.",
+  },
   {
     degree: "Java Full Stack Developer",
     institution: "Tel-Ran Educational Center",
-    duration: "2020 - 2022",
+    duration: "2020 – 2022",
     description:
-        "Completed an intensive full stack development program with a focus on Java backend technologies and modern frontend frameworks like React. Gained hands-on experience in cloud services, microservices architecture, and deployment strategies.",
+        "Studied Java, Spring Boot, SQL/NoSQL, cloud, networks and full-stack web development with React.",
   },
   {
     degree: "Advanced IT Technologies & Computer Graphics",
     institution: "Private Program",
-    duration: "2018 - 2020",
+    duration: "2018 – 2020",
     description:
-        "Completed 420 academic hours focused on IT infrastructure, software tools, and visual design concepts. Strengthened fundamentals in system architecture and computer graphics.",
+        "420 hours in IT infrastructure, architecture fundamentals, software tools and computer graphics.",
+  },
+  {
+    degree: "Independent Software Development",
+    institution: "Self-Taught",
+    duration: "Ongoing",
+    description:
+        "Continuous learning: React, TypeScript, Three.js, mobile development, backend systems, animations and modern frontend architecture.",
   },
 ];
 
-// Социальные ссылки
+// ================= SOCIALS =================
+
 export const SOCIAL_MEDIA_LINKS = [
-  {
-    href: "https://x.com/",
-    icon: <FaFacebook fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://x.com/",
-    icon: <FaDiscord fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://x.com/",
-    icon: <FaInstagram fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://x.com/",
-    icon: <FaTwitter fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://github.com/ilyajavadeveloper",
-    icon: <FaGithub fontSize={25} className="hover:opacity-80" />,
-  },
-  {
-    href: "https://www.linkedin.com/in/ilya-hvostenko-a03347298/",
-    icon: <FaLinkedin fontSize={25} className="hover:opacity-80" />,
-  },
+  { href: "https://facebook.com/", icon: <FaFacebook fontSize={25} className="hover:opacity-80" /> },
+  { href: "https://discord.com/", icon: <FaDiscord fontSize={25} className="hover:opacity-80" /> },
+  { href: "https://instagram.com/", icon: <FaInstagram fontSize={25} className="hover:opacity-80" /> },
+  { href: "https://x.com/", icon: <FaTwitter fontSize={25} className="hover:opacity-80" /> },
+  { href: "https://github.com/ilyajavadeveloper", icon: <FaGithub fontSize={25} className="hover:opacity-80" /> },
+  { href: "https://www.linkedin.com/in/ilya-hvostenko-a03347298/", icon: <FaLinkedin fontSize={25} className="hover:opacity-80" /> },
 ];

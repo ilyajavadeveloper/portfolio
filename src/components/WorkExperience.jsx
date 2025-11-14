@@ -32,11 +32,11 @@ const WorkExperience = () => {
             initial="hidden"
             animate="visible"
             className="container mx-auto mt-16"
-
         >
             <h2 className="text-center text-4xl font-semibold tracking-tighter mb-8">
                 Work Experience
             </h2>
+
             <motion.div className="space-y-8 p-10">
                 {EXPERIENCES.map((experience, index) => (
                     <motion.div

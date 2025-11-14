@@ -45,32 +45,36 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
             return;
         }
 
-        const fullForm = {
-            ...formData,
-            time: new Date().toLocaleString(),
-        };
-
         setIsSending(true);
         setErrors({});
+
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            time: new Date().toLocaleString(),
+        };
 
         emailjs
             .send(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                fullForm,
+                templateParams,
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             )
             .then(() => {
                 toast.success("Email sent successfully!");
                 setFormData({ name: "", email: "", message: "" });
             })
-            .catch(() => {
+            .catch((err) => {
+                console.error("EMAILJS ERROR:", err);
                 toast.error("Failed to send email. Please try again later.");
             })
             .finally(() => {
@@ -94,6 +98,7 @@ const ContactForm = () => {
             >
                 Let's Connect
             </motion.h2>
+
             <motion.form
                 onSubmit={handleSubmit}
                 className="space-y-4"
@@ -114,6 +119,7 @@ const ContactForm = () => {
                         <p className="text-sm text-red-600">{errors.name}</p>
                     )}
                 </motion.div>
+
                 <motion.div variants={itemVariants}>
                     <input
                         type="email"
@@ -127,18 +133,20 @@ const ContactForm = () => {
                         <p className="text-sm text-red-600">{errors.email}</p>
                     )}
                 </motion.div>
+
                 <motion.div variants={itemVariants}>
-          <textarea
-              name="message"
-              value={formData.message}
-              placeholder="Message"
-              onChange={handleChange}
-              className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
-          />
+                    <textarea
+                        name="message"
+                        value={formData.message}
+                        placeholder="Message"
+                        onChange={handleChange}
+                        className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
+                    />
                     {errors.message && (
                         <p className="text-sm text-red-600">{errors.message}</p>
                     )}
                 </motion.div>
+
                 <motion.div variants={itemVariants}>
                     <motion.button
                         type="submit"
