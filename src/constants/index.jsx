@@ -110,50 +110,59 @@ export const PROJECTS = [
   {
     id: 1,
     name: "Maestro Studio",
-    description: "Лендинг семейной фотостудии и digital-агентства с акцентом на визуал и атмосферу.",
+    description:
+      "A landing page for a family photo studio and digital agency, focused on atmosphere, visuals, and emotional branding.",
     link: "https://maestro-studio-phi.vercel.app/",
-    image: "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image:
+      "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 2,
     name: "Maestro Web",
-    description: "Промо-сайт студии по созданию лендингов и бизнес-сайтов. Чистый UX/UI.",
+    description:
+      "A promo website for a studio specializing in landing pages and business sites. Clean UX/UI and smooth interactions.",
     link: "https://maestro-web-nine.vercel.app/",
-    image: "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image:
+      "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 3,
     name: "Lev Group",
-    description: "Корпоративный сайт действующей компании по обслуживанию зданий. Мультиязычность, строгий стиль.",
+    description:
+      "A corporate site for a real-world building maintenance and property management company. Multi-language and strict business style.",
     link: "https://lev-group.vercel.app/",
-    image: "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image:
+      "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 4,
     name: "Lila",
-    description: "Современный лендинг с анимациями и адаптивным UI.",
+    description:
+      "A modern landing page with smooth animations, bold layout, and responsive design.",
     link: "https://lila-neon.vercel.app/",
-    image: "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image:
+      "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 5,
     name: "Hutzahav",
-    description: "Креативный лендинг с глубокими UI-эффектами и плавной анимацией.",
+    description:
+      "A creative landing crafted with deep UI effects, smooth transitions, and an elegant animated flow.",
     link: "https://hutzaav2.vercel.app/",
-    image: "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
+    image:
+      "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
   {
     id: 6,
     name: "Apple Three.js Showcase",
     description:
-        "Интерактивная 3D-модель MacBook с анимациями, сменой текстур, освещением и видео-текстурами. Полный Three.js + React-Fiber стек.",
+      "An interactive 3D MacBook experience with animations, texture switching, lighting presets, and video textures. Full Three.js + React-Fiber stack.",
     link: "https://macbook-apple-app.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https://macbook-apple-app.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+      "https://api.microlink.io/?url=https://macbook-apple-app.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
-        "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/apple-three-js&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-  }
-
+      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/apple-three-js&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+  },
 ];
 
 // ================= EXPERIENCE =================
