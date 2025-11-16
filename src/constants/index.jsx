@@ -168,7 +168,7 @@ export const PROJECTS = [
     name: "Stock Market App",
     description:
       "A modern real-time stock analytics platform featuring advanced charting, company data, watchlist sync, technical indicators, and TradingView widgets. Fully server-side powered with MongoDB and BetterAuth.",
-    link: "https://stock-market-f2txrvuxs-ilyajavadevs-projects.vercel.app/",
+    link: "https://stock-market-app-lyart.vercel.app/sign-in",
     image:
       "https://api.microlink.io/?url=https://stock-market-f2txrvuxs-ilyajavadevs-projects.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
