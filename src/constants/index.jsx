@@ -162,7 +162,8 @@ export const PROJECTS = [
       "https://api.microlink.io/?url=https://macbook-apple-app.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/apple-three-js&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-  },{
+  },
+  {
     id: 7,
     name: "Stock Market App",
     description:
@@ -172,7 +173,7 @@ export const PROJECTS = [
       "https://api.microlink.io/?url=https://stock-market-f2txrvuxs-ilyajavadevs-projects.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-  },
+  }
   
 ];
 
