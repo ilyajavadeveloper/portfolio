@@ -170,10 +170,11 @@ export const PROJECTS = [
       "A modern real-time stock analytics platform featuring advanced charting, company data, watchlist sync, technical indicators, and TradingView widgets. Fully server-side powered with MongoDB and BetterAuth.",
     link: "https://stock-market-app-lyart.vercel.app",
     image:
-      "https://api.microlink.io/?url=https://stock-market-f2txrvuxs-ilyajavadevs-projects.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+      "https://api.microlink.io/?url=https://stock-market-app-lyart.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   }
+  
   
 ];
 
