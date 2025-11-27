@@ -14,35 +14,35 @@ const CVCard = ({ title, file }) => (
             shadow-[0_0_25px_rgba(255,255,255,0.1)]
             hover:shadow-[0_0_45px_rgba(255,255,255,0.35)]
             transition-all duration-300
-            max-w-[200px]
+            w-[260px]                 /* wider, clean */
         "
     >
         <div
             className="
-                h-48 w-36 rounded-xl
+                h-56 w-44 rounded-xl     /* bigger, perfect symmetry */
                 bg-gradient-to-b from-neutral-200/95 to-neutral-100
                 shadow-inner flex flex-col items-center justify-center
                 text-black font-bold text-lg
                 border border-neutral-300
             "
         >
-            <HiDocumentText size={50} className="opacity-70" />
+            <HiDocumentText size={60} className="opacity-70" />
             <span className="mt-2">{title}</span>
         </div>
 
-        <p className="mt-4 text-lg font-medium text-white/90">
+        <p className="mt-5 text-lg font-medium text-white/90">
             2 pages · PDF
         </p>
 
         {/* BUTTONS */}
-        <div className="mt-4 flex gap-3">
+        <div className="mt-5 flex gap-4 w-full justify-center">
             {/* OPEN BUTTON */}
             <a
                 href={file}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                    flex items-center gap-1 px-3 py-1.5 rounded-lg
+                    flex items-center gap-1 px-4 py-2 rounded-lg
                     bg-white/20 hover:bg-white/30
                     text-white text-sm transition
                 "
@@ -55,7 +55,7 @@ const CVCard = ({ title, file }) => (
                 href={file}
                 download={title + ".pdf"}
                 className="
-                    flex items-center gap-1 px-3 py-1.5 rounded-lg
+                    flex items-center gap-1 px-4 py-2 rounded-lg
                     bg-white/20 hover:bg-white/30
                     text-white text-sm transition
                 "
@@ -69,6 +69,7 @@ const CVCard = ({ title, file }) => (
 const Hero = () => {
     return (
         <section className="flex min-h-screen flex-wrap items-center">
+            
             {/* LEFT TEXT BLOCK */}
             <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -84,12 +85,12 @@ const Hero = () => {
                     {HERO.greet}
                 </p>
 
-                <p className="mb-8 p-2 text-xl">
+                <p className="mb-8 p-2 text-xl leading-relaxed text-white/90">
                     {HERO.description}
                 </p>
 
                 {/* CV BLOCK */}
-                <div className="mt-10 flex flex-col gap-8 p-2 md:flex-row">
+                <div className="mt-10 flex flex-col gap-10 p-2 md:flex-row">
                     <CVCard
                         title="IT CV"
                         file="/IT_CV_Ilya_2Pages_DarkPro.pdf"
