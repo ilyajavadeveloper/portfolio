@@ -1,7 +1,70 @@
 import React from "react";
-import heroPortrait from "../assets/hero-portrait-bw.jpg"; // 🧱 твоя фотка с кирпичной стеной
+import heroPortrait from "../assets/hero-portrait-bw.jpg";
 import { HERO } from "../constants/index.jsx";
 import { motion } from "framer-motion";
+import { HiDocumentText, HiDownload, HiEye } from "react-icons/hi";
+
+const CVCard = ({ title, file }) => (
+    <motion.div
+        whileHover={{ scale: 1.07 }}
+        whileTap={{ scale: 0.97 }}
+        className="
+            flex flex-col items-center p-6 rounded-2xl
+            bg-white/10 backdrop-blur-xl border border-white/20
+            shadow-[0_0_25px_rgba(255,255,255,0.1)]
+            hover:shadow-[0_0_45px_rgba(255,255,255,0.35)]
+            transition-all duration-300
+            max-w-[200px]
+        "
+    >
+        <div
+            className="
+                h-48 w-36 rounded-xl
+                bg-gradient-to-b from-neutral-200/95 to-neutral-100
+                shadow-inner flex flex-col items-center justify-center
+                text-black font-bold text-lg
+                border border-neutral-300
+            "
+        >
+            <HiDocumentText size={50} className="opacity-70" />
+            <span className="mt-2">{title}</span>
+        </div>
+
+        <p className="mt-4 text-lg font-medium text-white/90">
+            2 pages · PDF
+        </p>
+
+        {/* BUTTONS */}
+        <div className="mt-4 flex gap-3">
+            {/* OPEN BUTTON */}
+            <a
+                href={file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                    flex items-center gap-1 px-3 py-1.5 rounded-lg
+                    bg-white/20 hover:bg-white/30
+                    text-white text-sm transition
+                "
+            >
+                <HiEye size={18} /> View
+            </a>
+
+            {/* DOWNLOAD BUTTON */}
+            <a
+                href={file}
+                download={title + ".pdf"}
+                className="
+                    flex items-center gap-1 px-3 py-1.5 rounded-lg
+                    bg-white/20 hover:bg-white/30
+                    text-white text-sm transition
+                "
+            >
+                <HiDownload size={18} /> Download
+            </a>
+        </div>
+    </motion.div>
+);
 
 const Hero = () => {
     return (
@@ -24,6 +87,18 @@ const Hero = () => {
                 <p className="mb-8 p-2 text-xl">
                     {HERO.description}
                 </p>
+
+                {/* CV BLOCK */}
+                <div className="mt-10 flex flex-col gap-8 p-2 md:flex-row">
+                    <CVCard
+                        title="IT CV"
+                        file="/IT_CV_Ilya_2Pages_DarkPro.pdf"
+                    />
+                    <CVCard
+                        title="General CV"
+                        file="/General_CV_Ilya_2Pages_Expanded_Final.pdf"
+                    />
+                </div>
             </motion.div>
 
             {/* RIGHT IMAGE BLOCK */}
@@ -43,12 +118,11 @@ const Hero = () => {
                         width={550}
                         height={550}
                         className="
-              rounded-3xl
-              object-cover
-              shadow-[0_0_40px_rgba(255,255,255,0.15)]
-              max-w-full
-              select-none
-            "
+                            rounded-3xl
+                            object-cover
+                            shadow-[0_0_40px_rgba(255,255,255,0.2)]
+                            max-w-full select-none
+                        "
                     />
                 </div>
             </motion.div>
