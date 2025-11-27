@@ -173,6 +173,15 @@ export const PROJECTS = [
       "https://api.microlink.io/?url=https://stock-market-app-lyart.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+  },
+  {
+    id: 8,
+    name: "Dev Events Platform",
+    description:
+      "A full-stack event management platform with CRUD events, bookings, validation, server actions, MongoDB, and a clean Next.js 16 architecture.",
+    link: "https://dev-events-nextjs-16-3crs.vercel.app",
+    image:
+      "https://api.microlink.io/?url=https://dev-events-nextjs-16-3crs.vercel.app&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   }
   
   
