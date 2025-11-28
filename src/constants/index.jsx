@@ -179,7 +179,7 @@ export const PROJECTS = [
     name: "Dev Events Platform",
     description:
       "A full-stack event management platform with CRUD events, bookings, validation, server actions, MongoDB, and a clean Next.js 16 architecture.",
-    link: "https://dev-events-nextjs-16-melv-gartvmvvv-ilyajavadevs-projects.vercel.app",
+    link: "https://ilyajavadeveloper-dev-events-next.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://dev-events-nextjs-16-3crs.vercel.app&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   }
