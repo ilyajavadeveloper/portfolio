@@ -6,27 +6,26 @@ import { HiDocumentText, HiDownload, HiEye } from "react-icons/hi";
 
 const CVCard = ({ title, file }) => (
     <motion.div
-        whileHover={{ scale: 1.07 }}
+        whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.97 }}
         className="
             flex flex-col items-center p-6 rounded-2xl
             bg-white/10 backdrop-blur-xl border border-white/20
-            shadow-[0_0_25px_rgba(255,255,255,0.1)]
-            hover:shadow-[0_0_45px_rgba(255,255,255,0.35)]
+            shadow-[0_0_25px_rgba(255,255,255,0.15)]
+            hover:shadow-[0_0_50px_rgba(255,255,255,0.35)]
             transition-all duration-300
-            w-[260px]                 /* wider, clean */
+            w-[230px] sm:w-[250px]
         "
     >
         <div
             className="
-                h-56 w-44 rounded-xl     /* bigger, perfect symmetry */
+                h-52 w-40 sm:h-56 sm:w-44 rounded-xl
                 bg-gradient-to-b from-neutral-200/95 to-neutral-100
                 shadow-inner flex flex-col items-center justify-center
-                text-black font-bold text-lg
-                border border-neutral-300
+                text-black font-bold text-lg border border-neutral-300
             "
         >
-            <HiDocumentText size={60} className="opacity-70" />
+            <HiDocumentText size={55} className="opacity-70" />
             <span className="mt-2">{title}</span>
         </div>
 
@@ -34,9 +33,7 @@ const CVCard = ({ title, file }) => (
             2 pages · PDF
         </p>
 
-        {/* BUTTONS */}
         <div className="mt-5 flex gap-4 w-full justify-center">
-            {/* OPEN BUTTON */}
             <a
                 href={file}
                 target="_blank"
@@ -50,10 +47,9 @@ const CVCard = ({ title, file }) => (
                 <HiEye size={18} /> View
             </a>
 
-            {/* DOWNLOAD BUTTON */}
             <a
                 href={file}
-                download={title + ".pdf"}
+                download={title + '.pdf'}
                 className="
                     flex items-center gap-1 px-4 py-2 rounded-lg
                     bg-white/20 hover:bg-white/30
@@ -66,67 +62,133 @@ const CVCard = ({ title, file }) => (
     </motion.div>
 );
 
+// animation variants for stagger reveal
+const textContainer = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.3,
+            duration: 0.5,
+        },
+    },
+};
+
+const textItem = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
 const Hero = () => {
     return (
-        <section className="flex min-h-screen flex-wrap items-center">
-            
-            {/* LEFT TEXT BLOCK */}
+        <section
+            className="flex flex-col lg:flex-row min-h-screen items-center gap-8 lg:gap-0 pt-10"
+        >
+            {/* LEFT TEXT */}
             <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-                className="w-full md:w-1/2"
+                initial="hidden"
+                animate="show"
+                variants={textContainer}
+                className="w-full lg:w-1/2 px-4"
             >
-                <h2 className="my-8 p-2 text-4xl font-bold md:text-5xl lg:text-7xl">
+                <motion.h2
+                    variants={textItem}
+                    className="my-8 text-4xl font-bold md:text-5xl lg:text-7xl tracking-tight"
+                >
                     {HERO.name}
-                </h2>
+                </motion.h2>
 
-                <p className="p-2 text-3xl tracking-tighter lg:text-4xl">
+                <motion.p
+                    variants={textItem}
+                    className="text-3xl tracking-tighter lg:text-4xl mb-6"
+                >
                     {HERO.greet}
-                </p>
+                </motion.p>
 
-                <p className="mb-8 p-2 text-xl leading-relaxed text-white/90">
-                    {HERO.description}
-                </p>
+                {/* 4 PARAGRAPHS — SHORTER BUT POWERFUL */}
+                <motion.p
+                    variants={textItem}
+                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-6"
+                >
+                    I create modern, aesthetic, high-performance web apps that combine precise engineering 
+                    with expressive, human-centered design. My goal is always the same: make products that 
+                    feel smooth, intentional, premium, and emotionally engaging.
+                </motion.p>
 
-                {/* CV BLOCK */}
-                <div className="mt-10 flex flex-col gap-10 p-2 md:flex-row">
-                    <CVCard
-                        title="IT CV"
-                        file="/IT_CV_Ilya_2Pages_DarkPro.pdf"
-                    />
-                    <CVCard
-                        title="General CV"
-                        file="/General_CV_Ilya_2Pages_Expanded_Final.pdf"
-                    />
-                </div>
+                <motion.p
+                    variants={textItem}
+                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-6"
+                >
+                    My expertise includes <b>React, Next.js, TypeScript, Tailwind, Zustand</b>, backend APIs, 
+                    auth systems, databases, and scalable architecture. I also build mobile apps with 
+                    <b> React Native</b> and craft high-end interactive visuals, including 3D experiences 
+                    using Three.js and performant animations.
+                </motion.p>
+
+                <motion.p
+                    variants={textItem}
+                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-6"
+                >
+                    I approach projects like a product engineer — shaping UX flows, designing system structure, 
+                    building UI logic, optimizing performance, and polishing the final experience until it feels 
+                    cohesive and well-crafted. Not just functional — but outstanding.
+                </motion.p>
+
+                <motion.p
+                    variants={textItem}
+                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-10"
+                >
+                    I’m looking for a team where quality matters, where initiative is valued, and where building 
+                    exceptional digital products is the standard. I bring creativity, discipline, technical clarity, 
+                    and an obsession for great design and smooth user experience.
+                </motion.p>
             </motion.div>
 
-            {/* RIGHT IMAGE BLOCK */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
-                className="w-full md:w-1/2 lg:p-8"
+            {/* RIGHT IMAGE + CV BLOCK */}
+            <div
+                className="
+                w-full lg:w-1/2 flex flex-col items-center
+                px-4
+            "
             >
-                <div className="flex justify-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1 }}
+                    className="relative"
+                >
                     <motion.img
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
                         src={heroPortrait}
                         alt="Ilya Portrait"
                         width={550}
                         height={550}
                         className="
-                            rounded-3xl
-                            object-cover
-                            shadow-[0_0_40px_rgba(255,255,255,0.2)]
-                            max-w-full select-none
+                            rounded-3xl object-cover max-w-full select-none
+                            shadow-[0_0_40px_rgba(255,255,255,0.25)]
                         "
                     />
+
+                    <div
+                        className="
+                            absolute inset-0 rounded-3xl
+                            bg-white/10 blur-3xl
+                        "
+                    ></div>
+                </motion.div>
+
+                <div
+                    className="
+                        mt-10 flex flex-col gap-10 md:flex-row
+                        justify-center items-center
+                    "
+                >
+                    <CVCard title="IT CV" file="/IT_CV_Ilya_2Pages_DarkPro.pdf" />
+                    <CVCard
+                        title="General CV"
+                        file="/General_CV_Ilya_2Pages_Expanded_Final.pdf"
+                    />
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 };
