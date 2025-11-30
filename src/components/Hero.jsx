@@ -4,57 +4,57 @@ import { HERO } from "../constants/index.jsx";
 import { motion } from "framer-motion";
 import { HiDocumentText, HiDownload, HiEye } from "react-icons/hi";
 
-const CVCard = ({ title, file }) => (
+const CVCard = ({ title, file, small }) => (
     <motion.div
-        whileHover={{ scale: 1.06 }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
-        className="
-            flex flex-col items-center p-5 rounded-2xl
+        className={`
+            flex flex-col items-center p-4 rounded-2xl
             bg-white/10 backdrop-blur-xl border border-white/20
             shadow-[0_0_25px_rgba(255,255,255,0.12)]
             hover:shadow-[0_0_45px_rgba(255,255,255,0.25)]
             transition-all duration-300
-            w-[200px] sm:w-[220px]
-        "
+            ${small ? "w-[150px]" : "w-[200px] sm:w-[220px]"}
+        `}
     >
         <div
-            className="
-                h-48 w-36 sm:h-52 sm:w-40 rounded-xl
-                bg-gradient-to-b from-neutral-200/95 to-neutral-100
+            className={`
+                ${small ? "h-40 w-28" : "h-48 w-36 sm:h-52 sm:w-40"}
+                rounded-xl bg-gradient-to-b from-neutral-200/95 to-neutral-100
                 shadow-inner flex flex-col items-center justify-center
                 text-black font-bold text-base border border-neutral-300
-            "
+            `}
         >
-            <HiDocumentText size={50} className="opacity-70" />
+            <HiDocumentText size={small ? 40 : 50} className="opacity-70" />
             <span className="mt-2">{title}</span>
         </div>
 
-        <p className="mt-4 text-base font-medium text-white/80">
+        <p className="mt-3 text-sm font-medium text-white/80">
             2 pages · PDF
         </p>
 
-        <div className="mt-4 flex gap-3 w-full justify-center">
+        <div className="mt-3 flex gap-2 w-full justify-center">
             <a
                 href={file}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                    flex items-center gap-1 px-3 py-1.5 rounded-lg
-                    bg-white/20 hover:bg-white/30 text-white text-sm transition
+                    flex items-center gap-1 px-2 py-1.5 rounded-lg
+                    bg-white/20 hover:bg-white/30 text-white text-xs transition
                 "
             >
-                <HiEye size={16} /> View
+                <HiEye size={14} /> View
             </a>
 
             <a
                 href={file}
                 download={title + '.pdf'}
                 className="
-                    flex items-center gap-1 px-3 py-1.5 rounded-lg
-                    bg-white/20 hover:bg-white/30 text-white text-sm transition
+                    flex items-center gap-1 px-2 py-1.5 rounded-lg
+                    bg-white/20 hover:bg-white/30 text-white text-xs transition
                 "
             >
-                <HiDownload size={16} /> Download
+                <HiDownload size={14} /> Download
             </a>
         </div>
     </motion.div>
@@ -91,14 +91,14 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.75 }}
-                    className="relative"
+                    className="relative w-full flex justify-center"
                 >
                     <img
                         src={heroPortrait}
                         alt="Ilya Portrait"
                         className="
                             rounded-3xl object-cover
-                            w-[90%] max-w-[360px]
+                            w-[95%] max-w-[420px]
                             mx-auto select-none
                             shadow-[0_0_45px_rgba(255,255,255,0.22)]
                         "
@@ -117,7 +117,7 @@ const Hero = () => {
                 className="
                     w-full lg:w-1/2
                     flex flex-col
-                    items-start lg:items-start
+                    items-center lg:items-start
                     max-w-xl
                     text-center lg:text-left
                 "
@@ -136,40 +136,29 @@ const Hero = () => {
                     {HERO.greet}
                 </motion.p>
 
-                <motion.p
-                    variants={textItem}
-                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4"
-                >
-                    I create modern, aesthetic, high-performance web apps that combine precise engineering 
-                    with expressive design — building digital experiences that feel smooth, intentional, and premium.
+                <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4">
+                    I create modern, aesthetic, high-performance web apps built with precision and expressive design.
                 </motion.p>
 
-                <motion.p
-                    variants={textItem}
-                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4"
-                >
-                    Skilled in <b>React, Next.js, TypeScript, Tailwind, Zustand</b>, backend APIs, authentication, 
-                    databases, and scalable architecture. I craft mobile apps with <b>React Native</b> and create 
-                    interactive visuals with <b>Three.js</b>.
+                <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4">
+                    Skilled in <b>React, Next.js, TypeScript, Tailwind, Zustand</b>, backend APIs, auth and databases. 
+                    I build mobile apps with <b>React Native</b> and craft 3D experiences with <b>Three.js</b>.
                 </motion.p>
 
-                <motion.p
-                    variants={textItem}
-                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-8"
-                >
-                    I’m looking for a team where engineering quality, creativity, and product thinking come first.
+                <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-8">
+                    I’m looking for a team where quality, creativity and product thinking matter.
                 </motion.p>
 
-                {/* CVs */}
+                {/* CV CARDS — MOBILE GRID / DESKTOP ROW */}
                 <motion.div
                     variants={textItem}
                     className="
-                        mt-4 flex flex-col sm:flex-row gap-8
-                        justify-center lg:justify-start w-full
+                        mt-6 grid grid-cols-2 sm:flex sm:flex-row
+                        gap-6 sm:gap-8 justify-center lg:justify-start w-full
                     "
                 >
-                    <CVCard title="IT CV" file="/IT_CV_Ilya_2Pages_DarkPro.pdf" />
-                    <CVCard title="General CV" file="/General_CV_Ilya_2Pages_Expanded_Final.pdf" />
+                    <CVCard title="IT CV" file="/IT_CV_Ilya_2Pages_DarkPro.pdf" small />
+                    <CVCard title="General CV" file="/General_CV_Ilya_2Pages_Expanded_Final.pdf" small />
                 </motion.div>
             </motion.div>
 
@@ -186,16 +175,9 @@ const Hero = () => {
                         alt="Ilya Portrait"
                         width={580}
                         height={580}
-                        className="
-                            rounded-3xl object-cover
-                            max-w-[440px] md:max-w-[520px] lg:max-w-[580px]
-                            select-none
-                            shadow-[0_0_45px_rgba(255,255,255,0.22)]
-                        "
+                        className="rounded-3xl object-cover max-w-[580px] select-none shadow-[0_0_45px_rgba(255,255,255,0.22)]"
                     />
-                    <div
-                        className="absolute inset-0 rounded-3xl bg-white/10 blur-3xl pointer-events-none"
-                    ></div>
+                    <div className="absolute inset-0 rounded-3xl bg-white/10 blur-3xl pointer-events-none"></div>
                 </motion.div>
             </div>
         </section>
