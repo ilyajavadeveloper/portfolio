@@ -73,8 +73,7 @@ const ContactForm = () => {
                 toast.success("Email sent successfully!");
                 setFormData({ name: "", email: "", message: "" });
             })
-            .catch((err) => {
-                console.error("EMAILJS ERROR:", err);
+            .catch(() => {
                 toast.error("Failed to send email. Please try again later.");
             })
             .finally(() => {
@@ -84,7 +83,7 @@ const ContactForm = () => {
 
     return (
         <motion.div
-            className="p-4 lg:w-3/4 mx-auto"
+            className="pt-28 pb-20 px-4 lg:w-[70%] xl:w-[60%] mx-auto"
             id="contact"
             variants={containerVariants}
             initial="hidden"
@@ -92,8 +91,9 @@ const ContactForm = () => {
             viewport={{ once: true }}
         >
             <Toaster />
+
             <motion.h2
-                className="my-8 text-center text-4xl font-semibold tracking-tighter"
+                className="mb-12 text-center text-4xl font-semibold tracking-tight text-white"
                 variants={itemVariants}
             >
                 Let's Connect
@@ -101,7 +101,13 @@ const ContactForm = () => {
 
             <motion.form
                 onSubmit={handleSubmit}
-                className="space-y-4"
+                className="
+                    space-y-7 
+                    bg-white/5 backdrop-blur-2xl 
+                    border border-white/15 
+                    shadow-[0_0_45px_rgba(255,255,255,0.12)] 
+                    p-10 rounded-3xl
+                "
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -113,10 +119,14 @@ const ContactForm = () => {
                         value={formData.name}
                         placeholder="Name"
                         onChange={handleChange}
-                        className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
+                        className="
+                            w-full border border-white/20 rounded-xl px-5 py-4 
+                            bg-transparent text-white placeholder-white/40 
+                            focus:border-white/40 outline-none transition-all text-lg
+                        "
                     />
                     {errors.name && (
-                        <p className="text-sm text-red-600">{errors.name}</p>
+                        <p className="text-sm text-red-400 mt-1">{errors.name}</p>
                     )}
                 </motion.div>
 
@@ -127,10 +137,14 @@ const ContactForm = () => {
                         value={formData.email}
                         placeholder="Email"
                         onChange={handleChange}
-                        className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
+                        className="
+                            w-full border border-white/20 rounded-xl px-5 py-4 
+                            bg-transparent text-white placeholder-white/40 
+                            focus:border-white/40 outline-none transition-all text-lg
+                        "
                     />
                     {errors.email && (
-                        <p className="text-sm text-red-600">{errors.email}</p>
+                        <p className="text-sm text-red-400 mt-1">{errors.email}</p>
                     )}
                 </motion.div>
 
@@ -140,10 +154,16 @@ const ContactForm = () => {
                         value={formData.message}
                         placeholder="Message"
                         onChange={handleChange}
-                        className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
+                        rows={5}
+                        className="
+                            w-full border border-white/20 rounded-xl px-5 py-4 
+                            bg-transparent text-white placeholder-white/40 
+                            focus:border-white/40 outline-none transition-all text-lg 
+                            leading-relaxed
+                        "
                     />
                     {errors.message && (
-                        <p className="text-sm text-red-600">{errors.message}</p>
+                        <p className="text-sm text-red-400 mt-1">{errors.message}</p>
                     )}
                 </motion.div>
 
@@ -151,8 +171,12 @@ const ContactForm = () => {
                     <motion.button
                         type="submit"
                         disabled={isSending}
-                        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
-                        whileHover={{ scale: 1.05 }}
+                        className="
+                            w-full bg-white text-black py-4 rounded-xl 
+                            font-semibold tracking-tight text-lg
+                            hover:bg-white/90 shadow-md transition disabled:opacity-50
+                        "
+                        whileHover={{ scale: 1.03 }}
                     >
                         {isSending ? "Sending..." : "Send Message"}
                     </motion.button>

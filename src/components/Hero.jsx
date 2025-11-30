@@ -9,185 +9,170 @@ const CVCard = ({ title, file }) => (
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.97 }}
         className="
-            flex flex-col items-center p-6 rounded-2xl
+            flex flex-col items-center p-5 rounded-2xl
             bg-white/10 backdrop-blur-xl border border-white/20
-            shadow-[0_0_25px_rgba(255,255,255,0.15)]
-            hover:shadow-[0_0_50px_rgba(255,255,255,0.35)]
+            shadow-[0_0_25px_rgba(255,255,255,0.12)]
+            hover:shadow-[0_0_45px_rgba(255,255,255,0.25)]
             transition-all duration-300
-            w-[230px] sm:w-[250px]
+            w-[200px] sm:w-[220px]
         "
     >
         <div
             className="
-                h-52 w-40 sm:h-56 sm:w-44 rounded-xl
+                h-48 w-36 sm:h-52 sm:w-40 rounded-xl
                 bg-gradient-to-b from-neutral-200/95 to-neutral-100
                 shadow-inner flex flex-col items-center justify-center
-                text-black font-bold text-lg border border-neutral-300
+                text-black font-bold text-base border border-neutral-300
             "
         >
-            <HiDocumentText size={55} className="opacity-70" />
+            <HiDocumentText size={50} className="opacity-70" />
             <span className="mt-2">{title}</span>
         </div>
 
-        <p className="mt-5 text-lg font-medium text-white/90">
+        <p className="mt-4 text-base font-medium text-white/80">
             2 pages · PDF
         </p>
 
-        <div className="mt-5 flex gap-4 w-full justify-center">
+        <div className="mt-4 flex gap-3 w-full justify-center">
             <a
                 href={file}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                    flex items-center gap-1 px-4 py-2 rounded-lg
-                    bg-white/20 hover:bg-white/30
-                    text-white text-sm transition
+                    flex items-center gap-1 px-3 py-1.5 rounded-lg
+                    bg-white/20 hover:bg-white/30 text-white text-sm transition
                 "
             >
-                <HiEye size={18} /> View
+                <HiEye size={16} /> View
             </a>
 
             <a
                 href={file}
                 download={title + '.pdf'}
                 className="
-                    flex items-center gap-1 px-4 py-2 rounded-lg
-                    bg-white/20 hover:bg-white/30
-                    text-white text-sm transition
+                    flex items-center gap-1 px-3 py-1.5 rounded-lg
+                    bg-white/20 hover:bg-white/30 text-white text-sm transition
                 "
             >
-                <HiDownload size={18} /> Download
+                <HiDownload size={16} /> Download
             </a>
         </div>
     </motion.div>
 );
 
-// animation variants for stagger reveal
 const textContainer = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: {
-            staggerChildren: 0.3,
-            duration: 0.5,
-        },
+        transition: { staggerChildren: 0.18, duration: 0.4 },
     },
 };
 
 const textItem = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const Hero = () => {
     return (
         <section
-            className="flex flex-col lg:flex-row min-h-screen items-center gap-8 lg:gap-0 pt-10"
+            className="
+                flex flex-col lg:flex-row
+                min-h-[90vh]
+                items-start justify-center
+                gap-16 lg:gap-20
+                pt-28 lg:pt-32 pb-16 px-6
+            "
         >
-            {/* LEFT TEXT */}
+            {/* LEFT — TEXT + CVs */}
             <motion.div
                 initial="hidden"
                 animate="show"
                 variants={textContainer}
-                className="w-full lg:w-1/2 px-4"
+                className="
+                    w-full lg:w-1/2
+                    flex flex-col
+                    items-start
+                    max-w-xl
+                    pt-6   /* ← Чуть ниже */
+                "
             >
                 <motion.h2
                     variants={textItem}
-                    className="my-8 text-4xl font-bold md:text-5xl lg:text-7xl tracking-tight"
+                    className="mb-5 text-4xl font-bold md:text-5xl lg:text-6xl tracking-tight"
                 >
                     {HERO.name}
                 </motion.h2>
 
                 <motion.p
                     variants={textItem}
-                    className="text-3xl tracking-tighter lg:text-4xl mb-6"
+                    className="text-2xl tracking-tight lg:text-3xl mb-5"
                 >
                     {HERO.greet}
                 </motion.p>
 
-                {/* 4 PARAGRAPHS — SHORTER BUT POWERFUL */}
                 <motion.p
                     variants={textItem}
-                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-6"
+                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4"
                 >
                     I create modern, aesthetic, high-performance web apps that combine precise engineering 
-                    with expressive, human-centered design. My goal is always the same: make products that 
-                    feel smooth, intentional, premium, and emotionally engaging.
+                    with expressive design — building digital experiences that feel smooth, intentional, and premium.
                 </motion.p>
 
                 <motion.p
                     variants={textItem}
-                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-6"
+                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4"
                 >
-                    My expertise includes <b>React, Next.js, TypeScript, Tailwind, Zustand</b>, backend APIs, 
-                    auth systems, databases, and scalable architecture. I also build mobile apps with 
-                    <b> React Native</b> and craft high-end interactive visuals, including 3D experiences 
-                    using Three.js and performant animations.
+                    Skilled in <b>React, Next.js, TypeScript, Tailwind, Zustand</b>, backend APIs, authentication, 
+                    databases, and scalable architecture. I craft mobile apps with <b>React Native</b> and create 
+                    interactive visuals with <b>Three.js</b>.
                 </motion.p>
 
                 <motion.p
                     variants={textItem}
-                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-6"
+                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-6"
                 >
-                    I approach projects like a product engineer — shaping UX flows, designing system structure, 
-                    building UI logic, optimizing performance, and polishing the final experience until it feels 
-                    cohesive and well-crafted. Not just functional — but outstanding.
+                    I’m looking for a team where engineering quality, creativity, and product thinking come first.
                 </motion.p>
 
-                <motion.p
+                {/* CV BLOCK BELOW TEXT */}
+                <motion.div
                     variants={textItem}
-                    className="text-xl leading-relaxed text-white/90 max-w-2xl mb-10"
+                    className="mt-6 flex flex-col sm:flex-row gap-8" /* ← Чуть ниже */
                 >
-                    I’m looking for a team where quality matters, where initiative is valued, and where building 
-                    exceptional digital products is the standard. I bring creativity, discipline, technical clarity, 
-                    and an obsession for great design and smooth user experience.
-                </motion.p>
+                    <CVCard title="IT CV" file="/IT_CV_Ilya_2Pages_DarkPro.pdf" />
+                    <CVCard title="General CV" file="/General_CV_Ilya_2Pages_Expanded_Final.pdf" />
+                </motion.div>
             </motion.div>
 
-            {/* RIGHT IMAGE + CV BLOCK */}
-            <div
-                className="
-                w-full lg:w-1/2 flex flex-col items-center
-                px-4
-            "
-            >
+            {/* RIGHT — IMAGE */}
+            <div className="w-full lg:w-1/2 flex justify-center items-start pt-2">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.75 }}
                     className="relative"
                 >
                     <motion.img
                         src={heroPortrait}
                         alt="Ilya Portrait"
-                        width={550}
-                        height={550}
+                        width={580}
+                        height={580}
                         className="
-                            rounded-3xl object-cover max-w-full select-none
-                            shadow-[0_0_40px_rgba(255,255,255,0.25)]
+                            rounded-3xl object-cover
+                            max-w-[440px] md:max-w-[520px] lg:max-w-[580px]
+                            mx-auto select-none
+                            shadow-[0_0_45px_rgba(255,255,255,0.22)]
                         "
                     />
 
                     <div
                         className="
                             absolute inset-0 rounded-3xl
-                            bg-white/10 blur-3xl
+                            bg-white/10 blur-3xl pointer-events-none
                         "
                     ></div>
                 </motion.div>
-
-                <div
-                    className="
-                        mt-10 flex flex-col gap-10 md:flex-row
-                        justify-center items-center
-                    "
-                >
-                    <CVCard title="IT CV" file="/IT_CV_Ilya_2Pages_DarkPro.pdf" />
-                    <CVCard
-                        title="General CV"
-                        file="/General_CV_Ilya_2Pages_Expanded_Final.pdf"
-                    />
-                </div>
             </div>
         </section>
     );
