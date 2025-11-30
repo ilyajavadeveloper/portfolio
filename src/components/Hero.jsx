@@ -14,18 +14,18 @@ const CVCard = ({ title, file, small }) => (
             shadow-[0_0_25px_rgba(255,255,255,0.12)]
             hover:shadow-[0_0_45px_rgba(255,255,255,0.25)]
             transition-all duration-300
-            ${small ? "w-[170px]" : "w-[220px] sm:w-[240px]"}
+            ${small ? "w-[150px]" : "w-[200px] sm:w-[220px]"}
         `}
     >
         <div
             className={`
-                ${small ? "h-44 w-32" : "h-48 w-36 sm:h-52 sm:w-40"}
+                ${small ? "h-40 w-28" : "h-48 w-36 sm:h-52 sm:w-40"}
                 rounded-xl bg-gradient-to-b from-neutral-200/95 to-neutral-100
                 shadow-inner flex flex-col items-center justify-center
                 text-black font-bold text-base border border-neutral-300
             `}
         >
-            <HiDocumentText size={small ? 44 : 50} className="opacity-70" />
+            <HiDocumentText size={small ? 40 : 50} className="opacity-70" />
             <span className="mt-2">{title}</span>
         </div>
 
@@ -33,28 +33,33 @@ const CVCard = ({ title, file, small }) => (
             2 pages · PDF
         </p>
 
-        <div className="mt-4 flex gap-2 w-full justify-center">
+        {/* ICON-ONLY BUTTONS */}
+        <div className="mt-3 flex gap-3 w-full justify-center">
             <a
                 href={file}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                    flex items-center gap-1 px-3 py-1.5 rounded-lg
-                    bg-white/20 hover:bg-white/30 text-white text-xs transition
+                    flex items-center justify-center
+                    w-9 h-9 rounded-full
+                    bg-white/20 hover:bg-white/30
+                    text-white transition
                 "
             >
-                <HiEye size={14} /> View
+                <HiEye size={18} />
             </a>
 
             <a
                 href={file}
                 download={title + '.pdf'}
                 className="
-                    flex items-center gap-1 px-3 py-1.5 rounded-lg
-                    bg-white/20 hover:bg-white/30 text-white text-xs transition
+                    flex items-center justify-center
+                    w-9 h-9 rounded-full
+                    bg-white/20 hover:bg-white/30
+                    text-white transition
                 "
             >
-                <HiDownload size={14} /> Download
+                <HiDownload size={18} />
             </a>
         </div>
     </motion.div>
@@ -85,7 +90,7 @@ const Hero = () => {
             "
         >
 
-            {/* MOBILE FIRST IMAGE */}
+            {/* MOBILE IMAGE */}
             <div className="block lg:hidden w-full flex justify-center mb-10">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -98,12 +103,14 @@ const Hero = () => {
                         alt="Ilya Portrait"
                         className="
                             rounded-3xl object-cover
-                            w-[95%] max-w-[430px]
+                            w-[95%] max-w-[420px]
                             mx-auto select-none
                             shadow-[0_0_45px_rgba(255,255,255,0.22)]
                         "
                     />
-                    <div className="absolute inset-0 rounded-3xl bg-white/10 blur-3xl pointer-events-none"></div>
+                    <div
+                        className="absolute inset-0 rounded-3xl bg-white/10 blur-3xl pointer-events-none"
+                    ></div>
                 </motion.div>
             </div>
 
@@ -144,7 +151,6 @@ const Hero = () => {
                     I’m looking for a team where quality, creativity and product thinking matter.
                 </motion.p>
 
-                {/* CV GRID */}
                 <motion.div
                     variants={textItem}
                     className="
