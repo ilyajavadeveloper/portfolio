@@ -79,11 +79,36 @@ const Hero = () => {
             className="
                 flex flex-col lg:flex-row
                 min-h-[90vh]
-                items-start justify-center
+                items-center lg:items-start justify-center
                 gap-16 lg:gap-20
-                pt-28 lg:pt-32 pb-16 px-6
+                pt-20 lg:pt-32 pb-16 px-6
             "
         >
+
+            {/* MOBILE IMAGE FIRST */}
+            <div className="block lg:hidden w-full flex justify-center mb-10">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.75 }}
+                    className="relative"
+                >
+                    <img
+                        src={heroPortrait}
+                        alt="Ilya Portrait"
+                        className="
+                            rounded-3xl object-cover
+                            w-[90%] max-w-[360px]
+                            mx-auto select-none
+                            shadow-[0_0_45px_rgba(255,255,255,0.22)]
+                        "
+                    />
+                    <div
+                        className="absolute inset-0 rounded-3xl bg-white/10 blur-3xl pointer-events-none"
+                    ></div>
+                </motion.div>
+            </div>
+
             {/* LEFT — TEXT + CVs */}
             <motion.div
                 initial="hidden"
@@ -92,14 +117,14 @@ const Hero = () => {
                 className="
                     w-full lg:w-1/2
                     flex flex-col
-                    items-start
+                    items-start lg:items-start
                     max-w-xl
-                    pt-6   /* ← Чуть ниже */
+                    text-center lg:text-left
                 "
             >
                 <motion.h2
                     variants={textItem}
-                    className="mb-5 text-4xl font-bold md:text-5xl lg:text-6xl tracking-tight"
+                    className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl tracking-tight"
                 >
                     {HERO.name}
                 </motion.h2>
@@ -130,30 +155,33 @@ const Hero = () => {
 
                 <motion.p
                     variants={textItem}
-                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-6"
+                    className="text-lg lg:text-xl leading-relaxed text-white/85 mb-8"
                 >
                     I’m looking for a team where engineering quality, creativity, and product thinking come first.
                 </motion.p>
 
-                {/* CV BLOCK BELOW TEXT */}
+                {/* CVs */}
                 <motion.div
                     variants={textItem}
-                    className="mt-6 flex flex-col sm:flex-row gap-8" /* ← Чуть ниже */
+                    className="
+                        mt-4 flex flex-col sm:flex-row gap-8
+                        justify-center lg:justify-start w-full
+                    "
                 >
                     <CVCard title="IT CV" file="/IT_CV_Ilya_2Pages_DarkPro.pdf" />
                     <CVCard title="General CV" file="/General_CV_Ilya_2Pages_Expanded_Final.pdf" />
                 </motion.div>
             </motion.div>
 
-            {/* RIGHT — IMAGE */}
-            <div className="w-full lg:w-1/2 flex justify-center items-start pt-2">
+            {/* DESKTOP IMAGE */}
+            <div className="hidden lg:flex w-full lg:w-1/2 justify-center items-start pt-2">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.75 }}
                     className="relative"
                 >
-                    <motion.img
+                    <img
                         src={heroPortrait}
                         alt="Ilya Portrait"
                         width={580}
@@ -161,16 +189,12 @@ const Hero = () => {
                         className="
                             rounded-3xl object-cover
                             max-w-[440px] md:max-w-[520px] lg:max-w-[580px]
-                            mx-auto select-none
+                            select-none
                             shadow-[0_0_45px_rgba(255,255,255,0.22)]
                         "
                     />
-
                     <div
-                        className="
-                            absolute inset-0 rounded-3xl
-                            bg-white/10 blur-3xl pointer-events-none
-                        "
+                        className="absolute inset-0 rounded-3xl bg-white/10 blur-3xl pointer-events-none"
                     ></div>
                 </motion.div>
             </div>
