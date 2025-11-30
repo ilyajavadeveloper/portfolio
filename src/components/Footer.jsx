@@ -15,12 +15,8 @@ const Footer = () => {
         <footer
             className="
                 mt-28 mb-12 
-                px-4 pt-16 pb-14
+                px-4 pt-16 pb-10
                 text-center text-white/70
-                border-t border-white/10
-                bg-white/5 backdrop-blur-xl
-                rounded-t-3xl
-                shadow-[0_-15px_45px_rgba(255,255,255,0.08)]
                 w-full
             "
         >
@@ -52,9 +48,6 @@ const Footer = () => {
                     </a>
                 ))}
             </div>
-
-            {/* Bottom Spacing */}
-            <div className="h-2" />
         </footer>
     );
 };
