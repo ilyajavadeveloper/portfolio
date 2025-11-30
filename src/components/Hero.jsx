@@ -29,11 +29,8 @@ const CVCard = ({ title, file, small }) => (
             <span className="mt-2">{title}</span>
         </div>
 
-        <p className="mt-3 text-sm font-medium text-white/80">
-            2 pages · PDF
-        </p>
+        <p className="mt-3 text-sm font-medium text-white/80">2 pages · PDF</p>
 
-        {/* ICON-ONLY BUTTONS */}
         <div className="mt-3 flex gap-3 w-full justify-center">
             <a
                 href={file}
@@ -86,7 +83,7 @@ const Hero = () => {
                 min-h-[90vh]
                 items-center lg:items-start justify-center
                 gap-16 lg:gap-20
-                pt-20 lg:pt-32 pb-16 px-6
+                pt-20 lg:pt-36 pb-16 px-6
             "
         >
 
@@ -125,6 +122,7 @@ const Hero = () => {
                     items-center lg:items-start
                     max-w-xl
                     text-center lg:text-left
+                    lg:mt-6
                 "
             >
                 <motion.h2
@@ -134,27 +132,32 @@ const Hero = () => {
                     {HERO.name}
                 </motion.h2>
 
-                <motion.p variants={textItem} className="text-2xl tracking-tight lg:text-3xl mb-5">
+                <motion.p variants={textItem} className="text-2xl tracking-tight lg:text-3xl mb-6">
                     {HERO.greet}
                 </motion.p>
 
                 <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4">
-                    I create modern, aesthetic, high-performance web apps built with precision and expressive design.
+                    I create modern, expressive web experiences focused on clarity, performance and aesthetics.
                 </motion.p>
 
                 <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4">
-                    Skilled in <b>React, Next.js, TypeScript, Tailwind, Zustand</b>, backend APIs, auth and databases. 
-                    I build mobile apps with <b>React Native</b> and craft 3D experiences with <b>Three.js</b>.
+                    Skilled in <b>React, Next.js, TypeScript, Tailwind, Zustand</b>.  
+                    I build mobile apps with <b>React Native</b> and craft 3D interfaces using <b>Three.js</b>.
                 </motion.p>
 
-                <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-8">
-                    I’m looking for a team where quality, creativity and product thinking matter.
+                {/* ⭐ Новый маленький параграф */}
+                <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-4">
+                    I care about details — from micro-interactions to system architecture — because great products are built with intention.
+                </motion.p>
+
+                <motion.p variants={textItem} className="text-lg lg:text-xl leading-relaxed text-white/85 mb-10">
+                    Looking for a team that values quality, creativity and engineering with intention.
                 </motion.p>
 
                 <motion.div
                     variants={textItem}
                     className="
-                        mt-6 grid grid-cols-2 sm:flex sm:flex-row
+                        mt-4 grid grid-cols-2 sm:flex sm:flex-row
                         gap-6 sm:gap-8 justify-center lg:justify-start w-full
                     "
                 >
@@ -164,7 +167,7 @@ const Hero = () => {
             </motion.div>
 
             {/* DESKTOP IMAGE */}
-            <div className="hidden lg:flex w-full lg:w-1/2 justify-center items-start pt-2">
+            <div className="hidden lg:flex w-full lg:w-1/2 justify-center items-start pt-6">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
