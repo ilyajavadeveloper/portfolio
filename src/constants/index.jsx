@@ -138,20 +138,20 @@ export const PROJECTS = [
     id: 4,
     name: "Lila",
     description:
-      "A modern landing page with smooth animations, bold layout, and responsive design.",
+      "A modern neon-themed landing page packed with smooth animations, bold visual rhythm, polished interactions, and a clean responsive layout crafted for a premium aesthetic feel.",
     link: "https://lila-neon.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
+  } , 
   {
     id: 5,
     name: "Hutzahav",
     description:
-      "A creative landing crafted with deep UI effects, smooth transitions, and an elegant animated flow.",
+      "A deeply creative landing featuring expressive UI effects, layered motion, elegant transitions, and a refined layout that blends storytelling with stylish modern design.",
     link: "https://hutzaav2.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
+  },  
   {
     id: 6,
     name: "Apple Three.js Showcase",
@@ -181,11 +181,9 @@ export const PROJECTS = [
       "A full-stack event management platform with CRUD events, bookings, validation, server actions, MongoDB, and a clean Next.js 16 architecture.",
     link: "https://ilyajavadeveloper-dev-events-next-o0b32ifa9.vercel.app/",
     image:
-      "https://api.microlink.io/?url=https://ilyajavadeveloper-dev-events-next-o0b32ifa9.vercel.app/events&meta=false&screenshot=true&embed=screenshot.url&userAgent=Chrome&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=6000",
-  }
-  
-  
-  
+      "https://api.microlink.io/?url=https://ilyajavadeveloper-dev-events-next-o0b32ifa9.vercel.app/events&meta=false&screenshot=true&embed=screenshot.url&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=5000"
+}
+
   
 ];
 
