@@ -187,12 +187,13 @@ export const PROJECTS = [
     id: 9,
     name: "Awwwards-Nu 3D Motion Experience",
     description:
-      "A visually striking, award-style interactive landing built with Next.js 16, GSAP ScrollTrigger, advanced motion choreography, dynamic video layers, and precision micro-interactions. The project demonstrates modern digital craftsmanship with cinematic 3D-inspired transitions, parallax-driven depth, buttery-smooth scroll physics, responsive motion logic, and component-level performance engineering. The architecture includes modular animation controllers, GPU-accelerated effects, adaptive hero sequences, and a clean design system tailored for premium brand storytelling.",
+      "An interactive, motion-heavy landing built with GSAP ScrollTrigger and dynamic video layers. Features cinematic transitions, parallax depth, smooth scroll physics, and modern micro-interactions. The architecture focuses on performance, modular animation flow, and a clean visual system inspired by award-winning digital experiences.",
     link: "https://awwwards-nu-murex.vercel.app/",
   
     image:
       "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
   }
+  
   
   
 
