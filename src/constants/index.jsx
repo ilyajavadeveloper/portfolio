@@ -183,7 +183,7 @@ export const PROJECTS = [
 
   image:
     "https://api.microlink.io/?url=https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=load&deviceScaleFactor=1&viewport.width=1600&viewport.height=900&waitForTimeout=6000"
-}
+},
   
   {
     id: 9,
