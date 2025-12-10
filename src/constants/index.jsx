@@ -181,8 +181,9 @@ export const PROJECTS = [
       "A full-stack event management platform with CRUD events, bookings, validation, server actions, MongoDB, and a clean Next.js 16 architecture.",
     link: "https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app/",
     image:
-      "https://api.microlink.io/?url=https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
-  },
+      "https://api.microlink.io/?url=https%3A%2F%2Fdev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
+  }
+  
   {
     id: 9,
     name: "Awwwards-Nu 3D Motion Experience",
