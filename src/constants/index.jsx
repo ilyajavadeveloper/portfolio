@@ -182,7 +182,7 @@ export const PROJECTS = [
     link: "https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app/",
     image:
       "https://api.microlink.io/?url=https%3A%2F%2Fdev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
-  }
+  },
   
   {
     id: 9,
