@@ -182,8 +182,17 @@ export const PROJECTS = [
     link: "https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
-  }
+  },
+  {
+    id: 9,
+    name: "Awwwards-Level 3D Hero & GSAP Interaction",
+    description:
+      "A high-end interactive web experience built with Next.js 16, React Three Fiber, GSAP ScrollTrigger, and dynamic video-driven hero sections. The project showcases advanced front-end engineering with 3D model integration, smooth scrolling animations, responsive design logic, and an optimized animation pipeline designed for premium product landing pages. Includes custom hover-based 3D parallax interactions, adaptive video playback management, and component-level performance tuning for seamless rendering across desktop and mobile devices.",
+    link: "https://awwwards-3d-hero-gsap.vercel.app/",
   
+    image:
+      "https://api.microlink.io/?url=https://awwwards-3d-hero-gsap.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
+  }
   
 
   
