@@ -4,17 +4,17 @@ import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 
 const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 1, staggerChildren: 0.2 },
+        transition: { duration: 0.8, staggerChildren: 0.15 },
     },
 };
 
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const ContactForm = () => {
@@ -23,142 +23,185 @@ const ContactForm = () => {
         email: "",
         message: "",
     });
+
     const [errors, setErrors] = useState({});
     const [isSending, setIsSending] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        setFormData((p) => ({ ...p, [name]: value }));
     };
 
     const validate = () => {
-        let errors = {};
-        if (!formData.name) errors.name = "Name is required";
+        const err = {};
+        if (!formData.name) err.name = "Name is required";
         if (!formData.email) {
-            errors.email = "Email is required";
+            err.email = "Email is required";
         } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            errors.email = "Email is invalid";
+            err.email = "Invalid email";
         }
-        if (!formData.message) errors.message = "Message is required";
-        return errors;
+        if (!formData.message) err.message = "Message is required";
+        return err;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const validationErrors = validate();
-        if (Object.keys(validationErrors).length > 0) {
+        if (Object.keys(validationErrors).length) {
             setErrors(validationErrors);
             return;
         }
 
-        setIsSending(true);
         setErrors({});
-
-        const templateParams = {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            time: new Date().toLocaleString(),
-        };
+        setIsSending(true);
 
         emailjs
             .send(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                templateParams,
+                {
+                    ...formData,
+                    time: new Date().toLocaleString(),
+                },
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             )
             .then(() => {
-                toast.success("Email sent successfully!");
+                toast.success("Message sent successfully");
                 setFormData({ name: "", email: "", message: "" });
             })
-            .catch((err) => {
-                console.error("EMAILJS ERROR:", err);
-                toast.error("Failed to send email. Please try again later.");
+            .catch(() => {
+                toast.error("Failed to send message");
             })
-            .finally(() => {
-                setIsSending(false);
-            });
+            .finally(() => setIsSending(false));
     };
 
     return (
-        <motion.div
-            className="p-4 lg:w-3/4 mx-auto"
+        <section
             id="contact"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            className="relative px-6 py-28 lg:px-16"
         >
-            <Toaster />
-            <motion.h2
-                className="my-8 text-center text-4xl font-semibold tracking-tighter"
-                variants={itemVariants}
-            >
-                Let's Connect
-            </motion.h2>
+            <Toaster position="bottom-right" />
 
-            <motion.form
-                onSubmit={handleSubmit}
-                className="space-y-4"
+            <motion.div
+                className="mx-auto max-w-7xl"
                 variants={containerVariants}
                 initial="hidden"
-                animate="visible"
+                whileInView="visible"
+                viewport={{ once: true }}
             >
-                <motion.div variants={itemVariants}>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        placeholder="Name"
-                        onChange={handleChange}
-                        className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
-                    />
-                    {errors.name && (
-                        <p className="text-sm text-red-600">{errors.name}</p>
-                    )}
+                {/* HEADER */}
+                <motion.div
+                    variants={itemVariants}
+                    className="mb-16 text-center"
+                >
+                    <h2 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl">
+                        Let’s Connect
+                    </h2>
+                    <p className="mt-4 text-lg text-white/60">
+                        Have a project, idea or opportunity? Let’s talk.
+                    </p>
                 </motion.div>
 
-                <motion.div variants={itemVariants}>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        placeholder="Email"
-                        onChange={handleChange}
-                        className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
-                    />
-                    {errors.email && (
-                        <p className="text-sm text-red-600">{errors.email}</p>
-                    )}
-                </motion.div>
+                {/* FORM */}
+                <motion.form
+                    onSubmit={handleSubmit}
+                    variants={containerVariants}
+                    className="
+            mx-auto grid max-w-5xl grid-cols-1 gap-6
+            rounded-3xl border border-white/15
+            bg-white/5 p-10 backdrop-blur
+            md:grid-cols-2
+          "
+                >
+                    {/* NAME */}
+                    <motion.div variants={itemVariants}>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            className="
+                w-full rounded-xl border border-white/20
+                bg-transparent px-4 py-3
+                text-white placeholder-white/40
+                focus:border-white/40 focus:outline-none
+              "
+                        />
+                        {errors.name && (
+                            <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                        )}
+                    </motion.div>
 
-                <motion.div variants={itemVariants}>
-                    <textarea
-                        name="message"
-                        value={formData.message}
-                        placeholder="Message"
-                        onChange={handleChange}
-                        className="w-full border rounded-lg px-3 py-2 bg-transparent focus:border-gray-400 focus:outline-none"
-                    />
-                    {errors.message && (
-                        <p className="text-sm text-red-600">{errors.message}</p>
-                    )}
-                </motion.div>
+                    {/* EMAIL */}
+                    <motion.div variants={itemVariants}>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Your email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="
+                w-full rounded-xl border border-white/20
+                bg-transparent px-4 py-3
+                text-white placeholder-white/40
+                focus:border-white/40 focus:outline-none
+              "
+                        />
+                        {errors.email && (
+                            <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                        )}
+                    </motion.div>
 
-                <motion.div variants={itemVariants}>
-                    <motion.button
-                        type="submit"
-                        disabled={isSending}
-                        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
-                        whileHover={{ scale: 1.05 }}
+                    {/* MESSAGE */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="md:col-span-2"
                     >
-                        {isSending ? "Sending..." : "Send Message"}
-                    </motion.button>
-                </motion.div>
-            </motion.form>
-        </motion.div>
+            <textarea
+                name="message"
+                rows={5}
+                placeholder="Tell me about your project or idea"
+                value={formData.message}
+                onChange={handleChange}
+                className="
+                w-full resize-none rounded-xl border border-white/20
+                bg-transparent px-4 py-4
+                text-white placeholder-white/40
+                focus:border-white/40 focus:outline-none
+              "
+            />
+                        {errors.message && (
+                            <p className="mt-1 text-sm text-red-400">
+                                {errors.message}
+                            </p>
+                        )}
+                    </motion.div>
+
+                    {/* SUBMIT */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="md:col-span-2"
+                    >
+                        <motion.button
+                            type="submit"
+                            disabled={isSending}
+                            whileHover={{ scale: 1.03 }}
+                            className="
+                w-full rounded-2xl
+                bg-white px-8 py-4
+                text-base font-bold text-black
+                transition hover:bg-white/90
+                disabled:opacity-50
+              "
+                        >
+                            {isSending ? "Sending..." : "Send Message"}
+                        </motion.button>
+                    </motion.div>
+                </motion.form>
+            </motion.div>
+        </section>
     );
 };
 
