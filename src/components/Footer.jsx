@@ -1,36 +1,67 @@
-import React from 'react';
-import Logo from './Logo'; // Убедитесь, что путь корректный
-import { Facebook, Instagram, Twitter, Github, Linkedin } from 'lucide-react';
+import React from "react";
+import Logo from "./Logo";
+import { Facebook, Instagram, Twitter, Github, Linkedin } from "lucide-react";
 
 const SOCIAL_MEDIA_LINKS = [
-    { href: "https://www.facebook.com/ilya.hvostenko/?locale=ru_RU", icon: <Facebook size={24} className="hover:text-blue-500 transition" /> },
-    { href: "https://www.instagram.com/ilyahvostenko?igsh=Y3ZseWc2c2ViMG41", icon: <Instagram size={24} className="hover:text-pink-500 transition" /> },
-    { href: "https://x.com/ilyajavadev?t=Pw_d8gBFzXQ0udIKbj9yDQ&s=35", icon: <Twitter size={24} className="hover:text-blue-400 transition" /> },
-    { href: "https://github.com/ilyajavadeveloper", icon: <Github size={24} className="hover:text-gray-300 transition" /> },
-    { href: "https://www.linkedin.com/in/ilya-hvostenko-a03347298/", icon: <Linkedin size={24} className="hover:text-blue-600 transition" /> }
+    { href: "https://www.facebook.com/ilya.hvostenko/?locale=ru_RU", icon: Facebook },
+    { href: "https://www.instagram.com/ilyahvostenko?igsh=Y3ZseWc2c2ViMG41", icon: Instagram },
+    { href: "https://x.com/ilyajavadev?t=Pw_d8gBFzXQ0udIKbj9yDQ&s=35", icon: Twitter },
+    { href: "https://github.com/ilyajavadeveloper", icon: Github },
+    { href: "https://www.linkedin.com/in/ilya-hvostenko-a03347298/", icon: Linkedin },
 ];
 
 const Footer = () => {
     return (
-        <footer className='mb-8 mt-20 text-center text-gray-400'>
-            {/* Логотип */}
-            <div className='flex items-center justify-center'>
-                <Logo />
-            </div>
+        <footer className="relative mt-28">
+            {/* soft divider */}
+            <div className="mx-auto h-px max-w-6xl bg-white/10" />
 
-            {/* Социальные сети */}
-            <div className='flex items-center justify-center gap-6'>
-                {SOCIAL_MEDIA_LINKS.map((link, index) => (
-                    <a key={index} href={link.href} target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:scale-110 transition-transform'>
-                        {link.icon}
-                    </a>
-                ))}
-            </div>
+            <div className="mx-auto max-w-7xl px-6 py-14">
+                {/* LOGO */}
+                <div className="mb-8 flex justify-center opacity-80">
+                    <Logo />
+                </div>
 
-            {/* Подпись */}
-            <p className='mt-6 text-sm tracking-wide'>
-                &copy; {new Date().getFullYear()} Ilya Hvostenko. All rights reserved.
-            </p>
+                {/* SOCIAL ICONS */}
+                <div className="mb-10 flex justify-center gap-8">
+                    {SOCIAL_MEDIA_LINKS.map((item, index) => {
+                        const Icon = item.icon;
+                        return (
+                            <a
+                                key={index}
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="social link"
+                                className="
+                  group flex h-14 w-14 items-center justify-center
+                  rounded-full border border-white/10
+                  bg-white/5 text-white/50
+                  backdrop-blur transition
+                  hover:border-white/25 hover:bg-white/10
+                  hover:text-white/80
+                "
+                            >
+                                <Icon
+                                    size={26}
+                                    className="transition-transform group-hover:scale-105"
+                                />
+                            </a>
+                        );
+                    })}
+                </div>
+
+                {/* COPYRIGHT */}
+                <div className="text-center">
+                    <p className="text-sm text-white/40">
+                        © {new Date().getFullYear()}{" "}
+                        <span className="font-medium text-white/55">
+              Ilya Hvostenko
+            </span>
+                        . All rights reserved.
+                    </p>
+                </div>
+            </div>
         </footer>
     );
 };
