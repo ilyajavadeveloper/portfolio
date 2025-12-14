@@ -174,7 +174,19 @@ export const PROJECTS = [
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   }
-  
+,
+{
+  id: 8,
+  name: "GSAP Cocktails",
+  description:
+    "A smooth, animation-driven showcase built with GSAP. Focused on scroll-based motion, cinematic transitions, and expressive UI interactions.",
+  link: "https://gsap-coctails-blond.vercel.app/",
+  image:
+    "https://api.microlink.io/?url=https://gsap-coctails-blond.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500&viewport.width=1600&viewport.height=900",
+  altImage:
+    "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/gsap-coctails&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+}
+
   
 ];
 
