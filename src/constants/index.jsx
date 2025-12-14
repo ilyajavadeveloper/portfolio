@@ -138,20 +138,20 @@ export const PROJECTS = [
     id: 4,
     name: "Lila",
     description:
-      "A modern landing page with smooth animations, bold layout, and responsive design.",
+      "A modern neon-themed landing page packed with smooth animations, bold visual rhythm, polished interactions, and a clean responsive layout crafted for a premium aesthetic feel.",
     link: "https://lila-neon.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
+  } , 
   {
     id: 5,
     name: "Hutzahav",
     description:
-      "A creative landing crafted with deep UI effects, smooth transitions, and an elegant animated flow.",
+      "A deeply creative landing featuring expressive UI effects, layered motion, elegant transitions, and a refined layout that blends storytelling with stylish modern design.",
     link: "https://hutzaav2.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
+  },  
   {
     id: 6,
     name: "Apple Three.js Showcase",
@@ -174,8 +174,32 @@ export const PROJECTS = [
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   },
+  {
+    id: 8,
+    name: "Dev Events Platform",
+    description:
+      "A full-stack event management platform with CRUD events, bookings, validation, server actions, MongoDB, and a clean Next.js 16 architecture.",
+    link: "https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app/",
+  
+    image:
+      "https://api.microlink.io/?url=https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app&redirect=false&meta=false&screenshot=true&embed=screenshot.url&waitUntil=networkidle2&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&viewport.width=1400&viewport.height=900&waitForTimeout=8000"
+  },
+  
+  
+  {
+    id: 9,
+    name: "Awwwards-Nu 3D Motion Experience",
+    description:
+      "An interactive, motion-heavy landing built with GSAP ScrollTrigger and dynamic video layers. Features cinematic transitions, parallax depth, smooth scroll physics, and modern micro-interactions. The architecture focuses on performance, modular animation flow, and a clean visual system inspired by award-winning digital experiences.",
+    link: "https://awwwards-nu-murex.vercel.app/",
+  
+    image:
+      "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
+  }
+
+,
 {
-  id: 8,
+  id: 10,
   name: "GSAP Cocktails",
   description:
     "A smooth, animation-driven showcase built with GSAP. Focused on scroll-based motion, cinematic transitions, and expressive UI interactions.",
@@ -185,6 +209,7 @@ export const PROJECTS = [
   altImage:
     "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/gsap-coctails&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
 }
+
 
   
 ];
