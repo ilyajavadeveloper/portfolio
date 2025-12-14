@@ -173,8 +173,7 @@ export const PROJECTS = [
       "https://api.microlink.io/?url=https://stock-market-app-lyart.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-  }
-,
+  },
 {
   id: 8,
   name: "GSAP Cocktails",
