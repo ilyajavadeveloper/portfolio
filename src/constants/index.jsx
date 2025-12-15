@@ -59,19 +59,15 @@ export const HERO = {
 // ================= BIO =================
 
 export const BIO = [
-  "I’m a full-stack developer with a strong focus on modern frontend engineering, combined with real-world operational and system experience. My core stack includes React, Next.js, React Native, TypeScript, Tailwind CSS, Three.js and advanced UI and motion tooling.",
+  "I’m a full-stack developer with a frontend-first mindset, focused on building modern, expressive and high-performance interfaces. My core stack includes React, Next.js, React Native, TypeScript, Tailwind CSS, Three.js and advanced motion tooling.",
 
-  "Alongside frontend development, I work with enterprise-grade Terminal Operating Systems (TOS) at Ashdod Port (נמל אשדוד) — one of Israel’s busiest maritime terminals. I interact daily with complex systems handling vessel workflows, container routing, yard planning, crane coordination and real-time logistics.",
+  "Alongside development, I work with enterprise-grade Terminal Operating Systems (TOS) at Ashdod Port — one of Israel’s busiest maritime terminals — dealing with complex logistics, real-time workflows and mission-critical data.",
 
-  "This hands-on exposure to large-scale TOS environments strengthened my understanding of system reliability, data accuracy and decision making under pressure, strongly shaping my approach to software architecture and UX clarity.",
+  "This experience shaped my engineering mindset: clarity over noise, reliability over shortcuts, and UX that supports fast decision-making under pressure.",
 
-  "I started my technical path with backend development in Java, Spring Boot and databases, building a solid foundation in system design and business logic before transitioning into frontend engineering, where I found my strongest flow.",
+  "I started my path in backend development with Java, Spring Boot and databases, building strong foundations in system design before transitioning fully into frontend engineering.",
 
-  "I completed my Full Stack Java Developer education at Tel-Ran Educational Center and additional professional IT and software development courses, where I built CRMs, dashboards and production-oriented applications using Java, Spring, SQL/NoSQL and modern web technologies.",
-
-  "Professionally, I’ve developed real-world systems at Elpisor LTD and continued expanding my skill set through independent projects, mobile applications and advanced 3D interfaces built with Three.js.",
-
-  "Clean architecture, reusable components, meaningful motion and intuitive UX are core principles of my work. I continuously refine my craft to build products that scale, perform and feel premium.",
+  "Today, I focus on clean architecture, reusable components, meaningful motion and premium-feeling user experiences — continuously refining my craft through real-world systems and advanced 3D interfaces.",
 ];
 
 
@@ -185,51 +181,40 @@ export const PROJECTS = [
     id: 7,
     name: "Stock Market App",
     description:
-      "A modern real-time stock analytics platform featuring advanced charting, company data, watchlist sync, technical indicators, and TradingView widgets. Fully server-side powered with MongoDB and BetterAuth.",
+        "A modern real-time stock analytics platform built for fast market insight and data clarity. Features advanced interactive charts, detailed company profiles, technical indicators, synchronized watchlists, and embedded TradingView widgets. The application is fully server-driven, with secure authentication powered by BetterAuth and persistent data storage via MongoDB. The architecture emphasizes performance, scalability, and clean separation between server logic and frontend state, resulting in a responsive and reliable financial dashboard experience.",
     link: "https://stock-market-app-lyart.vercel.app",
     image:
-      "https://api.microlink.io/?url=https://stock-market-app-lyart.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+        "https://api.microlink.io/?url=https://stock-market-app-lyart.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
     altImage:
-      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+        "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   },
   {
     id: 8,
-    name: "Dev Events Platform",
-    description:
-      "A full-stack event management platform with CRUD events, bookings, validation, server actions, MongoDB, and a clean Next.js 16 architecture.",
-    link: "https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app/",
-  
-    image:
-      "https://api.microlink.io/?url=https://dev-events-next-oislrjzxj-ilyajavadevs-projects.vercel.app&redirect=false&meta=false&screenshot=true&embed=screenshot.url&waitUntil=networkidle2&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&viewport.width=1400&viewport.height=900&waitForTimeout=8000"
-  },
-  
-  
-  {
-    id: 9,
     name: "Awwwards-Nu 3D Motion Experience",
     description:
-      "An interactive, motion-heavy landing built with GSAP ScrollTrigger and dynamic video layers. Features cinematic transitions, parallax depth, smooth scroll physics, and modern micro-interactions. The architecture focuses on performance, modular animation flow, and a clean visual system inspired by award-winning digital experiences.",
+        "An experimental, motion-first landing experience inspired by award-winning digital studios. Built with GSAP ScrollTrigger and dynamic video layers, the project combines cinematic transitions, parallax depth, smooth scroll physics, and expressive micro-interactions. Each section behaves as a visual scene, carefully orchestrated through modular animation timelines. The architecture prioritizes performance, precise motion control, and a clean visual hierarchy, delivering a fluid, immersive experience that showcases advanced frontend animation and interaction design.",
     link: "https://awwwards-nu-murex.vercel.app/",
-  
     image:
-      "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000"
+        "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
   }
+
 
 ,
 {
-  id: 10,
+  id: 9,
   name: "GSAP Cocktails",
   description:
-    "A smooth, animation-driven showcase built with GSAP. Focused on scroll-based motion, cinematic transitions, and expressive UI interactions.",
+      "A cinematic, animation-driven web experience built entirely around GSAP and scroll-based motion. The project explores advanced ScrollTrigger techniques, layered timelines, and precise easing to create a smooth, immersive visual flow. Each section is treated as a micro-scene with controlled transitions, expressive UI feedback, and rhythm-driven interactions. The architecture emphasizes performance, clean animation orchestration, and modular timelines, resulting in a polished showcase inspired by high-end digital studios and award-winning interactive experiences.",
   link: "https://gsap-coctails-blond.vercel.app/",
   image:
-    "https://api.microlink.io/?url=https://gsap-coctails-blond.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500&viewport.width=1600&viewport.height=900",
+      "https://api.microlink.io/?url=https://gsap-coctails-blond.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500&viewport.width=1600&viewport.height=900",
   altImage:
-    "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/gsap-coctails&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
+      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/gsap-coctails&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
 }
 
 
-  
+
+
 ];
 
 // ================= EXPERIENCE =================
