@@ -59,39 +59,58 @@ export const HERO = {
 // ================= BIO =================
 
 export const BIO = [
-  "I’m a full-stack developer with a strong focus on modern frontend engineering. My main stack includes React, Next.js, React Native, TypeScript, Tailwind, Three.js and advanced UI/animation tooling.",
-  "I originally started with backend development in Java, Spring and databases, but quickly shifted toward frontend where I found my flow — turning complex logic into intuitive, aesthetic interfaces.",
-  "I’ve built real-world products at Elpisor LTD (CRMs, analytics platforms) and continued sharpening my skills through independent projects, mobile apps and 3D interfaces with Three.js.",
-  "Clean code, reusable components, smooth animations and delightful UX — that’s what I aim for every time. I'm constantly learning, improving and pushing my craft forward.",
+  "I’m a full-stack developer with a strong focus on modern frontend engineering, combined with real-world operational and system experience. My core stack includes React, Next.js, React Native, TypeScript, Tailwind CSS, Three.js and advanced UI and motion tooling.",
+
+  "Alongside frontend development, I work with enterprise-grade Terminal Operating Systems (TOS) at Ashdod Port (נמל אשדוד) — one of Israel’s busiest maritime terminals. I interact daily with complex systems handling vessel workflows, container routing, yard planning, crane coordination and real-time logistics.",
+
+  "This hands-on exposure to large-scale TOS environments strengthened my understanding of system reliability, data accuracy and decision making under pressure, strongly shaping my approach to software architecture and UX clarity.",
+
+  "I started my technical path with backend development in Java, Spring Boot and databases, building a solid foundation in system design and business logic before transitioning into frontend engineering, where I found my strongest flow.",
+
+  "I completed my Full Stack Java Developer education at Tel-Ran Educational Center and additional professional IT and software development courses, where I built CRMs, dashboards and production-oriented applications using Java, Spring, SQL/NoSQL and modern web technologies.",
+
+  "Professionally, I’ve developed real-world systems at Elpisor LTD and continued expanding my skill set through independent projects, mobile applications and advanced 3D interfaces built with Three.js.",
+
+  "Clean architecture, reusable components, meaningful motion and intuitive UX are core principles of my work. I continuously refine my craft to build products that scale, perform and feel premium.",
 ];
 
-// ================= SKILLS =================
+
 
 export const SKILLS = [
-  // Frontend Core
+  // ================= FRONTEND CORE =================
   { icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />, name: "React", experience: "3+ years" },
   { icon: <SiNextdotjs className="text-4xl text-white lg:text-5xl" />, name: "Next.js", experience: "2+ years" },
   { icon: <RiReactjsLine className="text-4xl text-cyan-300 lg:text-5xl" />, name: "React Native", experience: "2+ years" },
   { icon: <SiExpo className="text-4xl text-black lg:text-5xl" />, name: "Expo", experience: "2+ years" },
   { icon: <SiThreedotjs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Three.js", experience: "1.5+ years" },
 
-  // UI / Motion
+  // ================= UI / MOTION =================
   { icon: <SiFramer className="text-4xl text-pink-400 lg:text-5xl" />, name: "Framer Motion", experience: "2+ years" },
   { icon: <SiTailwindcss className="text-4xl text-sky-400 lg:text-5xl" />, name: "Tailwind CSS", experience: "3+ years" },
+  { icon: <SiJavascript className="text-4xl text-green-400 lg:text-5xl" />, name: "GSAP", experience: "2+ years" },
 
-  // Languages & Core Skills
+  // ================= LANGUAGES =================
   { icon: <SiTypescript className="text-4xl text-blue-500 lg:text-5xl" />, name: "TypeScript", experience: "3+ years" },
-  { icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />, name: "JavaScript", experience: "3+ years" },
+  { icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />, name: "JavaScript (ES6+)", experience: "3+ years" },
 
-  // State Management (Zustand → без иконки)
+  // ================= STATE & DATA =================
   { icon: <FaNodeJs className="text-4xl text-lime-400 lg:text-5xl" />, name: "Zustand (State Management)", experience: "2+ years" },
+  { icon: <FaNodeJs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Redux Toolkit", experience: "1.5+ years" },
+  { icon: <FaNodeJs className="text-4xl text-blue-400 lg:text-5xl" />, name: "React Query / TanStack Query", experience: "2+ years" },
 
-  // Tooling
+  // ================= TOOLING =================
   { icon: <SiVite className="text-4xl text-purple-300 lg:text-5xl" />, name: "Vite", experience: "2+ years" },
   { icon: <SiWebpack className="text-4xl text-blue-300 lg:text-5xl" />, name: "Webpack", experience: "2+ years" },
   { icon: <SiGit className="text-4xl text-orange-600 lg:text-5xl" />, name: "Git & GitHub", experience: "4+ years" },
+  { icon: <SiGit className="text-4xl text-red-500 lg:text-5xl" />, name: "CI/CD Basics", experience: "1+ year" },
 
-  // Backend
+  // ================= FRONTEND FUNDAMENTALS =================
+  { icon: <SiJavascript className="text-4xl text-pink-300 lg:text-5xl" />, name: "Responsive Design", experience: "3+ years" },
+  { icon: <SiJavascript className="text-4xl text-indigo-300 lg:text-5xl" />, name: "Accessibility (a11y)", experience: "2+ years" },
+  { icon: <SiJavascript className="text-4xl text-teal-300 lg:text-5xl" />, name: "Performance Optimization", experience: "2+ years" },
+  { icon: <SiJavascript className="text-4xl text-gray-300 lg:text-5xl" />, name: "Component Architecture", experience: "3+ years" },
+
+  // ================= BACKEND =================
   { icon: <FaJava className="text-4xl text-red-500 lg:text-5xl" />, name: "Java", experience: "3+ years" },
   { icon: <SiSpring className="text-4xl text-green-700 lg:text-5xl" />, name: "Spring Boot", experience: "3+ years" },
   { icon: <SiHibernate className="text-4xl text-purple-600 lg:text-5xl" />, name: "Hibernate", experience: "3+ years" },
@@ -100,7 +119,7 @@ export const SKILLS = [
   { icon: <DiRedis className="text-4xl text-red-600 lg:text-5xl" />, name: "Redis", experience: "3+ years" },
   { icon: <FaNodeJs className="text-4xl text-green-600 lg:text-5xl" />, name: "Node.js", experience: "3+ years" },
 
-  // Tools
+  // ================= SERVICES & TOOLS =================
   { icon: <SiAppwrite className="text-4xl text-red-400 lg:text-5xl" />, name: "Appwrite", experience: "1+ year" },
 ];
 
@@ -253,12 +272,7 @@ export const EXPERIENCES = [
 // ================= EDUCATION =================
 
 export const EDUCATION = [
-  {
-    degree: "Full Israeli Bagrut",
-    institution: "Israel Ministry of Education",
-    duration: "Completed",
-    description: "Completed full Bagrut matriculation with strong performance in technology-oriented subjects.",
-  },
+
   {
     degree: "Military Service — Naval Operations & Intelligence",
     institution: "IDF — חיל הים (חמ\"ל קמ\"ציה)",
