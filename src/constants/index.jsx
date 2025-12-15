@@ -210,7 +210,19 @@ export const PROJECTS = [
       "https://api.microlink.io/?url=https://gsap-coctails-blond.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500&viewport.width=1600&viewport.height=900",
   altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/gsap-coctails&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-}
+},
+  {
+    id: 10,
+    name: "Dev Events Platform",
+    description:
+        "A full-stack event management platform built with Next.js App Router and a server-first architecture. Features include event creation and editing, bookings, form validation, dynamic routing, and secure server actions. The platform uses MongoDB for data persistence and is designed with a clean separation between server logic and frontend UI. Focused on scalability, clarity, and real-world CRUD workflows, the project demonstrates production-oriented full-stack engineering with modern Next.js patterns.",
+    link: "https://dev-events-next-gamma.vercel.app/",
+    image:
+        "https://api.microlink.io/?url=https://dev-events-next-gamma.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
+    altImage:
+        "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/dev-events-next&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000",
+  }
+
 
 
 
