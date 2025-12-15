@@ -78,52 +78,51 @@ export const BIO = [
 
 export const SKILLS = [
   // ================= FRONTEND CORE =================
-  { icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />, name: "React", experience: "3+ years" },
-  { icon: <SiNextdotjs className="text-4xl text-white lg:text-5xl" />, name: "Next.js", experience: "2+ years" },
-  { icon: <RiReactjsLine className="text-4xl text-cyan-300 lg:text-5xl" />, name: "React Native", experience: "2+ years" },
-  { icon: <SiExpo className="text-4xl text-black lg:text-5xl" />, name: "Expo", experience: "2+ years" },
-  { icon: <SiThreedotjs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Three.js", experience: "1.5+ years" },
+  { icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />, name: "React" },
+  { icon: <SiNextdotjs className="text-4xl text-white lg:text-5xl" />, name: "Next.js" },
+  { icon: <RiReactjsLine className="text-4xl text-cyan-300 lg:text-5xl" />, name: "React Native" },
+  { icon: <SiExpo className="text-4xl text-black lg:text-5xl" />, name: "Expo" },
+  { icon: <SiThreedotjs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Three.js" },
 
   // ================= UI / MOTION =================
-  { icon: <SiFramer className="text-4xl text-pink-400 lg:text-5xl" />, name: "Framer Motion", experience: "2+ years" },
-  { icon: <SiTailwindcss className="text-4xl text-sky-400 lg:text-5xl" />, name: "Tailwind CSS", experience: "3+ years" },
-  { icon: <SiJavascript className="text-4xl text-green-400 lg:text-5xl" />, name: "GSAP", experience: "2+ years" },
+  { icon: <SiFramer className="text-4xl text-pink-400 lg:text-5xl" />, name: "Framer Motion" },
+  { icon: <SiTailwindcss className="text-4xl text-sky-400 lg:text-5xl" />, name: "Tailwind CSS" },
+  { icon: <SiJavascript className="text-4xl text-green-400 lg:text-5xl" />, name: "GSAP" },
 
   // ================= LANGUAGES =================
-  { icon: <SiTypescript className="text-4xl text-blue-500 lg:text-5xl" />, name: "TypeScript", experience: "3+ years" },
-  { icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />, name: "JavaScript (ES6+)", experience: "3+ years" },
+  { icon: <SiTypescript className="text-4xl text-blue-500 lg:text-5xl" />, name: "TypeScript" },
+  { icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />, name: "JavaScript (ES6+)" },
 
   // ================= STATE & DATA =================
-  { icon: <FaNodeJs className="text-4xl text-lime-400 lg:text-5xl" />, name: "Zustand (State Management)", experience: "2+ years" },
-  { icon: <FaNodeJs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Redux Toolkit", experience: "1.5+ years" },
-  { icon: <FaNodeJs className="text-4xl text-blue-400 lg:text-5xl" />, name: "React Query / TanStack Query", experience: "2+ years" },
+  { icon: <FaNodeJs className="text-4xl text-lime-400 lg:text-5xl" />, name: "Zustand" },
+  { icon: <FaNodeJs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Redux Toolkit" },
+  { icon: <FaNodeJs className="text-4xl text-blue-400 lg:text-5xl" />, name: "React Query / TanStack Query" },
 
   // ================= TOOLING =================
-  { icon: <SiVite className="text-4xl text-purple-300 lg:text-5xl" />, name: "Vite", experience: "2+ years" },
-  { icon: <SiWebpack className="text-4xl text-blue-300 lg:text-5xl" />, name: "Webpack", experience: "2+ years" },
-  { icon: <SiGit className="text-4xl text-orange-600 lg:text-5xl" />, name: "Git & GitHub", experience: "4+ years" },
-  { icon: <SiGit className="text-4xl text-red-500 lg:text-5xl" />, name: "CI/CD Basics", experience: "1+ year" },
+  { icon: <SiVite className="text-4xl text-purple-300 lg:text-5xl" />, name: "Vite" },
+  { icon: <SiWebpack className="text-4xl text-blue-300 lg:text-5xl" />, name: "Webpack" },
+  { icon: <SiGit className="text-4xl text-orange-600 lg:text-5xl" />, name: "Git & GitHub" },
+  { icon: <SiGit className="text-4xl text-red-500 lg:text-5xl" />, name: "CI/CD Basics" },
 
   // ================= FRONTEND FUNDAMENTALS =================
-  { icon: <SiJavascript className="text-4xl text-pink-300 lg:text-5xl" />, name: "Responsive Design", experience: "3+ years" },
-  { icon: <SiJavascript className="text-4xl text-indigo-300 lg:text-5xl" />, name: "Accessibility (a11y)", experience: "2+ years" },
-  { icon: <SiJavascript className="text-4xl text-teal-300 lg:text-5xl" />, name: "Performance Optimization", experience: "2+ years" },
-  { icon: <SiJavascript className="text-4xl text-gray-300 lg:text-5xl" />, name: "Component Architecture", experience: "3+ years" },
+  { icon: <SiJavascript className="text-4xl text-pink-300 lg:text-5xl" />, name: "Responsive Design" },
+  { icon: <SiJavascript className="text-4xl text-indigo-300 lg:text-5xl" />, name: "Accessibility (a11y)" },
+  { icon: <SiJavascript className="text-4xl text-teal-300 lg:text-5xl" />, name: "Performance Optimization" },
+  { icon: <SiJavascript className="text-4xl text-gray-300 lg:text-5xl" />, name: "Component Architecture" },
 
   // ================= BACKEND =================
-  { icon: <FaJava className="text-4xl text-red-500 lg:text-5xl" />, name: "Java", experience: "3+ years" },
-  { icon: <SiSpring className="text-4xl text-green-700 lg:text-5xl" />, name: "Spring Boot", experience: "3+ years" },
-  { icon: <SiHibernate className="text-4xl text-purple-600 lg:text-5xl" />, name: "Hibernate", experience: "3+ years" },
-  { icon: <SiMysql className="text-4xl text-blue-600 lg:text-5xl" />, name: "MySQL", experience: "3+ years" },
-  { icon: <SiMongodb className="text-4xl text-green-600 lg:text-5xl" />, name: "MongoDB", experience: "3+ years" },
-  { icon: <DiRedis className="text-4xl text-red-600 lg:text-5xl" />, name: "Redis", experience: "3+ years" },
-  { icon: <FaNodeJs className="text-4xl text-green-600 lg:text-5xl" />, name: "Node.js", experience: "3+ years" },
+  { icon: <FaJava className="text-4xl text-red-500 lg:text-5xl" />, name: "Java" },
+  { icon: <SiSpring className="text-4xl text-green-700 lg:text-5xl" />, name: "Spring Boot" },
+  { icon: <SiHibernate className="text-4xl text-purple-600 lg:text-5xl" />, name: "Hibernate" },
+  { icon: <SiMysql className="text-4xl text-blue-600 lg:text-5xl" />, name: "MySQL" },
+  { icon: <SiMongodb className="text-4xl text-green-600 lg:text-5xl" />, name: "MongoDB" },
+  { icon: <DiRedis className="text-4xl text-red-600 lg:text-5xl" />, name: "Redis" },
+  { icon: <FaNodeJs className="text-4xl text-green-600 lg:text-5xl" />, name: "Node.js" },
 
   // ================= SERVICES & TOOLS =================
-  { icon: <SiAppwrite className="text-4xl text-red-400 lg:text-5xl" />, name: "Appwrite", experience: "1+ year" },
+  { icon: <SiAppwrite className="text-4xl text-red-400 lg:text-5xl" />, name: "Appwrite" },
 ];
 
-// ================= PROJECTS =================
 
 export const PROJECTS = [
   {
