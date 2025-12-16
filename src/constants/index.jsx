@@ -198,7 +198,6 @@ export const PROJECTS = [
         "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
   }
 
-
 ,
 {
   id: 9,
@@ -221,7 +220,18 @@ export const PROJECTS = [
         "https://api.microlink.io/?url=https://dev-events-next-gamma.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
     altImage:
         "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/dev-events-next&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000",
+  },{
+    id: 11,
+    name: "AI Resume Analyzer",
+    description:
+      "An AI-powered resume analysis platform built with React Router v7 and server-side rendering. The app allows users to upload PDF resumes, stores data via Puter KV, and generates structured ATS-focused feedback with scoring, strengths, and improvement suggestions. The architecture is fully SSR-ready, optimized for deployment on Vercel, and designed around clean UX, async workflows, and real-world resume review scenarios.",
+    link: "https://ai-resume-analyzer-rnrf.vercel.app/",
+    image:
+      "https://api.microlink.io/?url=https://ai-resume-analyzer-rnrf.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
+    altImage:
+      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/ai-resume-analyzier&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4000",
   }
+  
 
 
 
