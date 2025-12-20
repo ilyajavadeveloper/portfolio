@@ -220,19 +220,30 @@ export const PROJECTS = [
         "https://api.microlink.io/?url=https://dev-events-next-gamma.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
     altImage:
         "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/dev-events-next&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000",
-  },
-  {
-    id: 12,
-    name: "HooBank — Modern Fintech Landing",
+  },{
+    id: 11,
+    name: "AI Resume Analyzer",
     description:
-      "A modern fintech landing page built with React, Vite, and Tailwind CSS v4, focused on clean architecture, responsive layout, and polished UI/UX. The project features a fully componentized structure, reusable design patterns, gradient-based visuals, and production-ready sections such as Hero, Features, Billing, Testimonials, and CTA. The layout is optimized for scalability, performance, and deployment on Vercel, showcasing best practices in modern frontend development and design-driven interfaces.",
-    link: "https://hoobank-ashen-five.vercel.app/",
+      "An AI-powered resume analysis platform built with React Router v7 and server-side rendering. The app allows users to upload PDF resumes, stores data via Puter KV, and generates structured ATS-focused feedback with scoring, strengths, and improvement suggestions. The architecture is fully SSR-ready, optimized for deployment on Vercel, and designed around clean UX, async workflows, and real-world resume review scenarios.",
+    link: "https://ai-resume-analyzer-rnrf.vercel.app/",
     image:
-      "https://api.microlink.io/?url=https://hoobank-ashen-five.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
+      "https://api.microlink.io/?url=https://ai-resume-analyzer-rnrf.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
     altImage:
-      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/hoobank&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4000",
+      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/ai-resume-analyzier&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4000",
   }
-  
+,{
+  id: 12,
+  name: "HooBank — Modern Fintech Landing",
+  description:
+    "A modern fintech landing page built with React, Vite, and Tailwind CSS v4, focused on clean architecture, responsive layout, and polished UI/UX. The project features a fully componentized structure, reusable design patterns, gradient-based visuals, and production-ready sections such as Hero, Features, Billing, Testimonials, and CTA. The layout is optimized for scalability, performance, and deployment on Vercel, showcasing best practices in modern frontend development and design-driven interfaces.",
+  link: "https://hoobank-ashen-five.vercel.app/",
+  image:
+    "https://api.microlink.io/?url=https://hoobank-ashen-five.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
+  altImage:
+    "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/hoobank&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4000",
+}
+
+
 
 
 
