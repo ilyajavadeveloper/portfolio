@@ -177,19 +177,9 @@ export const PROJECTS = [
     altImage:
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/apple-three-js&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   },
+
   {
     id: 7,
-    name: "Stock Market App",
-    description:
-        "A modern real-time stock analytics platform built for fast market insight and data clarity. Features advanced interactive charts, detailed company profiles, technical indicators, synchronized watchlists, and embedded TradingView widgets. The application is fully server-driven, with secure authentication powered by BetterAuth and persistent data storage via MongoDB. The architecture emphasizes performance, scalability, and clean separation between server logic and frontend state, resulting in a responsive and reliable financial dashboard experience.",
-    link: "https://stock-market-app-lyart.vercel.app",
-    image:
-        "https://api.microlink.io/?url=https://stock-market-app-lyart.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-    altImage:
-        "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-  },
-  {
-    id: 8,
     name: "Awwwards-Nu 3D Motion Experience",
     description:
         "An experimental, motion-first landing experience inspired by award-winning digital studios. Built with GSAP ScrollTrigger and dynamic video layers, the project combines cinematic transitions, parallax depth, smooth scroll physics, and expressive micro-interactions. Each section behaves as a visual scene, carefully orchestrated through modular animation timelines. The architecture prioritizes performance, precise motion control, and a clean visual hierarchy, delivering a fluid, immersive experience that showcases advanced frontend animation and interaction design.",
