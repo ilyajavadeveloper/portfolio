@@ -165,8 +165,7 @@ export const PROJECTS = [
     link: "https://hutzaav2.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },  
-
+  },
   {
     id: 6,
     name: "Awwwards-Nu 3D Motion Experience",
