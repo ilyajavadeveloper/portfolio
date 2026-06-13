@@ -50,12 +50,12 @@ const Hero = () => {
               transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-[520px] sm:max-w-[620px] lg:max-w-[760px]">
-              {/* ФИКС ТУТ: Адаптивные inset, bg и blur для мобилок */}
-              <div className="absolute -inset-6 sm:-inset-14 rounded-[72px] bg-white/5 sm:bg-white/10 blur-[80px] sm:blur-[160px]" />
+              {/* Свечение полностью скрыто на мобилках, появляется только со sm экранов */}
+              <div className="hidden sm:block absolute -inset-14 rounded-[72px] bg-white/10 blur-[160px]" />
               <img
                   src={heroPortrait}
                   alt="Ilya Hvostenko portrait"
-                  className="relative w-full rounded-[52px] object-cover shadow-[0_120px_280px_rgba(0,0,0,0.9)]"
+                  className="relative w-full rounded-[52px] object-cover shadow-none sm:shadow-[0_120px_280px_rgba(0,0,0,0.9)]"
                   draggable={false}
               />
             </div>
