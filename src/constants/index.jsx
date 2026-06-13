@@ -228,7 +228,7 @@ export const PROJECTS = [
     link: "https://ai-resume-analyzer-rnrf.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://ai-resume-analyzer-rnrf.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
-    altImage:
+    altImage: 
       "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/ai-resume-analyzier&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4000",
   }
 ,{
