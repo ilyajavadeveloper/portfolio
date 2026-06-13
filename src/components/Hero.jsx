@@ -50,7 +50,6 @@ const Hero = () => {
               transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-[520px] sm:max-w-[620px] lg:max-w-[760px]">
-              {/* Свечение полностью скрыто на мобилках, появляется только со sm экранов */}
               <div className="hidden sm:block absolute -inset-14 rounded-[72px] bg-white/10 blur-[160px]" />
               <img
                   src={heroPortrait}
@@ -72,7 +71,8 @@ const Hero = () => {
                 animate="visible"
                 custom={1}
             >
-            <span className="bg-gradient-to-br from-white via-white to-white/60 bg-clip-text text-transparent drop-shadow-[0_10px_60px_rgba(255,255,255,0.25)]">
+              {/* ФИКС ТУТ: Чистый белый градиент без затухания в прозрачность и мощный белый дропшадоу */}
+              <span className="bg-gradient-to-br from-white via-white to-white bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,255,255,0.6)]">
               {HERO.name}
             </span>
             </motion.h1>
