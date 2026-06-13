@@ -165,28 +165,6 @@ export const PROJECTS = [
     link: "https://hutzaav2.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },  
-  {
-    id: 6,
-    name: "Apple Three.js Showcase",
-    description:
-      "An interactive 3D MacBook experience with animations, texture switching, lighting presets, and video textures. Full Three.js + React-Fiber stack.",
-    link: "https://macbook-apple-app.vercel.app/",
-    image:
-      "https://api.microlink.io/?url=https://macbook-apple-app.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-    altImage:
-      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/apple-three-js&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-  },
-  {
-    id: 7,
-    name: "Stock Market App",
-    description:
-        "A modern real-time stock analytics platform built for fast market insight and data clarity. Features advanced interactive charts, detailed company profiles, technical indicators, synchronized watchlists, and embedded TradingView widgets. The application is fully server-driven, with secure authentication powered by BetterAuth and persistent data storage via MongoDB. The architecture emphasizes performance, scalability, and clean separation between server logic and frontend state, resulting in a responsive and reliable financial dashboard experience.",
-    link: "https://stock-market-app-lyart.vercel.app",
-    image:
-        "https://api.microlink.io/?url=https://stock-market-app-lyart.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-    altImage:
-        "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/StockMarketApp&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
   },
   {
     id: 8,
@@ -197,55 +175,6 @@ export const PROJECTS = [
     image:
         "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
   }
-
-,
-{
-  id: 9,
-  name: "GSAP Cocktails",
-  description:
-      "A cinematic, animation-driven web experience built entirely around GSAP and scroll-based motion. The project explores advanced ScrollTrigger techniques, layered timelines, and precise easing to create a smooth, immersive visual flow. Each section is treated as a micro-scene with controlled transitions, expressive UI feedback, and rhythm-driven interactions. The architecture emphasizes performance, clean animation orchestration, and modular timelines, resulting in a polished showcase inspired by high-end digital studios and award-winning interactive experiences.",
-  link: "https://gsap-coctails-blond.vercel.app/",
-  image:
-      "https://api.microlink.io/?url=https://gsap-coctails-blond.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500&viewport.width=1600&viewport.height=900",
-  altImage:
-      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/gsap-coctails&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3500",
-},
-  {
-    id: 10,
-    name: "Dev Events Platform",
-    description:
-        "A full-stack event management platform built with Next.js App Router and a server-first architecture. Features include event creation and editing, bookings, form validation, dynamic routing, and secure server actions. The platform uses MongoDB for data persistence and is designed with a clean separation between server logic and frontend UI. Focused on scalability, clarity, and real-world CRUD workflows, the project demonstrates production-oriented full-stack engineering with modern Next.js patterns.",
-    link: "https://dev-events-next-gamma.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://dev-events-next-gamma.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
-    altImage:
-        "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/dev-events-next&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000",
-  },{
-    id: 11,
-    name: "AI Resume Analyzer",
-    description:
-      "An AI-powered resume analysis platform built with React Router v7 and server-side rendering. The app allows users to upload PDF resumes, stores data via Puter KV, and generates structured ATS-focused feedback with scoring, strengths, and improvement suggestions. The architecture is fully SSR-ready, optimized for deployment on Vercel, and designed around clean UX, async workflows, and real-world resume review scenarios.",
-    link: "https://ai-resume-analyzer-rnrf.vercel.app/",
-    image:
-      "https://api.microlink.io/?url=https://ai-resume-analyzer-rnrf.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
-    altImage: 
-      "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/ai-resume-analyzier&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4000",
-  }
-,{
-  id: 12,
-  name: "HooBank — Modern Fintech Landing",
-  description:
-    "A modern fintech landing page built with React, Vite, and Tailwind CSS v4, focused on clean architecture, responsive layout, and polished UI/UX. The project features a fully componentized structure, reusable design patterns, gradient-based visuals, and production-ready sections such as Hero, Features, Billing, Testimonials, and CTA. The layout is optimized for scalability, performance, and deployment on Vercel, showcasing best practices in modern frontend development and design-driven interfaces.",
-  link: "https://hoobank-ashen-five.vercel.app/",
-  image:
-    "https://api.microlink.io/?url=https://hoobank-ashen-five.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=5000&viewport.width=1600&viewport.height=900",
-  altImage:
-    "https://api.microlink.io/?url=https://github.com/ilyajavadeveloper/hoobank&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4000",
-}
-
-
-
-
 
 
 ];
