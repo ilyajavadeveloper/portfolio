@@ -50,6 +50,7 @@ const Hero = () => {
               transition={{ duration: 1, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-[520px] sm:max-w-[620px] lg:max-w-[760px]">
+              {/* Свечение скрыто на мобилках, чтобы не давать грязный оттенок */}
               <div className="hidden sm:block absolute -inset-14 rounded-[72px] bg-white/10 blur-[160px]" />
               <img
                   src={heroPortrait}
@@ -65,14 +66,13 @@ const Hero = () => {
 
             {/* ===== HEADINGS ===== */}
             <motion.h1
-                className="mb-8 text-center text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-left md:text-6xl lg:text-7xl"
+                className="relative z-10 mb-8 text-center text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-left md:text-6xl lg:text-7xl"
                 variants={slideLeft}
                 initial="hidden"
                 animate="visible"
                 custom={1}
             >
-              {/* ФИКС ТУТ: Чистый белый градиент без затухания в прозрачность и мощный белый дропшадоу */}
-              <span className="bg-gradient-to-br from-white via-white to-white bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,255,255,0.6)]">
+            <span className="drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
               {HERO.name}
             </span>
             </motion.h1>
