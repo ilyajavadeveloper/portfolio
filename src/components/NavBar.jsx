@@ -5,8 +5,10 @@ import { Menu, X } from "lucide-react";
 const NavBar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    // ✔ Добавляем ссылку Projects ведущую на секцию #projects
+    // Добавляем Home, который ведет на Hero-секцию #home,
+    // и Projects, который ведет на секцию #projects
     const EXTENDED_NAVIGATION_LINKS = [
+        { label: "Home", href: "#home" },
         ...NAVIGATION_LINKS,
         { label: "Projects", href: "#projects" },
     ];
@@ -16,9 +18,10 @@ const NavBar = () => {
     };
 
     const handleLinkClick = (e, href) => {
+        setIsMobileMenuOpen(false);
+
         if (href.startsWith("#")) {
             e.preventDefault();
-            setIsMobileMenuOpen(false);
 
             const id = href.replace("#", "");
             const target = document.getElementById(id);
@@ -32,9 +35,10 @@ const NavBar = () => {
         }
     };
 
-    // ✔ Прокрутка если в URL есть hash при загрузке
+    // Прокрутка к секции, если в URL уже есть hash при загрузке
     useEffect(() => {
         const hash = window.location.hash;
+
         if (hash) {
             const id = hash.replace("#", "");
             const element = document.getElementById(id);
@@ -55,7 +59,9 @@ const NavBar = () => {
             <div className="flex justify-between items-center max-w-7xl mx-auto">
 
                 {/* Logo / Name */}
-                <div className="text-white text-2xl font-bold">{HERO.name}</div>
+                <div className="text-white text-2xl font-bold">
+                    {HERO.name}
+                </div>
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex gap-6">
@@ -73,8 +79,10 @@ const NavBar = () => {
 
                 {/* Mobile Menu Toggle */}
                 <button
+                    type="button"
                     className="lg:hidden text-white"
                     onClick={toggleMobileMenu}
+                    aria-label="Toggle navigation menu"
                 >
                     {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
                 </button>
