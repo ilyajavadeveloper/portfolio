@@ -4,17 +4,23 @@ import {
     MdAutoAwesome,
     MdLayers,
     MdWeb,
-    MdStar,
+    MdViewInAr,
+    MdWorkspacePremium,
 } from "react-icons/md";
-import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+
+import { PROJECTS } from "../constants";
 
 /* ================= ANIMATIONS ================= */
 
 const sectionVariants = {
-    hidden: { opacity: 0 },
+    hidden: {
+        opacity: 0,
+    },
+
     visible: {
         opacity: 1,
+
         transition: {
             duration: 0.8,
             staggerChildren: 0.12,
@@ -23,11 +29,17 @@ const sectionVariants = {
 };
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 36, scale: 0.96 },
+    hidden: {
+        opacity: 0,
+        y: 36,
+        scale: 0.96,
+    },
+
     visible: (i = 1) => ({
         opacity: 1,
         y: 0,
         scale: 1,
+
         transition: {
             delay: i * 0.08,
             duration: 0.7,
@@ -42,10 +54,68 @@ const getProjectTech = (project) => {
     return project.technologies || project.stack || project.tags || [];
 };
 
+const getProjectType = (project) => {
+    const explicitType = String(
+        project.type || project.category || "",
+    ).toLowerCase();
+
+    if (
+        explicitType === "threejs" ||
+        explicitType === "three.js" ||
+        explicitType === "3d"
+    ) {
+        return "threejs";
+    }
+
+    if (
+        explicitType === "awwwards" ||
+        explicitType === "awwward"
+    ) {
+        return "awwwards";
+    }
+
+    if (explicitType === "landing") {
+        return "landing";
+    }
+
+    /*
+     * Запасной поиск.
+     * Даже без type проект определится по названию,
+     * описанию или технологиям.
+     */
+
+    const searchableText = [
+        project.name,
+        project.description,
+        ...getProjectTech(project),
+    ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+    if (
+        searchableText.includes("three.js") ||
+        searchableText.includes("threejs") ||
+        searchableText.includes("react three fiber")
+    ) {
+        return "threejs";
+    }
+
+    if (
+        searchableText.includes("awwwards") ||
+        searchableText.includes("awwward")
+    ) {
+        return "awwwards";
+    }
+
+    return "landing";
+};
+
 /* ================= IMAGE ================= */
 
 const LazyImage = ({ src, alt, size = "default" }) => {
     const [loaded, setLoaded] = useState(false);
+
     const fallback = "/images/placeholder.png";
 
     const imageHeight =
@@ -54,7 +124,12 @@ const LazyImage = ({ src, alt, size = "default" }) => {
             : "h-60 sm:h-64 lg:h-72";
 
     return (
-        <div className={`relative w-full overflow-hidden bg-white/5 ${imageHeight}`}>
+        <div
+            className={`
+        relative w-full overflow-hidden bg-white/5
+        ${imageHeight}
+      `}
+        >
             {!loaded && (
                 <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-white/5 via-white/15 to-white/5" />
             )}
@@ -64,25 +139,31 @@ const LazyImage = ({ src, alt, size = "default" }) => {
                 alt={alt}
                 loading="lazy"
                 onLoad={() => setLoaded(true)}
-                onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = fallback;
+                onError={(event) => {
+                    event.currentTarget.onerror = null;
+                    event.currentTarget.src = fallback;
                     setLoaded(true);
                 }}
                 className={`
-                    h-full w-full object-cover transition-all duration-700
-                    group-hover:scale-105
-                    ${loaded ? "scale-100 opacity-100" : "scale-105 opacity-0"}
-                `}
+          h-full w-full object-cover
+          transition-all duration-700
+          group-hover:scale-105
+          ${
+                    loaded
+                        ? "scale-100 opacity-100"
+                        : "scale-105 opacity-0"
+                }
+        `}
             />
 
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
+
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-50" />
         </div>
     );
 };
 
-/* ================= PROJECT CARD ================= */
+/* ================= LANDING CARD ================= */
 
 const ProjectCard = ({ project, index }) => {
     const techList = getProjectTech(project);
@@ -93,20 +174,23 @@ const ProjectCard = ({ project, index }) => {
             custom={index + 1}
             whileHover={{ y: -9 }}
             className="
-                group relative flex h-full flex-col overflow-hidden
-                rounded-[2rem] border border-white/15
-                bg-white/[0.055] backdrop-blur
-                transition duration-300
-                hover:border-white/35 hover:bg-white/[0.09]
-            "
+        group relative flex h-full flex-col overflow-hidden
+        rounded-[2rem] border border-white/15
+        bg-white/[0.055] backdrop-blur
+        transition duration-300
+        hover:border-white/35 hover:bg-white/[0.09]
+      "
         >
             <div className="pointer-events-none absolute -inset-1 rounded-[2rem] bg-white/10 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
 
             <div className="relative z-10 flex h-full flex-col overflow-hidden rounded-[2rem]">
-                <LazyImage src={project.image} alt={project.name} />
+                <LazyImage
+                    src={project.image}
+                    alt={project.name}
+                />
 
                 <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/75 backdrop-blur">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div className="flex flex-grow flex-col justify-between p-6">
@@ -126,17 +210,17 @@ const ProjectCard = ({ project, index }) => {
 
                         {techList.length > 0 && (
                             <div className="mt-6 flex flex-wrap gap-2">
-                                {techList.slice(0, 5).map((tech, i) => (
+                                {techList.slice(0, 5).map((tech, techIndex) => (
                                     <span
-                                        key={i}
+                                        key={`${project.id}-${tech}-${techIndex}`}
                                         className="
-                                            rounded-full border border-white/12
-                                            bg-white/[0.07] px-3 py-1
-                                            text-xs font-semibold text-white/65
-                                        "
+                      rounded-full border border-white/12
+                      bg-white/[0.07] px-3 py-1
+                      text-xs font-semibold text-white/65
+                    "
                                     >
-                                        {tech}
-                                    </span>
+                    {tech}
+                  </span>
                                 ))}
                             </div>
                         )}
@@ -149,28 +233,29 @@ const ProjectCard = ({ project, index }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="
-                                    inline-flex items-center gap-2
-                                    rounded-full border border-white/20
-                                    bg-white/10 px-6 py-3
-                                    text-sm font-bold text-white
-                                    backdrop-blur transition
-                                    hover:border-white/45 hover:bg-white/20
-                                "
+                  inline-flex items-center gap-2
+                  rounded-full border border-white/20
+                  bg-white/10 px-6 py-3
+                  text-sm font-bold text-white
+                  backdrop-blur transition
+                  hover:border-white/45 hover:bg-white/20
+                "
                             >
                                 View Landing
+
                                 <MdArrowOutward className="text-lg transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                             </a>
                         ) : (
                             <span
                                 className="
-                                    inline-flex items-center gap-2
-                                    rounded-full border border-white/10
-                                    bg-white/5 px-6 py-3
-                                    text-sm font-bold text-white/45
-                                "
+                  inline-flex items-center gap-2
+                  rounded-full border border-white/10
+                  bg-white/5 px-6 py-3
+                  text-sm font-bold text-white/45
+                "
                             >
-                                Coming Soon
-                            </span>
+                Coming Soon
+              </span>
                         )}
 
                         <div className="hidden h-px flex-1 bg-gradient-to-r from-white/25 to-transparent sm:block" />
@@ -181,67 +266,82 @@ const ProjectCard = ({ project, index }) => {
     );
 };
 
-/* ================= STANDALONE PROJECT ================= */
+/* ================= STANDALONE CARD ================= */
 
-const StandaloneProject = ({ project }) => {
-    if (!project) return null;
-
+const StandaloneProject = ({
+                               project,
+                               index,
+                               icon: Icon,
+                               badge,
+                               secondaryBadge,
+                               buttonText,
+                           }) => {
     const techList = getProjectTech(project);
 
     return (
         <motion.article
             variants={cardVariants}
-            custom={8}
+            custom={index + 5}
             whileHover={{ y: -10 }}
             className="
-                group relative overflow-hidden rounded-[2.25rem]
-                border border-white/20
-                bg-gradient-to-br from-white/[0.12] via-white/[0.07] to-white/[0.04]
-                backdrop-blur
-                transition duration-300
-                hover:border-white/40
-            "
+        group relative overflow-hidden
+        rounded-[2.25rem]
+        border border-white/20
+        bg-gradient-to-br
+        from-white/[0.12]
+        via-white/[0.07]
+        to-white/[0.04]
+        backdrop-blur
+        transition duration-300
+        hover:border-white/40
+      "
         >
             <div className="pointer-events-none absolute -right-28 -top-28 h-96 w-96 rounded-full bg-white/10 blur-[140px]" />
+
             <div className="pointer-events-none absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-white/10 blur-[130px]" />
+
             <div className="pointer-events-none absolute -inset-1 rounded-[2.25rem] bg-white/10 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
 
             <div className="relative z-10 grid overflow-hidden rounded-[2.25rem] lg:grid-cols-[1.05fr_0.95fr]">
-                <LazyImage src={project.image} alt={project.name} size="hero" />
+                <LazyImage
+                    src={project.image}
+                    alt={project.name}
+                    size="hero"
+                />
 
                 <div className="flex flex-col justify-center p-7 sm:p-9 lg:p-12">
                     <div className="mb-6 flex flex-wrap items-center gap-3">
-                        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/75 backdrop-blur">
-                            <MdStar size={16} />
-                            Standalone Project
-                        </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/75 backdrop-blur">
+              <Icon size={17} />
+                {badge}
+            </span>
 
                         <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/20 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/55 backdrop-blur">
-                            Special build
-                        </span>
+              {secondaryBadge}
+            </span>
                     </div>
 
                     <h3 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
                         {project.name}
                     </h3>
 
-                    <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/72 sm:text-lg">
+                    <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
                         {project.description}
                     </p>
 
                     {techList.length > 0 && (
                         <div className="mt-8 flex flex-wrap gap-2">
-                            {techList.slice(0, 8).map((tech, i) => (
+                            {techList.slice(0, 8).map((tech, techIndex) => (
                                 <span
-                                    key={i}
+                                    key={`${project.id}-${tech}-${techIndex}`}
                                     className="
-                                        rounded-full border border-white/14
-                                        bg-white/[0.08] px-4 py-2
-                                        text-xs font-semibold text-white/70
-                                    "
+                    rounded-full border border-white/15
+                    bg-white/[0.08] px-4 py-2
+                    text-xs font-semibold text-white/70
+                  "
                                 >
-                                    {tech}
-                                </span>
+                  {tech}
+                </span>
                             ))}
                         </div>
                     )}
@@ -253,30 +353,34 @@ const StandaloneProject = ({ project }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="
-                                    inline-flex w-full items-center justify-center gap-2
-                                    rounded-full border border-white/25
-                                    bg-white/15 px-7 py-4
-                                    text-sm font-extrabold text-white
-                                    backdrop-blur transition
-                                    hover:border-white/50 hover:bg-white/25
-                                    sm:w-auto
-                                "
+                  inline-flex w-full items-center
+                  justify-center gap-2
+                  rounded-full border border-white/25
+                  bg-white/15 px-7 py-4
+                  text-sm font-extrabold text-white
+                  backdrop-blur transition
+                  hover:border-white/50
+                  hover:bg-white/25
+                  sm:w-auto
+                "
                             >
-                                View Full Project
+                                {buttonText}
+
                                 <MdArrowOutward className="text-xl transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                             </a>
                         ) : (
                             <span
                                 className="
-                                    inline-flex w-full items-center justify-center gap-2
-                                    rounded-full border border-white/10
-                                    bg-white/5 px-7 py-4
-                                    text-sm font-extrabold text-white/45
-                                    sm:w-auto
-                                "
+                  inline-flex w-full items-center
+                  justify-center gap-2
+                  rounded-full border border-white/10
+                  bg-white/5 px-7 py-4
+                  text-sm font-extrabold text-white/45
+                  sm:w-auto
+                "
                             >
-                                Coming Soon
-                            </span>
+                Coming Soon
+              </span>
                         )}
 
                         <div className="h-px flex-1 bg-gradient-to-r from-white/25 to-transparent" />
@@ -287,11 +391,85 @@ const StandaloneProject = ({ project }) => {
     );
 };
 
+/* ================= STANDALONE SECTION ================= */
+
+const StandaloneSection = ({
+                               projects,
+                               icon: Icon,
+                               eyebrow,
+                               title,
+                               description,
+                               badge,
+                               secondaryBadge,
+                               buttonText,
+                           }) => {
+    if (!projects.length) {
+        return null;
+    }
+
+    return (
+        <div>
+            <motion.div
+                variants={cardVariants}
+                custom={4}
+                className="
+          mb-9 flex flex-col gap-5
+          md:flex-row md:items-end
+          md:justify-between
+        "
+            >
+                <div>
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/60">
+                        <Icon size={18} />
+                        {eyebrow}
+                    </div>
+
+                    <h3 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+                        {title}
+                    </h3>
+
+                    <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/60">
+                        {description}
+                    </p>
+                </div>
+
+                <div className="w-fit rounded-full border border-white/15 bg-white/[0.06] px-5 py-2 text-sm font-bold text-white/60 backdrop-blur">
+                    {projects.length}{" "}
+                    {projects.length === 1 ? "project" : "projects"}
+                </div>
+            </motion.div>
+
+            <div className="space-y-8">
+                {projects.map((project, index) => (
+                    <StandaloneProject
+                        key={project.id || `${title}-${index}`}
+                        project={project}
+                        index={index}
+                        icon={Icon}
+                        badge={badge}
+                        secondaryBadge={secondaryBadge}
+                        buttonText={buttonText}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
 /* ================= MAIN COMPONENT ================= */
 
 function Projects() {
-    const landingProjects = PROJECTS.slice(0, -1);
-    const standaloneProject = PROJECTS[PROJECTS.length - 1];
+    const landingProjects = PROJECTS.filter(
+        (project) => getProjectType(project) === "landing",
+    );
+
+    const threeJsProjects = PROJECTS.filter(
+        (project) => getProjectType(project) === "threejs",
+    );
+
+    const awwwardsProjects = PROJECTS.filter(
+        (project) => getProjectType(project) === "awwwards",
+    );
 
     return (
         <motion.section
@@ -299,16 +477,28 @@ function Projects() {
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            className="relative overflow-hidden px-5 py-24 sm:px-6 lg:px-16"
+            viewport={{
+                once: true,
+                amount: 0.08,
+            }}
+            className="
+        relative overflow-hidden
+        px-5 py-24
+        sm:px-6
+        lg:px-16
+      "
         >
-            {/* BACKGROUND ATMOSPHERE */}
+            {/* BACKGROUND */}
+
             <div className="pointer-events-none absolute left-1/2 top-20 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/5 blur-[170px]" />
+
             <div className="pointer-events-none absolute -right-40 top-1/3 h-[400px] w-[400px] rounded-full bg-white/5 blur-[140px]" />
+
             <div className="pointer-events-none absolute -left-40 bottom-10 h-[360px] w-[360px] rounded-full bg-white/5 blur-[130px]" />
 
             <div className="relative z-10 mx-auto max-w-7xl">
                 {/* HEADER */}
+
                 <motion.div
                     variants={cardVariants}
                     custom={1}
@@ -324,18 +514,24 @@ function Projects() {
                     </h2>
 
                     <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/60 sm:text-lg">
-                        A curated collection of landing pages and standalone builds focused on visual quality,
-                        structure, responsiveness and clean user experience.
+                        Landing pages, interactive Three.js experiences and
+                        experimental Awwwards-style websites built around visual
+                        quality, motion and clean user experience.
                     </p>
                 </motion.div>
 
-                {/* LANDINGS SECTION */}
+                {/* LANDING PROJECTS */}
+
                 {landingProjects.length > 0 && (
                     <div className="mb-24">
                         <motion.div
                             variants={cardVariants}
                             custom={2}
-                            className="mb-9 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
+                            className="
+                mb-9 flex flex-col gap-5
+                md:flex-row md:items-end
+                md:justify-between
+              "
                         >
                             <div>
                                 <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/60">
@@ -347,14 +543,16 @@ function Projects() {
                                     Landing Pages
                                 </h3>
 
-                                <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/58">
-                                    Marketing-style pages built around first impression, clean composition,
-                                    responsive layout and strong visual presentation.
+                                <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/60">
+                                    Marketing websites built around strong first
+                                    impressions, responsive composition and clear visual
+                                    hierarchy.
                                 </p>
                             </div>
 
-                            <div className="rounded-full border border-white/15 bg-white/[0.06] px-5 py-2 text-sm font-bold text-white/60 backdrop-blur">
-                                {landingProjects.length} builds
+                            <div className="w-fit rounded-full border border-white/15 bg-white/[0.06] px-5 py-2 text-sm font-bold text-white/60 backdrop-blur">
+                                {landingProjects.length}{" "}
+                                {landingProjects.length === 1 ? "build" : "builds"}
                             </div>
                         </motion.div>
 
@@ -370,34 +568,40 @@ function Projects() {
                     </div>
                 )}
 
-                {/* STANDALONE SECTION */}
-                {standaloneProject && (
-                    <div>
-                        <motion.div
-                            variants={cardVariants}
-                            custom={6}
-                            className="mb-9 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"
-                        >
-                            <div>
-                                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/60">
-                                    <MdStar size={17} />
-                                    Separate case
-                                </div>
+                {/* THREE.JS PROJECTS */}
 
-                                <h3 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-                                    Standalone Project
-                                </h3>
+                <div className="space-y-24">
+                    <StandaloneSection
+                        projects={threeJsProjects}
+                        icon={MdViewInAr}
+                        eyebrow="Interactive 3D"
+                        title="Three.js Projects"
+                        description="
+              Interactive 3D experiences, product configurators and
+              browser-based environments built with Three.js and
+              React Three Fiber.
+            "
+                        badge="Three.js Project"
+                        secondaryBadge="Interactive 3D"
+                        buttonText="View 3D Experience"
+                    />
 
-                                <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/58">
-                                    A separate project block reserved for deeper builds, stronger concepts
-                                    and future full-scale work.
-                                </p>
-                            </div>
-                        </motion.div>
+                    {/* AWWWARDS PROJECTS */}
 
-                        <StandaloneProject project={standaloneProject} />
-                    </div>
-                )}
+                    <StandaloneSection
+                        projects={awwwardsProjects}
+                        icon={MdWorkspacePremium}
+                        eyebrow="Experimental design"
+                        title="Awwwards Projects"
+                        description="
+              Concept-driven websites focused on typography, motion,
+              visual storytelling and premium digital experiences.
+            "
+                        badge="Awwwards Project"
+                        secondaryBadge="Creative Experience"
+                        buttonText="View Experience"
+                    />
+                </div>
             </div>
         </motion.section>
     );

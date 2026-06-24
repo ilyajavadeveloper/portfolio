@@ -156,7 +156,7 @@ export const PROJECTS = [
     link: "https://lila-neon.vercel.app/",
     image:
       "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  } , 
+  } ,
   {
     id: 5,
     name: "Hutzahav",
@@ -174,7 +174,15 @@ export const PROJECTS = [
     link: "https://awwwards-nu-murex.vercel.app/",
     image:
         "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&userAgent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/120%20Safari/537.36&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
-  }
+  },{
+    id: 7,
+    name: "Three.js AI T-Shirt Customizer",
+    description:
+        "An interactive 3D product customization experience built with React and Three.js. Users can change shirt colors, upload custom logos and textures, and generate unique designs using AI while previewing every update directly on a real-time 3D model.",
+    link: "https://three-js-ai-rho.vercel.app/",
+    image:
+        "https://api.microlink.io/?url=https://three-js-ai-rho.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=6000",
+  },
 
 ];
 
