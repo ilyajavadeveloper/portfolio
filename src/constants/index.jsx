@@ -118,110 +118,148 @@ export const SKILLS = [
   // ================= SERVICES & TOOLS =================
   { icon: <SiAppwrite className="text-4xl text-red-400 lg:text-5xl" />, name: "Appwrite" },
 ];
+
 export const PROJECTS = [
   // ================= LANDING PAGES =================
 
   {
     id: 1,
     name: "Maestro Studio",
-    type: "landing",
+    category: "landing",
     description:
         "A landing page for a family photo studio and digital agency, focused on atmosphere, visuals, and emotional branding.",
     link: "https://maestro-studio-phi.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Fmaestro-studio-phi.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=5000",
+        "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
 
   {
     id: 2,
     name: "Maestro Web",
-    type: "landing",
+    category: "landing",
     description:
         "A promo website for a studio specializing in landing pages and business sites. Clean UX/UI and smooth interactions.",
     link: "https://maestro-web-nine.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Fmaestro-web-nine.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=5000",
+        "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
 
   {
     id: 3,
     name: "Lev Group",
-    type: "landing",
+    category: "landing",
     description:
-        "A corporate site for a real-world building maintenance and property management company. Multi-language and strict business style.",
+        "A corporate site for a real-world building maintenance and property management company. Multi-language support and a strict business-oriented visual style.",
     link: "https://lev-group.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Flev-group.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=5000",
+        "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
 
   {
     id: 4,
     name: "Lila",
-    type: "landing",
+    category: "landing",
     description:
-        "A modern neon-themed landing page packed with smooth animations, bold visual rhythm, polished interactions, and a clean responsive layout crafted for a premium aesthetic feel.",
+        "A modern neon-themed landing page with smooth animations, bold visual rhythm, polished interactions, and a responsive premium layout.",
     link: "https://lila-neon.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Flila-neon.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=5000",
+        "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
 
   {
     id: 5,
     name: "Hutzahav",
-    type: "landing",
+    category: "landing",
     description:
-        "A deeply creative landing featuring expressive UI effects, layered motion, elegant transitions, and a refined layout that blends storytelling with stylish modern design.",
+        "A creative landing page featuring expressive UI effects, layered motion, elegant transitions, and visual storytelling.",
     link: "https://hutzaav2.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Fhutzaav2.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=5000",
+        "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
   },
 
   // ================= FEATURED PROJECTS =================
 
   {
     id: 6,
-    name: "Awwwards-Nu 3D Motion Experience",
-    type: "featured",
+    name: "Awwwards 3D Motion Experience",
+    category: "featured",
+    label: "Motion Experience",
     description:
-        "An experimental, motion-first landing experience inspired by award-winning digital studios. Built with GSAP ScrollTrigger and dynamic video layers, the project combines cinematic transitions, parallax depth, smooth scroll physics, and expressive micro-interactions. Each section behaves as a visual scene, carefully orchestrated through modular animation timelines.",
+        "An experimental, motion-first web experience inspired by award-winning digital studios. Built around cinematic transitions, scroll-driven scenes, layered video, parallax depth, smooth motion physics, and expressive micro-interactions.",
     link: "https://awwwards-nu-murex.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Fawwwards-nu-murex.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+        "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+    technologies: [
+      "React",
+      "GSAP",
+      "ScrollTrigger",
+      "Framer Motion",
+    ],
   },
 
   {
     id: 7,
-    name: "MacBook Pro GSAP Experience",
-    type: "featured",
+    name: "Three.js AI Product Configurator",
+    category: "featured",
+    label: "Interactive 3D",
     description:
-        "A cinematic Apple-inspired product experience built with React and GSAP. The project combines scroll-driven animations, video sequences, smooth transitions, interactive product showcases, and a fully responsive interface inspired by Apple's visual design language.",
-    link: "https://macbook-apple-app-yhxg.vercel.app/",
+        "An interactive 3D product customization experience combining real-time rendering with AI-assisted image generation. Users can change colors, upload logos, apply full-surface artwork, preview designs directly on a 3D model, and export the final result.",
+    link: "https://three-js-ai-rho.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Fmacbook-apple-app-yhxg.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=12000",
+        "https://api.microlink.io/?url=https://three-js-ai-rho.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+    technologies: [
+      "React",
+      "Three.js",
+      "React Three Fiber",
+      "Valtio",
+      "Framer Motion",
+      "OpenAI API",
+    ],
   },
 
   {
     id: 8,
-    name: "Three.js AI T-Shirt Customizer",
-    type: "featured",
+    name: "MacBook Pro 3D Experience",
+    category: "featured",
+    label: "3D Product Experience",
     description:
-        "An interactive 3D product customization experience built with React and Three.js. Users can change shirt colors, upload custom logos and textures, and generate unique designs using AI while previewing every update directly on a real-time 3D model.",
-    link: "https://three-js-ai-rho.vercel.app/",
+        "A cinematic interactive product experience inspired by Apple's visual language. The project combines detailed 3D rendering, scroll-driven animations, responsive transitions, and immersive product storytelling to showcase a MacBook through a polished modern interface.",
+    link: "https://macbook-apple-app-yhxg.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Fthree-js-ai-rho.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=6000",
+        "https://api.microlink.io/?url=https://macbook-apple-app-yhxg.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+    technologies: [
+      "React",
+      "GSAP",
+      "ScrollTrigger",
+      "Three.js",
+      "React Three Fiber",
+      "React Three Drei",
+    ],
   },
 
   {
     id: 9,
-    name: "iPhone Three.js Experience",
-    type: "featured",
+    name: "iPhone 15 Pro 3D Experience",
+    category: "featured",
+    label: "3D Product Showcase",
     description:
-        "An immersive Apple-inspired iPhone product website built with React, Three.js, GSAP, and Tailwind CSS. The experience features interactive 3D models, cinematic scroll animations, smooth transitions, dynamic product highlights, and a fully responsive interface.",
+        "An immersive iPhone product website inspired by Apple's premium visual language. The experience combines cinematic scroll-driven animations, interactive 3D models, dynamic video sequences, responsive layouts, and polished transitions to present the device through modern digital storytelling.",
     link: "https://iphonewebsite-three-js.vercel.app/",
     image:
-        "https://api.microlink.io/?url=https%3A%2F%2Fiphonewebsite-three-js.vercel.app%2F&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=12000",
+        "https://api.microlink.io/?url=https://iphonewebsite-three-js.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+    technologies: [
+      "React",
+      "GSAP",
+      "ScrollTrigger",
+      "Three.js",
+      "React Three Fiber",
+      "React Three Drei",
+    ],
   },
 ];
+
+
+
 // ================= EXPERIENCE =================
 
 export const EXPERIENCES = [
