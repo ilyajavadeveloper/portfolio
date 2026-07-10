@@ -118,7 +118,6 @@ export const SKILLS = [
   // ================= SERVICES & TOOLS =================
   { icon: <SiAppwrite className="text-4xl text-red-400 lg:text-5xl" />, name: "Appwrite" },
 ];
-
 export const PROJECTS = [
   // ================= LANDING PAGES =================
 
@@ -256,8 +255,30 @@ export const PROJECTS = [
       "React Three Drei",
     ],
   },
-];
 
+  {
+    id: 10,
+    name: "Stock Market Signalist",
+    category: "featured",
+    label: "Full-Stack Finance Platform",
+    description:
+        "A full-stack financial market platform designed for discovering stocks, tracking personalized watchlists, monitoring market data, and receiving AI-powered news summaries. The application combines secure authentication, real-time financial information, personalized user preferences, automated background workflows, and a responsive modern dashboard.",
+    link: "https://stock-market-signalist-app.vercel.app/",
+    image:
+        "https://api.microlink.io/?url=https://stock-market-signalist-app.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "Better Auth",
+      "Inngest",
+      "Gemini API",
+      "Finnhub API",
+      "Tailwind CSS",
+    ],
+  },
+];
 
 
 // ================= EXPERIENCE =================

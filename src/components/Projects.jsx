@@ -73,7 +73,7 @@ const Technologies = ({ technologies }) => {
     );
 };
 
-function Projects() {
+function Projects() {  
     const featuredProjects = PROJECTS.filter(
         (project) => project.category === "featured",
     );
