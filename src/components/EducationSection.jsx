@@ -141,7 +141,7 @@ const EducationSection = () => {
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.12 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="relative overflow-hidden py-24 px-5 sm:px-6 lg:px-16"
         >
             {/* BACKGROUND GLOW */}
