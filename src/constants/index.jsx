@@ -277,7 +277,25 @@ export const PROJECTS = [
       "Finnhub API",
       "Tailwind CSS",
     ],
-  },
+  }, {
+        id: 10,
+        name: "CoinPulse Crypto App",
+        category: "featured",
+        label: "Crypto Market Platform",
+        description:
+            "A modern cryptocurrency market platform for exploring coins, tracking live prices, analyzing interactive candlestick charts, reviewing market statistics, converting currencies, and searching digital assets through a polished responsive interface powered by CoinGecko data.",
+        link: "https://coin-pulse-crypto-app.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://coin-pulse-crypto-app.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "CoinGecko API",
+            "Lightweight Charts",
+            "Tailwind CSS",
+        ],
+    },
 ];
 
 
