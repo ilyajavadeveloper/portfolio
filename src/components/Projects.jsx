@@ -73,13 +73,9 @@ const Technologies = ({ technologies }) => {
     );
 };
 
-function Projects() {  
+function Projects() {
     const featuredProjects = PROJECTS.filter(
         (project) => project.category === "featured",
-    );
-
-    const landingProjects = PROJECTS.filter(
-        (project) => project.category === "landing",
     );
 
     return (
@@ -242,111 +238,6 @@ function Projects() {
 
                             <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                                 <div className="absolute -bottom-32 -right-32 h-72 w-72 rounded-full bg-white/10 blur-[90px]" />
-                            </div>
-                        </motion.article>
-                    ))}
-                </div>
-            </div>
-
-            {/* ================= LANDING PAGES ================= */}
-
-            <div className="relative z-10 mx-auto max-w-7xl">
-                <motion.div
-                    initial={{ opacity: 0, x: -24 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                        duration: 0.7,
-                        ease: "easeOut",
-                    }}
-                    viewport={{ once: true }}
-                    className="mb-10"
-                >
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-white/40">
-            Websites
-          </span>
-
-                    <h3 className="mt-3 text-3xl font-bold tracking-tight text-white md:text-4xl">
-                        Landing Pages
-                    </h3>
-
-                    <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
-                        Responsive commercial websites built around visual
-                        identity, clear hierarchy and smooth user interaction.
-                    </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {landingProjects.map((project, index) => (
-                        <motion.article
-                            key={project.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{
-                                duration: 0.6,
-                                delay: index * 0.08,
-                                ease: "easeOut",
-                            }}
-                            viewport={{
-                                once: true,
-                                amount: 0.15,
-                            }}
-                            whileHover={{ y: -8 }}
-                            className="
-                group relative flex flex-col overflow-hidden
-                rounded-3xl border border-white/15
-                bg-white/[0.04] backdrop-blur-xl
-                transition-all duration-500
-                hover:border-white/30
-                hover:bg-white/[0.08]
-              "
-                        >
-                            <LazyImage
-                                src={project.image}
-                                alt={project.name}
-                                className="h-56"
-                            />
-
-                            <div className="relative z-10 flex flex-grow flex-col justify-between p-6">
-                                <div>
-                  <span className="mb-3 inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
-                    Landing page
-                  </span>
-
-                                    <h4 className="mb-3 text-xl font-bold text-white">
-                                        {project.name}
-                                    </h4>
-
-                                    <p className="text-sm leading-6 text-white/60">
-                                        {project.description}
-                                    </p>
-                                </div>
-
-                                <div className="mt-7">
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={`View ${project.name}`}
-                                        className="
-                      inline-flex items-center gap-2
-                      rounded-full border border-white/20
-                      bg-white/10 px-5 py-2.5
-                      text-sm font-semibold text-white
-                      backdrop-blur-md
-                      transition-all duration-300
-                      hover:border-white/40
-                      hover:bg-white/20
-                    "
-                                    >
-                                        View Project
-
-                                        <MdArrowOutward className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                                <div className="absolute -bottom-20 -right-20 h-48 w-48 rounded-full bg-white/10 blur-[70px]" />
                             </div>
                         </motion.article>
                     ))}
