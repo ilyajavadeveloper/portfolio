@@ -1,381 +1,268 @@
 import {
-  FaTwitter,
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaDiscord,
-  FaInstagram,
-  FaJava,
-  FaNodeJs,
+    FaGithub,
+    FaLinkedin,
 } from "react-icons/fa";
 
-import {
-  RiReactjsLine
-} from "react-icons/ri";
+import { RiReactjsLine } from "react-icons/ri";
 
 import {
-  SiTypescript,
-  SiMongodb,
-  SiJavascript,
-  SiSpring,
-  SiHibernate,
-  SiMysql,
-  SiNextdotjs,
-  SiExpo,
-  SiThreedotjs,
-  SiFramer,
-  SiTailwindcss,
-  SiVite,
-  SiWebpack,
-  SiGit,
-  SiAppwrite
+    SiTypescript,
+    SiMongodb,
+    SiJavascript,
+    SiSpring,
+    SiHibernate,
+    SiMysql,
+    SiNextdotjs,
+    SiExpo,
+    SiThreedotjs,
+    SiFramer,
+    SiTailwindcss,
+    SiVite,
+    SiWebpack,
+    SiGit,
+    SiAppwrite,
+    SiRedux,
+    SiReactquery,
+    SiGithubactions,
 } from "react-icons/si";
 
 import { DiRedis } from "react-icons/di";
 
-// Если не используешь — можешь удалить
-import projectImage1 from "../assets/project1.jpeg";
-
 // ================= NAVIGATION =================
 
 export const NAVIGATION_LINKS = [
-  { label: "Bio", href: "#bio" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work Experience", href: "#work-experience" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
+    { label: "Projects", href: "#projects" },
+    { label: "Bio", href: "#bio" },
+    { label: "Skills", href: "#skills" },
+    { label: "Work Experience", href: "#work-experience" },
+    { label: "Education", href: "#education" },
+    { label: "Contact", href: "#contact" },
 ];
 
 // ================= HERO =================
 
 export const HERO = {
-  name: "Ilya Hvostenko",
-  greet: "Hello there! 👋🏻",
-  description:
-      "Frontend is my craft, design is my language. I build interfaces that feel alive — fast, modern and emotionally engaging. Combining React, Next.js, mobile development and 3D graphics, I turn complex ideas into smooth, interactive digital experiences.",
+    name: "Ilya Hvostenko",
+    greet: "Full-Stack & Frontend Engineer",
+    description:
+        "I build fast, scalable web and mobile applications using TypeScript, React, Next.js, and React Native — backed by Java/Spring architecture and hands-on experience with mission-critical logistics and automotive diagnostic systems.",
 };
-
 
 // ================= BIO =================
 
 export const BIO = [
-  "I’m a full-stack developer with a frontend-first mindset, focused on building modern, expressive and high-performance interfaces. My core stack includes React, Next.js, React Native, TypeScript, Tailwind CSS, Three.js and advanced motion tooling.",
+    "I’m a Full-Stack Developer with a strong Frontend & Mobile focus (TypeScript, React, Next.js, React Native, Tailwind CSS, and Three.js), dedicated to building responsive, production-grade applications.",
 
-  "Alongside development, I work with enterprise-grade Terminal Operating Systems (TOS) at Ashdod Port — one of Israel’s busiest maritime terminals — dealing with complex logistics, real-time workflows and mission-critical data.",
+    "What sets me apart is my hands-on industrial and hardware-adjacent background. Currently working as a Diagnostics & PDI Systems Specialist at Scania, and previously managing Terminal Operating Systems (TOS) at Ashdod Port, I deal daily with CAN-bus protocols, ECU telemetry, and mission-critical operational data.",
 
-  "This experience shaped my engineering mindset: clarity over noise, reliability over shortcuts, and UX that supports fast decision-making under pressure.",
+    "This background shaped my core engineering mindset: systematic debugging, root-cause analysis, strict data integrity, and interfaces designed for fast decision-making under real-world pressure.",
 
-  "I started my path in backend development with Java, Spring Boot and databases, building strong foundations in system design before transitioning fully into frontend engineering.",
-
-  "Today, I focus on clean architecture, reusable components, meaningful motion and premium-feeling user experiences — continuously refining my craft through real-world systems and advanced 3D interfaces.",
+    "Trained in enterprise backend development (Java, Spring Boot, SQL/NoSQL) and experienced in delivering commercial web solutions, I bridge the gap between complex backend logic and polished, interactive user interfaces.",
 ];
 
-
+// ================= SKILLS =================
 
 export const SKILLS = [
-  // ================= FRONTEND CORE =================
-  { icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />, name: "React" },
-  { icon: <SiNextdotjs className="text-4xl text-white lg:text-5xl" />, name: "Next.js" },
-  { icon: <RiReactjsLine className="text-4xl text-cyan-300 lg:text-5xl" />, name: "React Native" },
-  { icon: <SiExpo className="text-4xl text-black lg:text-5xl" />, name: "Expo" },
-  { icon: <SiThreedotjs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Three.js" },
-
-  // ================= UI / MOTION =================
-  { icon: <SiFramer className="text-4xl text-pink-400 lg:text-5xl" />, name: "Framer Motion" },
-  { icon: <SiTailwindcss className="text-4xl text-sky-400 lg:text-5xl" />, name: "Tailwind CSS" },
-  { icon: <SiJavascript className="text-4xl text-green-400 lg:text-5xl" />, name: "GSAP" },
-
-  // ================= LANGUAGES =================
-  { icon: <SiTypescript className="text-4xl text-blue-500 lg:text-5xl" />, name: "TypeScript" },
-  { icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />, name: "JavaScript (ES6+)" },
-
-  // ================= STATE & DATA =================
-  { icon: <FaNodeJs className="text-4xl text-lime-400 lg:text-5xl" />, name: "Zustand" },
-  { icon: <FaNodeJs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Redux Toolkit" },
-  { icon: <FaNodeJs className="text-4xl text-blue-400 lg:text-5xl" />, name: "React Query / TanStack Query" },
-
-  // ================= TOOLING =================
-  { icon: <SiVite className="text-4xl text-purple-300 lg:text-5xl" />, name: "Vite" },
-  { icon: <SiWebpack className="text-4xl text-blue-300 lg:text-5xl" />, name: "Webpack" },
-  { icon: <SiGit className="text-4xl text-orange-600 lg:text-5xl" />, name: "Git & GitHub" },
-  { icon: <SiGit className="text-4xl text-red-500 lg:text-5xl" />, name: "CI/CD Basics" },
-
-  // ================= FRONTEND FUNDAMENTALS =================
-  { icon: <SiJavascript className="text-4xl text-pink-300 lg:text-5xl" />, name: "Responsive Design" },
-  { icon: <SiJavascript className="text-4xl text-indigo-300 lg:text-5xl" />, name: "Accessibility (a11y)" },
-  { icon: <SiJavascript className="text-4xl text-teal-300 lg:text-5xl" />, name: "Performance Optimization" },
-  { icon: <SiJavascript className="text-4xl text-gray-300 lg:text-5xl" />, name: "Component Architecture" },
-
-  // ================= BACKEND =================
-  { icon: <FaJava className="text-4xl text-red-500 lg:text-5xl" />, name: "Java" },
-  { icon: <SiSpring className="text-4xl text-green-700 lg:text-5xl" />, name: "Spring Boot" },
-  { icon: <SiHibernate className="text-4xl text-purple-600 lg:text-5xl" />, name: "Hibernate" },
-  { icon: <SiMysql className="text-4xl text-blue-600 lg:text-5xl" />, name: "MySQL" },
-  { icon: <SiMongodb className="text-4xl text-green-600 lg:text-5xl" />, name: "MongoDB" },
-  { icon: <DiRedis className="text-4xl text-red-600 lg:text-5xl" />, name: "Redis" },
-  { icon: <FaNodeJs className="text-4xl text-green-600 lg:text-5xl" />, name: "Node.js" },
-
-  // ================= SERVICES & TOOLS =================
-  { icon: <SiAppwrite className="text-4xl text-red-400 lg:text-5xl" />, name: "Appwrite" },
+    { icon: <SiTypescript className="text-4xl text-blue-500 lg:text-5xl" />, name: "TypeScript" },
+    { icon: <SiJavascript className="text-4xl text-yellow-400 lg:text-5xl" />, name: "JavaScript (ES6+)" },
+    { icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-5xl" />, name: "React" },
+    { icon: <SiNextdotjs className="text-4xl text-white lg:text-5xl" />, name: "Next.js" },
+    { icon: <RiReactjsLine className="text-4xl text-cyan-300 lg:text-5xl" />, name: "React Native" },
+    { icon: <SiExpo className="text-4xl text-white lg:text-5xl" />, name: "Expo" },
+    { icon: <SiRedux className="text-4xl text-purple-500 lg:text-5xl" />, name: "Redux Toolkit" },
+    { icon: <SiReactquery className="text-4xl text-red-400 lg:text-5xl" />, name: "TanStack Query" },
+    { icon: <SiTailwindcss className="text-4xl text-sky-400 lg:text-5xl" />, name: "Tailwind CSS" },
+    { icon: <SiFramer className="text-4xl text-pink-400 lg:text-5xl" />, name: "Framer Motion" },
+    { icon: <SiThreedotjs className="text-4xl text-orange-400 lg:text-5xl" />, name: "Three.js / R3F" },
+    { icon: <SiJavascript className="text-4xl text-green-400 lg:text-5xl" />, name: "GSAP" },
+    { icon: <SiSpring className="text-4xl text-green-500 lg:text-5xl" />, name: "Spring Boot" },
+    { icon: <SiMysql className="text-4xl text-blue-400 lg:text-5xl" />, name: "PostgreSQL / MySQL" },
+    { icon: <SiMongodb className="text-4xl text-green-500 lg:text-5xl" />, name: "MongoDB" },
+    { icon: <DiRedis className="text-4xl text-red-600 lg:text-5xl" />, name: "Redis" },
+    { icon: <SiGit className="text-4xl text-orange-600 lg:text-5xl" />, name: "Git & GitHub" },
+    { icon: <SiGithubactions className="text-4xl text-blue-400 lg:text-5xl" />, name: "CI/CD Workflows" },
 ];
+
+// ================= PROJECTS =================
+
 export const PROJECTS = [
-  // ================= LANDING PAGES =================
+    // ================= COMMERCIAL & LANDING PAGES (4) =================
 
-  {
-    id: 1,
-    name: "Maestro Studio",
-    category: "landing",
-    description:
-        "A landing page for a family photo studio and digital agency, focused on atmosphere, visuals, and emotional branding.",
-    link: "https://maestro-studio-phi.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
-
-  {
-    id: 2,
-    name: "Maestro Web",
-    category: "landing",
-    description:
-        "A promo website for a studio specializing in landing pages and business sites. Clean UX/UI and smooth interactions.",
-    link: "https://maestro-web-nine.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
-
-  {
-    id: 3,
-    name: "Lev Group",
-    category: "landing",
-    description:
-        "A corporate site for a real-world building maintenance and property management company. Multi-language support and a strict business-oriented visual style.",
-    link: "https://lev-group.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
-
-  {
-    id: 4,
-    name: "Lila",
-    category: "landing",
-    description:
-        "A modern neon-themed landing page with smooth animations, bold visual rhythm, polished interactions, and a responsive premium layout.",
-    link: "https://lila-neon.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
-
-  {
-    id: 5,
-    name: "Hutzahav",
-    category: "landing",
-    description:
-        "A creative landing page featuring expressive UI effects, layered motion, elegant transitions, and visual storytelling.",
-    link: "https://hutzaav2.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://hutzaav2.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000",
-  },
-
-  // ================= FEATURED PROJECTS =================
-
-  {
-    id: 6,
-    name: "Awwwards 3D Motion Experience",
-    category: "featured",
-    label: "Motion Experience",
-    description:
-        "An experimental, motion-first web experience inspired by award-winning digital studios. Built around cinematic transitions, scroll-driven scenes, layered video, parallax depth, smooth motion physics, and expressive micro-interactions.",
-    link: "https://awwwards-nu-murex.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
-    technologies: [
-      "React",
-      "GSAP",
-      "ScrollTrigger",
-      "Framer Motion",
-    ],
-  },
-
-  {
-    id: 7,
-    name: "Three.js AI Product Configurator",
-    category: "featured",
-    label: "Interactive 3D",
-    description:
-        "An interactive 3D product customization experience combining real-time rendering with AI-assisted image generation. Users can change colors, upload logos, apply full-surface artwork, preview designs directly on a 3D model, and export the final result.",
-    link: "https://three-js-ai-rho.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://three-js-ai-rho.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
-    technologies: [
-      "React",
-      "Three.js",
-      "React Three Fiber",
-      "Valtio",
-      "Framer Motion",
-      "OpenAI API",
-    ],
-  },
-
-  {
-    id: 8,
-    name: "MacBook Pro 3D Experience",
-    category: "featured",
-    label: "3D Product Experience",
-    description:
-        "A cinematic interactive product experience inspired by Apple's visual language. The project combines detailed 3D rendering, scroll-driven animations, responsive transitions, and immersive product storytelling to showcase a MacBook through a polished modern interface.",
-    link: "https://macbook-apple-app-yhxg.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://macbook-apple-app-yhxg.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
-    technologies: [
-      "React",
-      "GSAP",
-      "ScrollTrigger",
-      "Three.js",
-      "React Three Fiber",
-      "React Three Drei",
-    ],
-  },
-
-  {
-    id: 9,
-    name: "iPhone 15 Pro 3D Experience",
-    category: "featured",
-    label: "3D Product Showcase",
-    description:
-        "An immersive iPhone product website inspired by Apple's premium visual language. The experience combines cinematic scroll-driven animations, interactive 3D models, dynamic video sequences, responsive layouts, and polished transitions to present the device through modern digital storytelling.",
-    link: "https://iphonewebsite-three-js.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://iphonewebsite-three-js.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
-    technologies: [
-      "React",
-      "GSAP",
-      "ScrollTrigger",
-      "Three.js",
-      "React Three Fiber",
-      "React Three Drei",
-    ],
-  },
-
-  {
-    id: 10,
-    name: "Stock Market Signalist",
-    category: "featured",
-    label: "Full-Stack Finance Platform",
-    description:
-        "A full-stack financial market platform designed for discovering stocks, tracking personalized watchlists, monitoring market data, and receiving AI-powered news summaries. The application combines secure authentication, real-time financial information, personalized user preferences, automated background workflows, and a responsive modern dashboard.",
-    link: "https://stock-market-signalist-app.vercel.app/",
-    image:
-        "https://api.microlink.io/?url=https://stock-market-signalist-app.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "MongoDB",
-      "Better Auth",
-      "Inngest",
-      "Gemini API",
-      "Finnhub API",
-      "Tailwind CSS",
-    ],
-  }, {
-        id: 10,
-        name: "CoinPulse Crypto App",
-        category: "featured",
-        label: "Crypto Market Platform",
+    {
+        id: 1,
+        name: "Lev Group — Corporate Platform",
+        category: "landing",
         description:
-            "A modern cryptocurrency market platform for exploring coins, tracking live prices, analyzing interactive candlestick charts, reviewing market statistics, converting currencies, and searching digital assets through a polished responsive interface powered by CoinGecko data.",
-        link: "https://coin-pulse-crypto-app.vercel.app/",
+            "Production corporate website for an Israeli building maintenance and property management company. Features multi-language support (RTL/LTR) and lead generation.",
+        link: "https://lev-group.vercel.app/",
         image:
-            "https://api.microlink.io/?url=https://coin-pulse-crypto-app.vercel.app/&meta=false&screenshot=true&embed=screenshot.url&force=true&waitUntil=networkidle2&viewport.width=1600&viewport.height=900&waitForTimeout=8000",
+            "https://api.microlink.io/?url=https://lev-group.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
+    },
+
+    {
+        id: 2,
+        name: "Maestro Web Agency",
+        category: "landing",
+        description:
+            "Commercial promo website for a digital web studio specializing in conversion-focused landing pages and business platforms.",
+        link: "https://maestro-web-nine.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://maestro-web-nine.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
+    },
+
+    {
+        id: 3,
+        name: "Maestro Studio",
+        category: "landing",
+        description:
+            "Production landing page for a family photo studio and creative agency, engineered for fast media loading and visual storytelling.",
+        link: "https://maestro-studio-phi.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://maestro-studio-phi.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
+    },
+
+    {
+        id: 4,
+        name: "Lila Digital",
+        category: "landing",
+        description:
+            "Modern neon-themed landing page featuring smooth hardware-accelerated animations, responsive grid layout, and interactive UI components.",
+        link: "https://lila-neon.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://lila-neon.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
+    },
+
+    // ================= FEATURED PROJECTS (4) =================
+
+    {
+        id: 10,
+        name: "Stock Market Signalist",
+        category: "featured",
+        label: "Full-Stack FinTech Platform",
+        description:
+            "Full-stack financial market platform for tracking real-time stock data, managing personalized watchlists, and generating automated AI market summaries via background event workflows.",
+        link: "https://stock-market-signalist-app.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://stock-market-signalist-app.vercel.app/&meta=false&screenshot=true&embed=screenshot.url",
         technologies: [
             "Next.js",
-            "React",
             "TypeScript",
+            "MongoDB",
+            "Better Auth",
+            "Inngest",
+            "Gemini API",
+            "Finnhub API",
+            "Tailwind CSS",
+        ],
+    },
+
+    {
+        id: 11,
+        name: "CoinPulse Crypto Analytics",
+        category: "featured",
+        label: "Crypto Market Dashboard",
+        description:
+            "Cryptocurrency analytics platform featuring live price tracking, interactive TradingView candlestick charts, market cap filtering, and real-time currency conversion.",
+        link: "https://coin-pulse-crypto-app.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://coin-pulse-crypto-app.vercel.app/&meta=false&screenshot=true&embed=screenshot.url",
+        technologies: [
+            "Next.js",
+            "TypeScript",
+            "React",
             "CoinGecko API",
             "Lightweight Charts",
             "Tailwind CSS",
         ],
     },
-];
 
+    {
+        id: 12,
+        name: "Awwwards Motion Experience",
+        category: "featured",
+        label: "Advanced UI Motion",
+        description:
+            "Motion-driven web interface built around scroll-triggered timelines, clip-path transitions, layered video playback, and 3D tilt micro-interactions.",
+        link: "https://awwwards-nu-murex.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://awwwards-nu-murex.vercel.app/&meta=false&screenshot=true&embed=screenshot.url",
+        technologies: ["React", "GSAP", "ScrollTrigger", "Framer Motion", "Tailwind CSS"],
+    },
+
+    {
+        id: 13,
+        name: "iPhone 15 Pro 3D Showcase",
+        category: "featured",
+        label: "3D Product Showcase",
+        description:
+            "Immersive 3D device showcase combining interactive model inspection, synchronized video carousels, and GSAP scroll timelines.",
+        link: "https://iphonewebsite-three-js.vercel.app/",
+        image:
+            "https://api.microlink.io/?url=https://iphonewebsite-three-js.vercel.app/&meta=false&screenshot=true&embed=screenshot.url",
+        technologies: [
+            "React",
+            "Three.js",
+            "React Three Fiber",
+            "GSAP",
+            "Tailwind CSS",
+        ],
+    },
+];
 
 // ================= EXPERIENCE =================
 
 export const EXPERIENCES = [
-  {
-    title: "Terminal Operations System Specialist",
-    company: "Ashdod Port — TOS Division",
-    duration: "2024 – Present",
-    description:
-        "Managing enterprise-grade Terminal Operating Systems (TOS). Overseeing vessel workflow, yard planning, container routing, crane operations and real-time logistics in Israel’s busiest port. Ensuring operational accuracy, data integrity and smooth cargo movement across the terminal.",
-  },
-
-  {
-    title: "Full Stack Developer",
-    company: "Elpisor LTD",
-    duration: "2022 – 2023",
-    description:
-        "Developed Edutreck CRM and StockStats analytics. Built REST APIs, authentication, dashboards and data-driven UI. Improved performance, optimized UX flow and delivered production features with React, TS, Node, Java and Spring.",
-  },
-
-  {
-    title: "Software Engineering Student & Independent Developer",
-    company: "Self-Driven + Tel-Ran College",
-    duration: "2021 – 2023",
-    description:
-        "Studied Java, Spring, databases, algorithms, cloud and frontend engineering. Built multiple full-stack and 3D projects (React, TypeScript, Three.js, Expo). Strengthened problem-solving, architecture thinking and real production workflows.",
-  },
-
-  {
-    title: "Operations & Intelligence Coordinator (חמ״ל קמ\"ציה)",
-    company: "IDF — 916 Battalion, Navy",
-    duration: "2018 – 2021",
-    description:
-        "Worked in the Navy operational command center. Managed encrypted communication, scheduling, manpower, real-time monitoring and mission-level operational flow. Supported coastal security units and coordinated high-priority responses.",
-  },
+    {
+        title: "Diagnostics & PDI Systems Specialist (Automotive)",
+        company: "Scania Israel",
+        duration: "2025 – Present",
+        description:
+            "Performing advanced electronic diagnostics, ECU software calibration, CAN-bus troubleshooting, and Pre-Delivery Inspections (PDI) on commercial fleet vehicles using Scania SDP3. Applying rigorous engineering troubleshooting and systematic root-cause analysis under tight operational deadlines.",
+    },
+    {
+        title: "Terminal Operations System (TOS) Specialist",
+        company: "Ashdod Port — TOS Division",
+        duration: "2024 – 2025",
+        description:
+            "Operated enterprise-grade Terminal Operating Systems (TOS) in Israel’s busiest maritime port. Managed real-time vessel workflows, yard planning, container routing, and mission-critical logistics data under high operational load.",
+    },
+    {
+        title: "Operations & Intelligence Coordinator (חמ״ל קמ\"ציה)",
+        company: "IDF — 916th Patrol Squadron, Israeli Navy",
+        duration: "2018 – 2021",
+        description:
+            "Served in the naval operational command center (War Room). Managed encrypted communications, real-time radar/sensor tracking, resource scheduling, and high-priority incident response for coastal security units.",
+    },
 ];
 
 // ================= EDUCATION =================
 
 export const EDUCATION = [
-
-  {
-    degree: "Military Service — Naval Operations & Intelligence",
-    institution: "IDF — חיל הים (חמ\"ל קמ\"ציה)",
-    duration: "2018 – 2021",
-    description:
-        "Full combat-support naval service. Operational intelligence workflow, secure communication, scheduling, coordination and mission execution.",
-  },
-  {
-    degree: "Java Full Stack Developer",
-    institution: "Tel-Ran Educational Center",
-    duration: "2020 – 2022",
-    description:
-        "Studied Java, Spring Boot, SQL/NoSQL, cloud, networks and full-stack web development with React.",
-  },
-  {
-    degree: "Advanced IT Technologies & Computer Graphics",
-    institution: "Private Program",
-    duration: "2018 – 2020",
-    description:
-        "420 hours in IT infrastructure, architecture fundamentals, software tools and computer graphics.",
-  },
-  {
-    degree: "Independent Software Development",
-    institution: "Self-Taught",
-    duration: "Ongoing",
-    description:
-        "Continuous learning: React, TypeScript, Three.js, mobile development, backend systems, animations and modern frontend architecture.",
-  },
+    {
+        degree: "Java Full-Stack Software Engineering",
+        institution: "Tel-Ran Educational Center",
+        duration: "2020 – 2022",
+        description:
+            "Intensive 2-year engineering program covering Java, Spring Boot, Hibernate, SQL/NoSQL databases, data structures, algorithms, and modern frontend development with React and TypeScript.",
+    },
+    {
+        degree: "Military Service — Naval Operations & Command Center",
+        institution: "IDF — Israeli Navy (חיל הים, פלגה 916)",
+        duration: "2018 – 2021",
+        description:
+            "Full combat-support service in an operational command center, working with real-time tactical software, encrypted networks, and mission coordination.",
+    },
 ];
 
 // ================= SOCIALS =================
 
 export const SOCIAL_MEDIA_LINKS = [
-  { href: "https://facebook.com/", icon: <FaFacebook fontSize={25} className="hover:opacity-80" /> },
-  { href: "https://discord.com/", icon: <FaDiscord fontSize={25} className="hover:opacity-80" /> },
-  { href: "https://instagram.com/", icon: <FaInstagram fontSize={25} className="hover:opacity-80" /> },
-  { href: "https://x.com/", icon: <FaTwitter fontSize={25} className="hover:opacity-80" /> },
-  { href: "https://github.com/ilyajavadeveloper", icon: <FaGithub fontSize={25} className="hover:opacity-80" /> },
-  { href: "https://www.linkedin.com/in/ilya-hvostenko-a03347298/", icon: <FaLinkedin fontSize={25} className="hover:opacity-80" /> },
+    {
+        href: "https://github.com/hvostenko-dev",
+        icon: <FaGithub fontSize={28} className="text-white/80 transition-colors hover:text-white" />,
+    },
+    {
+        href: "https://www.linkedin.com/in/ilya-hvostenko-a03347298/",
+        icon: <FaLinkedin fontSize={28} className="text-white/80 transition-colors hover:text-sky-400" />,
+    },
 ];
