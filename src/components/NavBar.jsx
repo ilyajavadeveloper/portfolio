@@ -10,7 +10,6 @@ const NavBar = () => {
     const EXTENDED_NAVIGATION_LINKS = [
         { label: "Home", href: "#home" },
         ...NAVIGATION_LINKS,
-        { label: "Projects", href: "#projects" },
     ];
 
     const toggleMobileMenu = () => {

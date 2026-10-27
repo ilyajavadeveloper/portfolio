@@ -6,13 +6,32 @@
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.18-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
-A modern, motion-driven personal developer portfolio built with **React 19**, **Vite (SWC)**, **Tailwind CSS**, and **Framer Motion**. Designed with a dark glassmorphic aesthetic to showcase featured 3D/full-stack projects, engineering skills, work experience, education, and direct contact capabilities.
+A modern, motion-driven personal developer portfolio built with **React 19**, **Vite (SWC)**, **Tailwind CSS**, and **Framer Motion**. Designed with a dark glassmorphic aesthetic to showcase full-stack FinTech platforms, interactive 3D WebGL experiences, engineering skills, enterprise background, and direct contact capabilities.
 
-**Live Demo:** [portfolio-ilyajavadevs-projects.vercel.app](https://portfolio-ilyajavadevs-projects.vercel.app)
+**Live Demo:** [portfolio-ilyajavadevs-projects.vercel.app](https://portfolio-ilyajavadevs-projects.vercel.app)  
+**GitHub Profile:** [@hvostenko-dev](https://github.com/hvostenko-dev)
 
 ---
 
-## Tech Stack
+## 🚀 Featured Projects Showcased
+
+### 1. Full-Stack & Advanced Applications
+- **[PulseQuant](https://stock-market-signalist-app.vercel.app/)** (`hvostenko-dev/pulsequant`) — Full-stack AI market intelligence terminal with paper-trading P&L simulator, stock screener, watchlists, live NYSE/NASDAQ sessions, and daily Gemini AI news digests orchestrated via Inngest.
+- **[NexusFi Pro](https://coin-pulse-crypto-app.vercel.app/)** (`hvostenko-dev/nexusfi-pro`) — Institutional-grade cryptocurrency terminal with live TradingView OHLC candlestick charts, market radar heatmap, portfolio tracker, price alerts, and DCA / what-if quantitative simulators.
+- **[ATELIER 3D](https://three-js-ai-rho.vercel.app/)** (`hvostenko-dev/atelier-3d`) — Interactive WebGL apparel studio & configurator with real-time PBR fabric simulation, procedural bump generator, multi-zone decals, HDRI environments, and tech-pack export.
+- **[MacBook Pro 3D Experience](https://macbook-apple-app-yhxg.vercel.app/)** (`hvostenko-dev/macbook-pro-3d`) — Apple-style M4 MacBook Pro launch page with scroll-driven GSAP cinematics, interactive 3D model with live video screen textures, chip comparison matrix, and live buy configurator.
+- **[iPhone 15 Pro 3D Showcase](https://iphonewebsite-three-js.vercel.app/)** (`hvostenko-dev/iphone-15-pro-3d`) — 3D device showcase featuring interactive 3D model rotation, dynamic color/size switcher, synchronized video carousels, and GSAP scroll timelines.
+- **[Zentry — Awwwards Motion Experience](https://awwwards-nu-murex.vercel.app/)** (`hvostenko-dev/zentry-awwwards`) — Awwwards-inspired creative web experience with clip-path video portals, kinetic 3D typography, interactive bento grids, and mobile navigation.
+
+### 2. Commercial Websites & Client Work
+- **[Lev Group](https://lev-group.vercel.app/)** (`hvostenko-dev/LevGroup`) — Corporate platform for Israeli property management & building maintenance with 4-language i18n (HE/EN/FR/RU) and RTL/LTR synchronization.
+- **[Maestro Web Agency](https://maestro-web-nine.vercel.app/)** (`hvostenko-dev/MAESTRO-WEB`) — Promo website for a digital web studio with video hero backgrounds, 3D-tilt glass cards, and custom cursor.
+- **[Maestro Studio](https://maestro-studio-phi.vercel.app/)** (`hvostenko-dev/MAESTRO-STUDIO`) — Landing page for a photo & video production studio in Ashdod with gallery lightbox and accessible controls.
+- **[Lila](https://lila-neon.vercel.app/)** (`hvostenko-dev/Lila`) — Landing page for a transformational psychological game with zero-dependency scroll-spy navigation, booking CTAs, and interactive maps.
+
+---
+
+## 🛠️ Tech Stack
 
 ### Core & Build Tooling
 - **React 19** (`react`, `react-dom`) — Component-driven UI architecture and hooks
@@ -32,29 +51,16 @@ A modern, motion-driven personal developer portfolio built with **React 19**, **
 
 ---
 
-## Key Features & Sections
-
-- **Responsive Navigation (`NavBar`)** — Fixed glassmorphic navbar with smooth anchor scrolling, hash-aware navigation on load, and mobile dropdown menu.
-- **Hero & Engineering Manifesto (`Hero`)** — Animated introduction, engineering principles manifesto, high-resolution portrait with ambient glow, and one-click **IT CV** / **General CV** PDF downloads.
-- **Biography (`Bio`)** — Staggered scroll-reveal narrative highlighting frontend-first full-stack engineering and enterprise system experience.
-- **Skills Matrix (`Skills`)** — Categorized skill groups (*Frontend Core, State Management & Data Flow, UI / Motion / 3D, Backend & Data, Tooling & Infrastructure, Product & UX*) with animated proficiency bars.
-- **Work Experience (`WorkExperience`)** — Interactive timeline cards detailing roles in software engineering, Terminal Operating Systems (TOS), diagnostics, and naval operations.
-- **Education (`EducationSection`)** — Academic and self-taught engineering milestones.
-- **Selected Projects (`Projects`)** — Showcase of featured 3D, motion, and full-stack applications with technology tags, lazy-loaded live previews, and external links.
-- **Contact Form (`ContactForm`)** — Validated contact form integrated with EmailJS and `react-hot-toast` feedback.
-
----
-
-## Project Structure
+## 📂 Project Structure
 
 ```text
 portfolio/
 ├── public/
 │   ├── General CV.pdf          # Downloadable General CV
 │   ├── IT CV.pdf               # Downloadable IT CV
-│   └── vite.svg
+│   └── favicon.svg             # Modern SVG brand favicon
 ├── src/
-│   ├── assets/                 # Backgrounds, portraits, logos, and project previews
+│   ├── assets/                 # Backgrounds, portraits, logos, and previews
 │   ├── components/
 │   │   ├── Bio.jsx             # About & engineering mindset section
 │   │   ├── ContactForm.jsx     # EmailJS contact form with validation & toasts
@@ -63,7 +69,7 @@ portfolio/
 │   │   ├── Hero.jsx            # Hero banner, manifesto & CV download buttons
 │   │   ├── Logo.jsx            # Brand logo component
 │   │   ├── NavBar.jsx          # Responsive fixed navigation bar
-│   │   ├── Projects.jsx        # Featured projects grid with LazyImage loader
+│   │   ├── Projects.jsx        # Featured & commercial project showcase with live/code links
 │   │   ├── Skills.jsx          # Categorized skills & animated progress bars
 │   │   └── WorkExperience.jsx  # Professional experience cards
 │   ├── constants/
@@ -76,3 +82,30 @@ portfolio/
 ├── tailwind.config.cjs         # Tailwind CSS configuration
 ├── vite.config.js              # Vite + React SWC configuration
 └── package.json
+```
+
+---
+
+## ⚡ Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/hvostenko-dev/portfolio.git
+
+# Navigate into the project directory
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 📬 Contact & Connect
+
+- **GitHub:** [github.com/hvostenko-dev](https://github.com/hvostenko-dev)
+- **LinkedIn:** [linkedin.com/in/ilya-hvostenko-a03347298](https://www.linkedin.com/in/ilya-hvostenko-a03347298/)
+- **Live Demo:** [portfolio-ilyajavadevs-projects.vercel.app](https://portfolio-ilyajavadevs-projects.vercel.app/)

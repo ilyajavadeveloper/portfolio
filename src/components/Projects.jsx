@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 
@@ -72,7 +73,7 @@ function Projects() {
                     Selected Projects
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/55 md:text-lg">
-                    Full-stack platforms, interactive experiences, and commercial web solutions.
+                    Full-stack platforms, interactive 3D experiences, and commercial web solutions.
                 </p>
             </motion.div>
 
@@ -130,15 +131,25 @@ function Projects() {
                                     <Technologies technologies={project.technologies} />
                                 </div>
 
-                                <div className="mt-8">
+                                <div className="mt-8 flex flex-wrap items-center gap-3">
                                     <a
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white px-6 py-3 text-sm font-bold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-white/85"
+                                        className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-6 py-3 text-sm font-bold text-black transition-all duration-300 hover:scale-[1.03] hover:bg-white/85"
                                     >
                                         Live Demo <MdArrowOutward className="text-lg" />
                                     </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/80 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
+                                        >
+                                            <FaGithub className="text-base" /> Source Code
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.article>
@@ -183,15 +194,26 @@ function Projects() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="px-5 pb-5">
+                                <div className="flex items-center justify-between px-5 pb-5">
                                     <a
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-xs font-semibold text-white/80 transition-colors hover:text-white"
+                                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 transition-colors hover:text-white"
                                     >
                                         Visit Website <MdArrowOutward />
                                     </a>
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title="GitHub Repository"
+                                            className="inline-flex items-center gap-1 text-xs text-white/45 transition-colors hover:text-white/85"
+                                        >
+                                            <FaGithub className="text-sm" /> Code
+                                        </a>
+                                    )}
                                 </div>
                             </motion.article>
                         ))}

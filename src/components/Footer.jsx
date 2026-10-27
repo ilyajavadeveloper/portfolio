@@ -30,7 +30,7 @@ const SOCIAL_MEDIA_LINKS = [
     },
     {
         label: "GitHub",
-        href: "https://github.com/ilyajavadeveloper",
+        href: "https://github.com/hvostenko-dev",
         icon: Github,
     },
     {
