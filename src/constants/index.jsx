@@ -278,7 +278,7 @@ export const EXPERIENCES = [
         company: "IDF — 916th Patrol Squadron, Israeli Navy",
         duration: "2018 – 2021",
         description:
-            "Served in the naval operational command center (War Room). Managed encrypted communications, real-time radar/sensor tracking, resource scheduling, and high-priority incident response for coastal security units.",
+            "Served in the naval operational command center (War Room). Managed tactical radio encryption (COMSEC), secure communication channels, shore-side operational logistics, shift rosters, and shore readiness planning for naval patrol units.",
     },
 ];
 
