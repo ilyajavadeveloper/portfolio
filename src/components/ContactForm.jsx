@@ -3,429 +3,301 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import {
-    Mail,
-    User,
-    MessageSquare,
-    Send,
-    Sparkles,
-    CheckCircle2,
-    ArrowUpRight,
+  Mail,
+  User,
+  MessageSquare,
+  Send,
+  Sparkles,
+  CheckCircle2,
+  ArrowUpRight,
+  Terminal,
 } from "lucide-react";
 
-/* ================= ANIMATIONS ================= */
-
 const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            duration: 0.8,
-            staggerChildren: 0.14,
-        },
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      staggerChildren: 0.1,
     },
+  },
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 24, scale: 0.98 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            duration: 0.65,
-            ease: [0.16, 1, 0.3, 1],
-        },
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
     },
+  },
 };
-
-const fieldVariants = {
-    hidden: { opacity: 0, y: 18 },
-    visible: (i = 1) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-            delay: i * 0.08,
-            duration: 0.55,
-            ease: "easeOut",
-        },
-    }),
-};
-
-/* ================= DATA ================= */
 
 const contactHighlights = [
-    "Frontend interfaces",
-    "Landing pages",
-    "Portfolio websites",
-    "UI improvements",
+  "Full-Stack & Frontend Engineering",
+  "React / Next.js / TypeScript Apps",
+  "Interactive 3D & Motion Interfaces",
+  "Commercial Websites & Platforms",
 ];
 
-/* ================= COMPONENT ================= */
-
 const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-    const [errors, setErrors] = useState({});
-    const [isSending, setIsSending] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [isSending, setIsSending] = useState(false);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
 
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+  const validate = () => {
+    const err = {};
+    if (!formData.name.trim()) err.name = "Name is required";
+    if (!formData.email.trim()) {
+      err.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      err.email = "Invalid email address";
+    }
+    if (!formData.message.trim()) err.message = "Message is required";
+    return err;
+  };
 
-        if (errors[name]) {
-            setErrors((prev) => ({
-                ...prev,
-                [name]: "",
-            }));
-        }
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
 
-    const validate = () => {
-        const err = {};
+    if (Object.keys(validationErrors).length) {
+      setErrors(validationErrors);
+      toast.error("Please fill in all required fields");
+      return;
+    }
 
-        if (!formData.name.trim()) {
-            err.name = "Name is required";
-        }
+    setErrors({});
+    setIsSending(true);
 
-        if (!formData.email.trim()) {
-            err.email = "Email is required";
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            err.email = "Invalid email";
-        }
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          ...formData,
+          time: new Date().toLocaleString(),
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Please try again.");
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
 
-        if (!formData.message.trim()) {
-            err.message = "Message is required";
-        }
+  return (
+    <motion.section
+      id="contact"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.12 }}
+      className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "#090d16",
+            color: "#fff",
+            border: "1px solid rgba(255,255,255,0.15)",
+            borderRadius: "16px",
+          },
+        }}
+      />
 
-        return err;
-    };
+      {/* Ambient Glow */}
+      <div className="pointer-events-none absolute left-1/2 top-24 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-sky-500/10 blur-[160px]" />
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+      {/* Header */}
+      <motion.div variants={itemVariants} className="mb-14 text-center lg:mb-16">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-4 py-1.5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-sky-300 backdrop-blur-md">
+          <Sparkles size={15} />
+          <span>Direct Channel // Contact</span>
+        </div>
 
-        const validationErrors = validate();
+        <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+          Let’s Build Something Solid
+        </h2>
 
-        if (Object.keys(validationErrors).length) {
-            setErrors(validationErrors);
-            toast.error("Please fill in all required fields");
-            return;
-        }
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/60 sm:text-base">
+          Have a role, project, or engineering challenge? Send a message directly and let’s discuss how I can help.
+        </p>
+      </motion.div>
 
-        setErrors({});
-        setIsSending(true);
+      {/* Main Card */}
+      <motion.div
+        variants={itemVariants}
+        className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.035] backdrop-blur-2xl"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          {/* Left Info Panel */}
+          <div className="flex flex-col justify-between border-b border-white/10 bg-black/30 p-6 sm:p-8 lg:col-span-5 lg:border-b-0 lg:border-r lg:p-10">
+            <div>
+              <div className="mb-6 inline-flex items-center gap-2.5 rounded-2xl border border-sky-400/25 bg-sky-500/10 px-3.5 py-2 text-xs font-mono font-semibold text-sky-300">
+                <Terminal size={16} />
+                <span>STATUS: OPEN FOR OPPORTUNITIES</span>
+              </div>
 
-        emailjs
-            .send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                {
-                    ...formData,
-                    time: new Date().toLocaleString(),
-                },
-                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            )
-            .then(() => {
-                toast.success("Message sent successfully");
-                setFormData({
-                    name: "",
-                    email: "",
-                    message: "",
-                });
-            })
-            .catch(() => {
-                toast.error("Failed to send message");
-            })
-            .finally(() => {
-                setIsSending(false);
-            });
-    };
+              <h3 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                Start the conversation
+              </h3>
 
-    return (
-        <motion.section
-            id="contact"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.12 }}
-            className="relative overflow-hidden px-5 py-24 sm:px-6 lg:px-16"
-        >
-            <Toaster
-                position="bottom-right"
-                toastOptions={{
-                    style: {
-                        background: "#111",
-                        color: "#fff",
-                        border: "1px solid rgba(255,255,255,0.15)",
-                    },
-                }}
-            />
+              <p className="mt-4 text-sm leading-relaxed text-white/65 sm:text-base">
+                Available for full-stack & frontend engineering roles, high-impact web applications, and custom commercial builds.
+              </p>
 
-            {/* BACKGROUND ATMOSPHERE */}
-            <div className="pointer-events-none absolute left-1/2 top-20 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/5 blur-[170px]" />
-            <div className="pointer-events-none absolute -right-40 top-1/3 h-[400px] w-[400px] rounded-full bg-white/5 blur-[140px]" />
-            <div className="pointer-events-none absolute -left-40 bottom-10 h-[360px] w-[360px] rounded-full bg-white/5 blur-[130px]" />
-
-            <div className="relative z-10 mx-auto max-w-7xl">
-                {/* HEADER */}
-                <motion.div
-                    variants={itemVariants}
-                    className="mb-16 text-center"
-                >
-                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm font-semibold text-white/70 backdrop-blur">
-                        <Sparkles size={18} />
-                        Contact
-                    </div>
-
-                    <h2 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-                        Let’s Connect
-                    </h2>
-
-                    <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/60 sm:text-lg">
-                        Have a project, idea or opportunity? Send the message and let’s turn it into something clean,
-                        sharp and useful.
-                    </p>
-                </motion.div>
-
-                {/* MAIN CARD */}
-                <motion.div
-                    variants={itemVariants}
-                    className="
-                        group relative overflow-hidden rounded-[2.25rem]
-                        border border-white/15
-                        bg-gradient-to-br from-white/[0.11] via-white/[0.065] to-white/[0.035]
-                        backdrop-blur
-                    "
-                >
-                    {/* CARD GLOW */}
-                    <div className="pointer-events-none absolute -right-28 -top-28 h-96 w-96 rounded-full bg-white/10 blur-[140px]" />
-                    <div className="pointer-events-none absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-white/10 blur-[130px]" />
-                    <div className="pointer-events-none absolute -inset-1 rounded-[2.25rem] bg-white/10 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
-
-                    <div className="relative z-10 grid overflow-hidden rounded-[2.25rem] lg:grid-cols-[0.9fr_1.1fr]">
-                        {/* LEFT INFO PANEL */}
-                        <motion.div
-                            variants={itemVariants}
-                            className="
-                                relative flex flex-col justify-between
-                                border-b border-white/10
-                                bg-black/20 p-7 sm:p-9 lg:border-b-0 lg:border-r lg:p-10
-                            "
-                        >
-                            <div>
-                                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl border border-white/15 bg-white/10">
-                                    <Mail className="text-white/80" size={30} />
-                                </div>
-
-                                <h3 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                                    Start the conversation
-                                </h3>
-
-                                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg">
-                                    I’m open to frontend work, landing pages, portfolio builds, interface polishing
-                                    and practical product ideas. Clear message, clear goal, clean execution.
-                                </p>
-
-                                <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                                    {contactHighlights.map((item, index) => (
-                                        <motion.div
-                                            key={index}
-                                            variants={fieldVariants}
-                                            custom={index + 1}
-                                            className="
-                                                flex items-center gap-3 rounded-2xl
-                                                border border-white/10
-                                                bg-white/[0.055] px-4 py-3
-                                            "
-                                        >
-                                            <CheckCircle2 size={18} className="shrink-0 text-white/65" />
-                                            <span className="text-sm font-semibold text-white/70">
-                                                {item}
-                                            </span>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.045] p-5">
-                                <div className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-white/45">
-                                    <ArrowUpRight size={16} />
-                                    Response style
-                                </div>
-
-                                <p className="text-sm leading-relaxed text-white/62">
-                                    Tell me what you need, what the goal is and what already exists. The more context,
-                                    the faster the idea becomes a real interface.
-                                </p>
-                            </div>
-                        </motion.div>
-
-                        {/* FORM */}
-                        <motion.form
-                            onSubmit={handleSubmit}
-                            variants={containerVariants}
-                            className="grid grid-cols-1 gap-6 p-7 sm:p-9 md:grid-cols-2 lg:p-10"
-                        >
-                            {/* NAME */}
-                            <motion.div variants={fieldVariants} custom={1}>
-                                <label className="mb-3 flex items-center gap-2 text-sm font-bold text-white/70">
-                                    <User size={17} />
-                                    Your name
-                                </label>
-
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Enter your name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    className={`
-                                        w-full rounded-2xl border
-                                        bg-black/20 px-5 py-4
-                                        text-white placeholder-white/35
-                                        outline-none backdrop-blur
-                                        transition duration-300
-                                        focus:bg-white/[0.06]
-                                        ${
-                                            errors.name
-                                                ? "border-red-400/60 focus:border-red-400"
-                                                : "border-white/15 focus:border-white/45"
-                                        }
-                                    `}
-                                />
-
-                                {errors.name && (
-                                    <p className="mt-2 text-sm font-medium text-red-400">
-                                        {errors.name}
-                                    </p>
-                                )}
-                            </motion.div>
-
-                            {/* EMAIL */}
-                            <motion.div variants={fieldVariants} custom={2}>
-                                <label className="mb-3 flex items-center gap-2 text-sm font-bold text-white/70">
-                                    <Mail size={17} />
-                                    Your email
-                                </label>
-
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Enter your email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    className={`
-                                        w-full rounded-2xl border
-                                        bg-black/20 px-5 py-4
-                                        text-white placeholder-white/35
-                                        outline-none backdrop-blur
-                                        transition duration-300
-                                        focus:bg-white/[0.06]
-                                        ${
-                                            errors.email
-                                                ? "border-red-400/60 focus:border-red-400"
-                                                : "border-white/15 focus:border-white/45"
-                                        }
-                                    `}
-                                />
-
-                                {errors.email && (
-                                    <p className="mt-2 text-sm font-medium text-red-400">
-                                        {errors.email}
-                                    </p>
-                                )}
-                            </motion.div>
-
-                            {/* MESSAGE */}
-                            <motion.div
-                                variants={fieldVariants}
-                                custom={3}
-                                className="md:col-span-2"
-                            >
-                                <label className="mb-3 flex items-center gap-2 text-sm font-bold text-white/70">
-                                    <MessageSquare size={17} />
-                                    Message
-                                </label>
-
-                                <textarea
-                                    name="message"
-                                    rows={7}
-                                    placeholder="Tell me about your project, idea or opportunity..."
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    className={`
-                                        w-full resize-none rounded-2xl border
-                                        bg-black/20 px-5 py-4
-                                        text-white placeholder-white/35
-                                        outline-none backdrop-blur
-                                        transition duration-300
-                                        focus:bg-white/[0.06]
-                                        ${
-                                            errors.message
-                                                ? "border-red-400/60 focus:border-red-400"
-                                                : "border-white/15 focus:border-white/45"
-                                        }
-                                    `}
-                                />
-
-                                {errors.message && (
-                                    <p className="mt-2 text-sm font-medium text-red-400">
-                                        {errors.message}
-                                    </p>
-                                )}
-                            </motion.div>
-
-                            {/* SUBMIT */}
-                            <motion.div
-                                variants={fieldVariants}
-                                custom={4}
-                                className="md:col-span-2"
-                            >
-                                <motion.button
-                                    type="submit"
-                                    disabled={isSending}
-                                    whileHover={!isSending ? { scale: 1.015 } : {}}
-                                    whileTap={!isSending ? { scale: 0.98 } : {}}
-                                    className="
-                                        group/button relative flex w-full items-center justify-center gap-3
-                                        overflow-hidden rounded-2xl
-                                        border border-white/25
-                                        bg-white px-8 py-5
-                                        text-base font-extrabold text-black
-                                        transition duration-300
-                                        hover:bg-white/90
-                                        disabled:cursor-not-allowed disabled:opacity-55
-                                    "
-                                >
-                                    <span className="pointer-events-none absolute inset-0 translate-x-[-120%] bg-gradient-to-r from-transparent via-black/10 to-transparent transition duration-700 group-hover/button:translate-x-[120%]" />
-
-                                    <span className="relative z-10">
-                                        {isSending ? "Sending..." : "Send Message"}
-                                    </span>
-
-                                    <Send
-                                        size={20}
-                                        className="relative z-10 transition-transform duration-300 group-hover/button:translate-x-1"
-                                    />
-                                </motion.button>
-
-                                <p className="mt-4 text-center text-sm text-white/42">
-                                    Your message goes directly through EmailJS. No spam, no noise.
-                                </p>
-                            </motion.div>
-                        </motion.form>
-                    </div>
-                </motion.div>
+              <div className="mt-7 space-y-2.5">
+                {contactHighlights.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3"
+                  >
+                    <CheckCircle2 size={17} className="shrink-0 text-sky-400" />
+                    <span className="text-xs font-semibold text-white/80 sm:text-sm">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
-        </motion.section>
-    );
+
+            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5">
+              <div className="mb-1.5 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-sky-300">
+                <ArrowUpRight size={15} />
+                <span>Fast & Clear Response</span>
+              </div>
+              <p className="text-xs leading-relaxed text-white/60 sm:text-sm">
+                Share the role details, project scope, or timeline — messages are delivered directly to my inbox.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Form Panel */}
+          <form
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 gap-5 p-6 sm:p-8 md:grid-cols-2 lg:col-span-7 lg:p-10"
+          >
+            {/* Name */}
+            <div>
+              <label className="mb-2.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/70">
+                <User size={15} className="text-sky-400" />
+                Your Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="John Doe"
+                value={formData.name}
+                onChange={handleChange}
+                className={`w-full rounded-xl border bg-black/40 px-4 py-3.5 text-sm text-white placeholder-white/30 outline-none transition duration-200 focus:bg-white/[0.06] sm:text-base ${
+                  errors.name
+                    ? "border-rose-400/70 focus:border-rose-400"
+                    : "border-white/15 focus:border-sky-400/70"
+                }`}
+              />
+              {errors.name && (
+                <p className="mt-1.5 text-xs font-medium text-rose-400">
+                  {errors.name}
+                </p>
+              )}
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="mb-2.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/70">
+                <Mail size={15} className="text-sky-400" />
+                Your Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="name@company.com"
+                value={formData.email}
+                onChange={handleChange}
+                className={`w-full rounded-xl border bg-black/40 px-4 py-3.5 text-sm text-white placeholder-white/30 outline-none transition duration-200 focus:bg-white/[0.06] sm:text-base ${
+                  errors.email
+                    ? "border-rose-400/70 focus:border-rose-400"
+                    : "border-white/15 focus:border-sky-400/70"
+                }`}
+              />
+              {errors.email && (
+                <p className="mt-1.5 text-xs font-medium text-rose-400">
+                  {errors.email}
+                </p>
+              )}
+            </div>
+
+            {/* Message */}
+            <div className="md:col-span-2">
+              <label className="mb-2.5 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/70">
+                <MessageSquare size={15} className="text-sky-400" />
+                Message
+              </label>
+              <textarea
+                name="message"
+                rows={6}
+                placeholder="Tell me about the role, project, or collaboration..."
+                value={formData.message}
+                onChange={handleChange}
+                className={`w-full resize-none rounded-xl border bg-black/40 px-4 py-3.5 text-sm text-white placeholder-white/30 outline-none transition duration-200 focus:bg-white/[0.06] sm:text-base ${
+                  errors.message
+                    ? "border-rose-400/70 focus:border-rose-400"
+                    : "border-white/15 focus:border-sky-400/70"
+                }`}
+              />
+              {errors.message && (
+                <p className="mt-1.5 text-xs font-medium text-rose-400">
+                  {errors.message}
+                </p>
+              )}
+            </div>
+
+            {/* Submit */}
+            <div className="md:col-span-2">
+              <button
+                type="submit"
+                disabled={isSending}
+                className="group relative flex w-full items-center justify-center gap-2.5 rounded-xl bg-white px-6 py-4 text-sm font-extrabold text-black shadow-[0_10px_30px_rgba(255,255,255,0.15)] transition duration-300 hover:-translate-y-0.5 hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-55 sm:text-base"
+              >
+                <span>{isSending ? "Sending Message..." : "Send Message"}</span>
+                <Send
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </button>
+              <p className="mt-3 text-center font-mono text-[11px] text-white/40">
+                Direct encrypted delivery via EmailJS • Zero spam
+              </p>
+            </div>
+          </form>
+        </div>
+      </motion.div>
+    </motion.section>
+  );
 };
 
 export default ContactForm;

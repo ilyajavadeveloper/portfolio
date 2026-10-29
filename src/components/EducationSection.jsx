@@ -1,354 +1,288 @@
-
 import React from "react";
 import { EDUCATION } from "../constants";
 import { motion } from "framer-motion";
 import {
-    GraduationCap,
-    Laptop,
-    BookOpen,
-    Code2,
-    Wrench,
-    Cpu,
-    Layers,
-    Terminal,
-    Workflow,
-    Sparkles,
+  GraduationCap,
+  Laptop,
+  BookOpen,
+  Code2,
+  Wrench,
+  Cpu,
+  Layers,
+  Terminal,
+  Workflow,
+  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
 
 /* ================= ANIMATIONS ================= */
 
 const sectionVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            duration: 0.8,
-            staggerChildren: 0.16,
-        },
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.75,
+      staggerChildren: 0.12,
     },
+  },
 };
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 32, scale: 0.97 },
-    visible: (i = 1) => ({
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            delay: i * 0.08,
-            duration: 0.65,
-            ease: [0.16, 1, 0.3, 1],
-        },
-    }),
-};
-
-const fadeUp = {
-    hidden: { opacity: 0, y: 22 },
-    visible: (i = 1) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-            delay: i * 0.08,
-            duration: 0.55,
-            ease: "easeOut",
-        },
-    }),
+  hidden: { opacity: 0, y: 24 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.06,
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  }),
 };
 
 /* ================= DATA ================= */
 
 const selfDrivenEducation = {
-    degree: "Self-Driven IT Education",
-    institution: "Independent Learning & Real Projects",
-    duration: "Ongoing — Present",
-    description:
-        "Continuous self-education focused on frontend development, React, modern JavaScript, UI architecture and practical software engineering. The learning process is project-based: every concept is tested through real components, layouts, animations and production-style structure.",
-    highlights: [
-        "Building real portfolio components with React, Tailwind CSS and Framer Motion.",
-        "Practicing responsive design across mobile, tablet, laptop and large desktop screens.",
-        "Learning how to structure components, constants, reusable data and clean UI sections.",
-        "Improving debugging habits by fixing layout, scale, overflow, navigation and animation issues.",
-        "Studying frontend architecture through practice, not only passive theory.",
-    ],
+  degree: "Continuous Full-Stack & UI Engineering",
+  institution: "Project-Driven Learning & Architecture",
+  duration: "Ongoing — Present",
+  description:
+    "Focused on modern React/Next.js patterns, TypeScript type safety, 3D/WebGL interactive experiences, and scalable frontend system design verified through deployed applications.",
+  highlights: [
+    "Building production-grade interfaces with React, Next.js, Tailwind CSS, Framer Motion, and Three.js.",
+    "Engineering responsive layouts across mobile, tablet, and ultra-wide desktop viewports.",
+    "Applying clean state management, server/client separation, and reusable component abstractions.",
+  ],
 };
 
 const diagnosticLearning = {
-    degree: "Technical Diagnostic Thinking",
-    institution: "Electrical Diagnostics Experience — Scania",
-    duration: "2025 — Present",
-    description:
-        "Hands-on technical work as an electrician diagnostic technician has strengthened my engineering mindset: reading systems, tracing faults, understanding cause and effect, and working with precision under real responsibility.",
-    highlights: [
-        "Developing structured problem-solving through electrical diagnostics and fault tracing.",
-        "Working with complex systems where small details can affect the whole machine.",
-        "Reading technical logic, wiring behavior and system interactions step by step.",
-        "Training patience, accuracy and responsibility through real equipment and real consequences.",
-        "Transferring diagnostic thinking into software: isolate the issue, inspect the flow, fix the root cause.",
-    ],
+  degree: "Systems & Diagnostic Engineering",
+  institution: "Scania Automotive Diagnostics & PDI",
+  duration: "2025 — Present",
+  description:
+    "Hands-on electrical and CAN-bus diagnostics on commercial vehicles — reinforcing structured root-cause analysis, telemetry interpretation, and zero-guesswork troubleshooting.",
+  highlights: [
+    "Tracing complex multi-ECU faults from symptom to root cause using Scania SDP3.",
+    "Reading technical schematics, sensor data streams, and hardware-software control loops.",
+    "Translating industrial diagnostic discipline directly into software debugging and architecture.",
+  ],
 };
 
 const learningTracks = [
-    {
-        icon: Code2,
-        title: "Frontend Engineering",
-        text: "React, JavaScript, component structure, props, reusable UI patterns and clean project organization.",
-    },
-    {
-        icon: Layers,
-        title: "Interface Architecture",
-        text: "Building sections that scale: navigation, hero blocks, experience cards, education layouts and project pages.",
-    },
-    {
-        icon: Sparkles,
-        title: "Motion & Visual Feel",
-        text: "Using Framer Motion, transitions, hover states and subtle visual rhythm to make interfaces feel premium.",
-    },
-    {
-        icon: Workflow,
-        title: "Responsive Systems",
-        text: "Adapting layouts for phones, tablets, laptops and large monitors without breaking composition.",
-    },
-    {
-        icon: Terminal,
-        title: "Developer Workflow",
-        text: "Practicing Git-style thinking, clean files, reusable constants, debugging and production-ready habits.",
-    },
-    {
-        icon: Cpu,
-        title: "System Thinking",
-        text: "Combining IT learning with diagnostic experience: understanding systems deeply, not randomly guessing.",
-    },
+  {
+    icon: Code2,
+    title: "Frontend Core",
+    text: "TypeScript, React, Next.js App Router, reusable hooks, and clean module boundaries.",
+  },
+  {
+    icon: Layers,
+    title: "UI Architecture",
+    text: "Design systems, predictable state flow, and scalable component hierarchies.",
+  },
+  {
+    icon: Sparkles,
+    title: "Motion & 3D Web",
+    text: "GSAP timelines, Framer Motion micro-interactions, and Three.js / R3F scenes.",
+  },
+  {
+    icon: Workflow,
+    title: "Responsive Fluidity",
+    text: "Mobile-first adaptive grids, fluid typography, and cross-browser stability.",
+  },
+  {
+    icon: Terminal,
+    title: "Backend & Data",
+    text: "Java, Spring Boot, SQL/NoSQL persistence, REST APIs, and event-driven workflows.",
+  },
+  {
+    icon: Cpu,
+    title: "Diagnostic Mindset",
+    text: "Isolate the signal, inspect the data flow, and resolve the underlying root cause.",
+  },
 ];
 
 const studyPrinciples = [
-    "I learn by building real things, not by collecting empty theory.",
-    "Every component is treated like a system: structure, responsibility, spacing and behavior.",
-    "Clean UI matters, but reliable logic matters even more.",
-    "I connect technical diagnostics with software debugging: find the root cause, not the surface symptom.",
+  "Learn by shipping real production applications, not by collecting passive theory.",
+  "Treat every UI component as a system with clear state, timing, and responsibility.",
+  "Visual polish attracts attention; architectural reliability keeps users.",
+  "Connect hardware diagnostic precision with software debugging: never guess — verify.",
 ];
 
 /* ================= COMPONENT ================= */
 
 const EducationSection = () => {
-    const extendedEducation = [
-        ...EDUCATION,
-        selfDrivenEducation,
-        diagnosticLearning,
-    ];
+  const extendedEducation = [
+    ...EDUCATION,
+    selfDrivenEducation,
+    diagnosticLearning,
+  ];
 
-    return (
-        <motion.section
-            id="education"
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="relative overflow-hidden py-24 px-5 sm:px-6 lg:px-16"
-        >
-            {/* BACKGROUND GLOW */}
-            <div className="pointer-events-none absolute left-1/2 top-24 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-white/5 blur-[140px]" />
-            <div className="pointer-events-none absolute right-0 top-1/3 h-[300px] w-[300px] rounded-full bg-white/5 blur-[120px]" />
+  return (
+    <motion.section
+      id="education"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
+      {/* Background Glow */}
+      <div className="pointer-events-none absolute right-1/4 top-20 -z-10 h-96 w-96 rounded-full bg-indigo-500/10 blur-[150px]" />
 
-            <div className="relative z-10 mx-auto max-w-7xl">
-                {/* HEADER */}
-                <motion.div
-                    variants={fadeUp}
-                    className="mb-16 text-center"
-                >
-                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm font-semibold text-white/70 backdrop-blur">
-                        <GraduationCap size={18} />
-                        Education path
+      {/* Header */}
+      <motion.div variants={cardVariants} className="mb-14 text-center lg:mb-20">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-4 py-1.5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-sky-300 backdrop-blur-md">
+          <GraduationCap size={15} />
+          <span>Academic & Practical Foundation</span>
+        </div>
+
+        <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+          Education & Engineering Growth
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/60 sm:text-base">
+          Formal full-stack software engineering training combined with military command center operations and continuous technical evolution.
+        </p>
+      </motion.div>
+
+      {/* Main Education Cards */}
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+        {extendedEducation.map((edu, index) => {
+          const isSelf = edu.degree.includes("Continuous");
+          const isDiag = edu.degree.includes("Diagnostic");
+
+          return (
+            <motion.article
+              key={index}
+              variants={cardVariants}
+              custom={index + 1}
+              whileHover={{ y: -5 }}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.035] p-6 backdrop-blur-xl transition duration-300 hover:border-white/25 hover:bg-white/[0.06] sm:p-8"
+            >
+              <div>
+                <div className="mb-5 flex items-start justify-between gap-4 border-b border-white/10 pb-5">
+                  <div className="flex items-start gap-3.5">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-sky-400/25 bg-sky-500/10 text-sky-300">
+                      {isSelf ? (
+                        <Laptop size={20} />
+                      ) : isDiag ? (
+                        <Wrench size={20} />
+                      ) : (
+                        <GraduationCap size={20} />
+                      )}
                     </div>
 
-                    <h2 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-                        Education & Learning
-                    </h2>
+                    <div>
+                      <h3 className="text-lg font-bold leading-snug text-white sm:text-xl">
+                        {edu.degree}
+                      </h3>
+                      <p className="mt-1 text-xs font-medium text-sky-200/80 sm:text-sm">
+                        {edu.institution}
+                      </p>
+                    </div>
+                  </div>
 
-                    <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/60 sm:text-lg">
-                        Structured education, self-driven IT growth and technical experience shaped by real systems,
-                        real debugging and continuous improvement.
-                    </p>
-                </motion.div>
-
-                {/* MAIN EDUCATION CARDS */}
-                <div className="grid grid-cols-1 gap-7 lg:grid-cols-2">
-                    {extendedEducation.map((edu, index) => (
-                        <motion.article
-                            key={index}
-                            variants={cardVariants}
-                            custom={index + 1}
-                            whileHover={{ y: -7 }}
-                            className="
-                                group
-                                relative overflow-hidden rounded-3xl
-                                border border-white/15
-                                bg-white/[0.055]
-                                p-6 sm:p-8
-                                backdrop-blur
-                                transition
-                                hover:border-white/30
-                                hover:bg-white/[0.085]
-                            "
-                        >
-                            {/* CARD GLOW */}
-                            <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-white/5 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100" />
-
-                            <div className="relative z-10">
-                                <div className="mb-5 flex items-start gap-4">
-                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10">
-                                        {edu.degree === "Self-Driven IT Education" ? (
-                                            <Laptop className="text-white/80" size={24} />
-                                        ) : edu.degree === "Technical Diagnostic Thinking" ? (
-                                            <Wrench className="text-white/80" size={24} />
-                                        ) : (
-                                            <GraduationCap className="text-white/80" size={24} />
-                                        )}
-                                    </div>
-
-                                    <div>
-                                        <h3 className="text-2xl font-bold leading-tight text-white md:text-3xl">
-                                            {edu.degree}
-                                        </h3>
-
-                                        <p className="mt-2 text-base font-medium text-white/75 sm:text-lg">
-                                            {edu.institution}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-semibold text-white/70">
-                                    {edu.duration}
-                                </span>
-
-                                <p className="mt-6 text-base leading-relaxed text-white/75 sm:text-lg">
-                                    {edu.description}
-                                </p>
-
-                                {edu.highlights && (
-                                    <ul className="mt-6 list-disc space-y-2 pl-5 text-sm leading-relaxed text-white/68 sm:text-base">
-                                        {edu.highlights.map((item, i) => (
-                                            <li key={i}>{item}</li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </div>
-                        </motion.article>
-                    ))}
+                  <span className="shrink-0 rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 font-mono text-[11px] font-semibold text-white/75">
+                    {edu.duration}
+                  </span>
                 </div>
 
-                {/* IT LEARNING SYSTEM */}
-                <motion.div
-                    className="mt-20"
-                    variants={cardVariants}
-                    custom={extendedEducation.length + 1}
-                >
-                    <div
-                        className="
-                            relative overflow-hidden rounded-[2rem]
-                            border border-white/20
-                            bg-gradient-to-br from-white/12 via-white/7 to-white/5
-                            p-6 sm:p-8 lg:p-10
-                            backdrop-blur
-                        "
-                    >
-                        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-[120px]" />
+                <p className="text-sm leading-relaxed text-white/75 sm:text-base">
+                  {edu.description}
+                </p>
 
-                        <div className="relative z-10">
-                            <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                                <div className="flex items-center gap-4">
-                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10">
-                                        <Laptop className="text-white/80" size={28} />
-                                    </div>
-
-                                    <div>
-                                        <h3 className="text-3xl font-extrabold text-white md:text-4xl">
-                                            IT Growth System
-                                        </h3>
-                                        <p className="mt-2 text-white/60">
-                                            Practical frontend learning built around real output
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <span className="w-fit rounded-full border border-white/20 bg-black/20 px-4 py-2 text-sm font-bold text-white/75">
-                                    Always improving
-                                </span>
-                            </div>
-
-                            <p className="max-w-4xl text-base leading-relaxed text-white/78 sm:text-lg">
-                                My IT education is not passive. I build, break, fix and improve. The focus is on
-                                modern frontend development, component architecture, responsive interfaces,
-                                animation quality and clean implementation. Every project becomes a small laboratory:
-                                layout, state, timing, hierarchy, user flow and visual polish.
-                            </p>
-
-                            <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-                                {learningTracks.map((track, i) => {
-                                    const Icon = track.icon;
-
-                                    return (
-                                        <motion.div
-                                            key={i}
-                                            variants={fadeUp}
-                                            custom={i + 1}
-                                            className="
-                                                rounded-2xl
-                                                border border-white/12
-                                                bg-black/20
-                                                p-5
-                                                transition
-                                                hover:border-white/25
-                                                hover:bg-white/10
-                                            "
-                                        >
-                                            <div className="mb-4 flex items-center gap-3">
-                                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
-                                                    <Icon size={20} className="text-white/75" />
-                                                </div>
-
-                                                <h4 className="text-lg font-bold text-white">
-                                                    {track.title}
-                                                </h4>
-                                            </div>
-
-                                            <p className="text-sm leading-relaxed text-white/65 sm:text-base">
-                                                {track.text}
-                                            </p>
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* STUDY PRINCIPLES */}
-                <motion.div
-                    className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2"
-                    variants={cardVariants}
-                    custom={extendedEducation.length + 2}
-                >
-                    {studyPrinciples.map((principle, index) => (
-                        <div
-                            key={index}
-                            className="
-                                flex items-start gap-4 rounded-2xl
-                                border border-white/12
-                                bg-white/[0.045]
-                                p-5
-                                backdrop-blur
-                            "
-                        >
-                            <BookOpen className="mt-1 shrink-0 text-white/55" size={20} />
-                            <p className="text-base leading-relaxed text-white/72">
-                                {principle}
-                            </p>
-                        </div>
+                {edu.highlights && (
+                  <ul className="mt-5 space-y-2">
+                    {edu.highlights.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2.5 text-xs leading-relaxed text-white/65 sm:text-sm"
+                      >
+                        <CheckCircle2
+                          size={15}
+                          className="mt-0.5 shrink-0 text-sky-400/80"
+                        />
+                        <span>{item}</span>
+                      </li>
                     ))}
-                </motion.div>
+                  </ul>
+                )}
+              </div>
+            </motion.article>
+          );
+        })}
+      </div>
+
+      {/* IT Growth System Matrix */}
+      <motion.div
+        className="mt-12 lg:mt-16"
+        variants={cardVariants}
+        custom={5}
+      >
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-white/[0.07] via-white/[0.035] to-transparent p-6 backdrop-blur-xl sm:p-8 lg:p-10">
+          <div className="mb-8 flex flex-col justify-between gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-center">
+            <div className="flex items-center gap-3.5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/30 bg-sky-500/15 text-sky-300">
+                <Terminal size={22} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-extrabold text-white sm:text-3xl">
+                  Core Engineering Pillars
+                </h3>
+                <p className="mt-0.5 text-xs text-white/55 sm:text-sm">
+                  How I approach architecture, interfaces, and problem-solving
+                </p>
+              </div>
             </div>
-        </motion.section>
-    );
+
+            <span className="w-fit rounded-full border border-emerald-400/25 bg-emerald-500/10 px-3.5 py-1.5 font-mono text-xs font-semibold text-emerald-300">
+              Always Evolving
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {learningTracks.map((track, i) => {
+              const Icon = track.icon;
+              return (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-white/10 bg-black/30 p-5 transition duration-300 hover:border-white/25 hover:bg-white/[0.06]"
+                >
+                  <div className="mb-3 flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-sky-300">
+                      <Icon size={18} />
+                    </div>
+                    <h4 className="text-base font-bold text-white">
+                      {track.title}
+                    </h4>
+                  </div>
+                  <p className="text-xs leading-relaxed text-white/65 sm:text-sm">
+                    {track.text}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Principles Footer Row */}
+          <div className="mt-8 grid grid-cols-1 gap-3 border-t border-white/10 pt-6 md:grid-cols-2">
+            {studyPrinciples.map((principle, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3"
+              >
+                <BookOpen className="mt-0.5 shrink-0 text-sky-400/75" size={16} />
+                <p className="text-xs leading-relaxed text-white/70 sm:text-sm">
+                  {principle}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </motion.section>
+  );
 };
 
 export default EducationSection;
