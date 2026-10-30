@@ -27,6 +27,7 @@ import {
 } from "react-icons/si";
 
 import { DiRedis } from "react-icons/di";
+import sergeyHvostenkoImg from "../assets/sergey-hvostenko.jpg";
 
 // ================= NAVIGATION =================
 
@@ -253,6 +254,16 @@ export const PROJECTS = [
         link: "https://lila-neon.vercel.app/",
         github: `${GITHUB}/Lila`,
         image: screenshot("https://lila-neon.vercel.app/"),
+    },
+    {
+        id: 11,
+        name: "Sergey Hvostenko Portfolio",
+        category: "landing",
+        description:
+            "Multidisciplinary visual art & 3D architectural portfolio for artist Sergey Hvostenko. EN / RU / HE with full RTL, curated 92-work gallery archive, interactive lightbox and AI video showcases.",
+        link: "https://github.com/hvostenko-dev/Sergey-Hvostenko-website-",
+        github: `${GITHUB}/Sergey-Hvostenko-website-`,
+        image: sergeyHvostenkoImg,
     },
 ];
 
