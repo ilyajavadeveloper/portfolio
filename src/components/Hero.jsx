@@ -161,8 +161,146 @@ const Hero = () => {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[1480px]">
         <div className="grid grid-cols-1 items-center gap-10 sm:gap-14 lg:grid-cols-12 lg:gap-10 xl:gap-14">
           
-          {/* ================= LEFT COLUMN: TEXT, TERMINAL & ACTIONS ================= */}
-          <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:col-span-6 xl:col-span-6 lg:items-start lg:text-left">
+          {/* ================= TOP ON MOBILE / RIGHT ON DESKTOP: PORTRAIT & HUD ================= */}
+          <motion.div
+            className="flex w-full justify-center lg:order-2 lg:col-span-6 xl:col-span-6 lg:justify-end"
+            initial={{ opacity: 0, y: 30, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <motion.div
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                rotateX,
+                rotateY,
+                transformStyle: "preserve-3d",
+              }}
+              /* Significantly widened container: up to 420px on mobile, 560px-660px on desktop */
+              className="group relative w-full max-w-[370px] xs:max-w-[420px] sm:max-w-[490px] md:max-w-[530px] lg:max-w-[560px] xl:max-w-[620px] 2xl:max-w-[660px]"
+            >
+              {/* Dynamic Multi-Color Ambient Backlight Glow */}
+              <div className="pointer-events-none absolute -inset-8 rounded-[56px] bg-gradient-to-tr from-sky-500/25 via-blue-500/15 to-indigo-600/30 opacity-80 blur-2xl transition duration-700 group-hover:opacity-100 group-hover:blur-3xl sm:-inset-12 sm:blur-3xl" />
+
+              {/* Outer Cyber Glass Frame */}
+              <div className="relative overflow-hidden rounded-[32px] border border-white/20 bg-gradient-to-b from-white/15 via-white/[0.05] to-black/40 p-2.5 shadow-[0_30px_90px_rgba(0,0,0,0.8)] backdrop-blur-2xl sm:rounded-[42px] sm:p-3.5">
+                
+                {/* Top Frame HUD Bar */}
+                <div className="mb-2.5 flex items-center justify-between px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/60 sm:text-xs">
+                  <span className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                    </span>
+                    <span className="font-semibold text-emerald-400">SYS.ONLINE</span>
+                    <span className="text-white/30">//</span>
+                    <span className="text-white/70">ILYA.HVOSTENKO</span>
+                  </span>
+                  <span className="hidden font-mono text-sky-300/80 sm:inline">
+                    FULL-STACK.DEV
+                  </span>
+                </div>
+
+                {/* Image Container */}
+                <div className="relative overflow-hidden rounded-[26px] sm:rounded-[34px]">
+                  
+                  {/* Subtle Tech Corner Markers */}
+                  <div className="pointer-events-none absolute top-3 left-3 z-20 font-mono text-xs font-bold text-sky-400/70 drop-shadow">
+                    +
+                  </div>
+                  <div className="pointer-events-none absolute top-3 right-3 z-20 font-mono text-xs font-bold text-sky-400/70 drop-shadow">
+                    +
+                  </div>
+
+                  {/* Main Portrait Image: Centered face positioned higher up, larger frame */}
+                  <img
+                    src={heroPortrait}
+                    alt="Ilya Hvostenko portrait"
+                    style={{ objectPosition: "50% 64%" }}
+                    className="h-[430px] xs:h-[470px] sm:h-[520px] md:h-[560px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
+                    draggable={false}
+                  />
+
+                  {/* Sleek Atmospheric Vignette for telemetry readability - only at bottom */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+
+                  {/* Bottom Embedded Telemetry Card */}
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2.5 rounded-2xl border border-white/20 bg-black/75 p-2.5 shadow-lg backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:p-3.5">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-sky-400/40 bg-sky-500/20 text-sky-300 shadow-[0_0_15px_rgba(56,189,248,0.3)] sm:h-11 sm:w-11">
+                        <Cpu size={19} className="sm:hidden" />
+                        <Cpu size={22} className="hidden sm:block" />
+                      </div>
+                      <div className="text-left">
+                        <div className="flex items-center gap-1.5">
+                          <p className="font-mono text-[9px] uppercase tracking-wider text-sky-300 sm:text-[11px]">
+                            Full-Stack & Systems
+                          </p>
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                        </div>
+                        <p className="text-[11px] font-bold text-white sm:text-sm">
+                          Web · Mobile · Architecture
+                        </p>
+                      </div>
+                    </div>
+
+                    <a
+                      href="#contact"
+                      onClick={(e) => scrollToSection(e, "contact")}
+                      className="group/btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white transition duration-300 hover:border-white/50 hover:bg-white hover:text-black active:scale-95 sm:h-10 sm:w-10"
+                      aria-label="Contact Ilya"
+                    >
+                      <ChevronRight size={17} className="transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Top-Right Badge: Open to Work */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="pointer-events-none absolute -right-3 top-8 hidden items-center gap-2.5 rounded-2xl border border-sky-400/30 bg-black/85 px-4 py-2.5 shadow-[0_12px_32px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:flex lg:-right-6"
+              >
+                <div className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
+                </div>
+                <div className="text-left">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-sky-300">
+                    Open to Work
+                  </p>
+                  <p className="text-xs font-bold text-white">
+                    Full-Stack & Frontend
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Floating Bottom-Left Badge: Production Shipped */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="pointer-events-none absolute -left-3 bottom-24 hidden items-center gap-2.5 rounded-2xl border border-white/20 bg-black/85 px-4 py-2.5 shadow-[0_12px_32px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:flex lg:-left-6"
+              >
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
+                  <CheckCircle2 size={16} />
+                </div>
+                <div className="text-left">
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-white/50">
+                    Production Track
+                  </p>
+                  <p className="text-xs font-bold text-white">
+                    10+ Shipped Projects
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          {/* ================= BELOW ON MOBILE / LEFT ON DESKTOP: TEXT & ACTIONS ================= */}
+          <div className="flex flex-col items-center text-center lg:order-1 lg:col-span-6 xl:col-span-6 lg:items-start lg:text-left">
             
             {/* STATUS BADGE */}
             <motion.div
@@ -387,144 +525,6 @@ const Hero = () => {
               </div>
             </motion.div>
           </div>
-
-          {/* ================= RIGHT COLUMN: EXPANDED WIDE PORTRAIT & HUD CARD ================= */}
-          <motion.div
-            className="order-1 flex w-full justify-center lg:order-2 lg:col-span-6 xl:col-span-6 lg:justify-end"
-            initial={{ opacity: 0, y: 30, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <motion.div
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              style={{
-                rotateX,
-                rotateY,
-                transformStyle: "preserve-3d",
-              }}
-              /* Significantly widened container: up to 420px on mobile, 560px-660px on desktop */
-              className="group relative w-full max-w-[370px] xs:max-w-[420px] sm:max-w-[490px] md:max-w-[530px] lg:max-w-[560px] xl:max-w-[620px] 2xl:max-w-[660px]"
-            >
-              {/* Dynamic Multi-Color Ambient Backlight Glow */}
-              <div className="pointer-events-none absolute -inset-8 rounded-[56px] bg-gradient-to-tr from-sky-500/25 via-blue-500/15 to-indigo-600/30 opacity-80 blur-2xl transition duration-700 group-hover:opacity-100 group-hover:blur-3xl sm:-inset-12 sm:blur-3xl" />
-
-              {/* Outer Cyber Glass Frame */}
-              <div className="relative overflow-hidden rounded-[32px] border border-white/20 bg-gradient-to-b from-white/15 via-white/[0.05] to-black/40 p-2.5 shadow-[0_30px_90px_rgba(0,0,0,0.8)] backdrop-blur-2xl sm:rounded-[42px] sm:p-3.5">
-                
-                {/* Top Frame HUD Bar */}
-                <div className="mb-2.5 flex items-center justify-between px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/60 sm:text-xs">
-                  <span className="flex items-center gap-2">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                    </span>
-                    <span className="font-semibold text-emerald-400">SYS.ONLINE</span>
-                    <span className="text-white/30">//</span>
-                    <span className="text-white/70">ILYA.HVOSTENKO</span>
-                  </span>
-                  <span className="hidden font-mono text-sky-300/80 sm:inline">
-                    FULL-STACK.DEV
-                  </span>
-                </div>
-
-                {/* Image Container */}
-                <div className="relative overflow-hidden rounded-[26px] sm:rounded-[34px]">
-                  
-                  {/* Subtle Tech Corner Markers */}
-                  <div className="pointer-events-none absolute top-3 left-3 z-20 font-mono text-xs font-bold text-sky-400/70 drop-shadow">
-                    +
-                  </div>
-                  <div className="pointer-events-none absolute top-3 right-3 z-20 font-mono text-xs font-bold text-sky-400/70 drop-shadow">
-                    +
-                  </div>
-
-                  {/* Main Portrait Image: Centered face positioned higher up, larger frame */}
-                  <img
-                    src={heroPortrait}
-                    alt="Ilya Hvostenko portrait"
-                    style={{ objectPosition: "50% 64%" }}
-                    className="h-[430px] xs:h-[470px] sm:h-[520px] md:h-[560px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
-                    draggable={false}
-                  />
-
-                  {/* Sleek Atmospheric Vignette for telemetry readability - only at bottom */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
-
-                  {/* Bottom Embedded Telemetry Card */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2.5 rounded-2xl border border-white/20 bg-black/75 p-2.5 shadow-lg backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:p-3.5">
-                    <div className="flex items-center gap-2.5 sm:gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-sky-400/40 bg-sky-500/20 text-sky-300 shadow-[0_0_15px_rgba(56,189,248,0.3)] sm:h-11 sm:w-11">
-                        <Cpu size={19} className="sm:hidden" />
-                        <Cpu size={22} className="hidden sm:block" />
-                      </div>
-                      <div className="text-left">
-                        <div className="flex items-center gap-1.5">
-                          <p className="font-mono text-[9px] uppercase tracking-wider text-sky-300 sm:text-[11px]">
-                            Full-Stack & Systems
-                          </p>
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                        </div>
-                        <p className="text-[11px] font-bold text-white sm:text-sm">
-                          Web · Mobile · Architecture
-                        </p>
-                      </div>
-                    </div>
-
-                    <a
-                      href="#contact"
-                      onClick={(e) => scrollToSection(e, "contact")}
-                      className="group/btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white transition duration-300 hover:border-white/50 hover:bg-white hover:text-black active:scale-95 sm:h-10 sm:w-10"
-                      aria-label="Contact Ilya"
-                    >
-                      <ChevronRight size={17} className="transition-transform duration-300 group-hover/btn:translate-x-0.5" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Top-Right Badge: Open to Work */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="pointer-events-none absolute -right-3 top-8 hidden items-center gap-2.5 rounded-2xl border border-sky-400/30 bg-black/85 px-4 py-2.5 shadow-[0_12px_32px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:flex lg:-right-6"
-              >
-                <div className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
-                </div>
-                <div className="text-left">
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-sky-300">
-                    Open to Work
-                  </p>
-                  <p className="text-xs font-bold text-white">
-                    Full-Stack & Frontend
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Floating Bottom-Left Badge: Production Shipped */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7, duration: 0.6 }}
-                className="pointer-events-none absolute -left-3 bottom-24 hidden items-center gap-2.5 rounded-2xl border border-white/20 bg-black/85 px-4 py-2.5 shadow-[0_12px_32px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:flex lg:-left-6"
-              >
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
-                  <CheckCircle2 size={16} />
-                </div>
-                <div className="text-left">
-                  <p className="font-mono text-[10px] uppercase tracking-wider text-white/50">
-                    Production Track
-                  </p>
-                  <p className="text-xs font-bold text-white">
-                    10+ Shipped Projects
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
 
         </div>
       </div>
