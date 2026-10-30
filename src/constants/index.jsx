@@ -261,7 +261,7 @@ export const PROJECTS = [
         category: "landing",
         description:
             "Multidisciplinary visual art & 3D architectural portfolio for artist Sergey Hvostenko. EN / RU / HE with full RTL, curated 92-work gallery archive, interactive lightbox and AI video showcases.",
-        link: "https://github.com/hvostenko-dev/Sergey-Hvostenko-website-",
+        link: "https://sergey-hvostenko-website-ilyajavadevs-projects.vercel.app/",
         github: `${GITHUB}/Sergey-Hvostenko-website-`,
         image: sergeyHvostenkoImg,
     },
