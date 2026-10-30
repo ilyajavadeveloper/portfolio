@@ -265,6 +265,25 @@ export const PROJECTS = [
         github: `${GITHUB}/Sergey-Hvostenko-website-`,
         image: sergeyHvostenkoImg,
     },
+    {
+        id: 12,
+        name: "Hutzahav — Haute Couture Atelier",
+        category: "landing",
+        description:
+            "Luxury bespoke tailoring & textile art atelier website for designer Galina Khvostenko (Ashdod, Israel). Real-time bespoke cost & turnaround calculator, 4-step couture journey, curated lookbook with dual grid/editorial views, interactive Google Maps geolocation with Waze & Easy.co.il deep-links, multi-channel booking (WhatsApp, Telegram, Email), and comprehensive accessibility toolbar (נגישות / WCAG).",
+        link: "https://github.com/hvostenko-dev/hutzahav",
+        github: `${GITHUB}/hutzahav`,
+        image: "/projects/hutzahav.jpg",
+        technologies: [
+            "React 18",
+            "TypeScript",
+            "Tailwind CSS",
+            "Vite",
+            "Lucide Icons",
+            "Google Maps API",
+            "WCAG Accessibility",
+        ],
+    },
 ];
 
 // ================= EXPERIENCE =================
