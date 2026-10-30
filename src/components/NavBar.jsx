@@ -218,12 +218,12 @@ const NavBar = () => {
             {/* Right Desktop Actions */}
             <div className="hidden items-center gap-2.5 lg:flex">
               <a
-                href="/IT%20CV.pdf"
-                download="IT CV.pdf"
+                href="/Ilya_Hvostenko_CV.pdf"
+                download="Ilya_Hvostenko_CV.pdf"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-3.5 py-2 text-xs font-bold text-white/85 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
               >
                 <Download size={14} className="text-sky-400" />
-                <span>IT CV</span>
+                <span>CV</span>
               </a>
 
               <a
@@ -292,12 +292,12 @@ const NavBar = () => {
 
                   <div className="mt-3 grid grid-cols-2 gap-2.5 border-t border-white/10 pt-4 pb-2">
                     <a
-                      href="/IT%20CV.pdf"
-                      download="IT CV.pdf"
+                      href="/Ilya_Hvostenko_CV.pdf"
+                      download="Ilya_Hvostenko_CV.pdf"
                       className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 py-3 text-xs font-bold text-white transition hover:bg-white/15 active:scale-95"
                     >
                       <Download size={15} className="text-sky-400" />
-                      <span>IT CV</span>
+                      <span>CV</span>
                     </a>
                     <a
                       href="#contact"

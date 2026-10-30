@@ -485,28 +485,16 @@ const Hero = () => {
                 />
               </a>
 
-              {/* CV Download Buttons */}
-              <div className="grid w-full grid-cols-2 gap-2.5 sm:flex sm:w-auto sm:items-center sm:gap-3">
-                <a
-                  href="/IT%20CV.pdf"
-                  download="IT CV.pdf"
-                  aria-label="Download IT CV"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-sky-400/40 bg-sky-500/15 px-4 py-3.5 text-xs font-bold text-white shadow-[0_4px_20px_rgba(56,189,248,0.15)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-sky-400/70 hover:bg-sky-500/25 sm:px-5 sm:text-sm active:scale-95"
-                >
-                  <Download size={16} strokeWidth={2.4} className="shrink-0 text-sky-300" />
-                  <span>IT CV</span>
-                </a>
-
-                <a
-                  href="/General%20CV.pdf"
-                  download="General CV.pdf"
-                  aria-label="Download General CV"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/[0.05] px-4 py-3.5 text-xs font-semibold text-white/85 backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/15 sm:px-5 sm:text-sm active:scale-95"
-                >
-                  <Download size={16} strokeWidth={2} className="shrink-0 text-white/60" />
-                  <span>General CV</span>
-                </a>
-              </div>
+              {/* CV Download Button */}
+              <a
+                href="/Ilya_Hvostenko_CV.pdf"
+                download="Ilya_Hvostenko_CV.pdf"
+                aria-label="Download CV"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-sky-400/40 bg-sky-500/15 px-6 py-3.5 text-xs font-bold text-white shadow-[0_4px_20px_rgba(56,189,248,0.15)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:border-sky-400/70 hover:bg-sky-500/25 sm:text-sm active:scale-95"
+              >
+                <Download size={16} strokeWidth={2.4} className="shrink-0 text-sky-300" />
+                <span>Download CV</span>
+              </a>
 
               {/* Social Links */}
               <div className="mt-1 flex items-center justify-center gap-2.5 sm:mt-0 sm:ml-auto lg:ml-2">

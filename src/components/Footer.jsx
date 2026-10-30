@@ -83,20 +83,12 @@ const Footer = () => {
 
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start">
               <a
-                href="/IT%20CV.pdf"
-                download="IT CV.pdf"
+                href="/Ilya_Hvostenko_CV.pdf"
+                download="Ilya_Hvostenko_CV.pdf"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.06] px-4 py-2.5 text-xs font-bold text-white transition hover:border-white/30 hover:bg-white/15"
               >
                 <Download size={14} className="text-sky-400" />
-                <span>IT CV</span>
-              </a>
-              <a
-                href="/General%20CV.pdf"
-                download="General CV.pdf"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-xs font-semibold text-white/75 transition hover:border-white/25 hover:bg-white/10 hover:text-white"
-              >
-                <Download size={14} />
-                <span>General CV</span>
+                <span>Download CV</span>
               </a>
             </div>
           </div>
