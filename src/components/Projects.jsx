@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import { PROJECTS } from "../constants";
@@ -8,6 +8,17 @@ import { Code2, Globe, Sparkles } from "lucide-react";
 const LazyImage = ({ src, alt, className = "h-56" }) => {
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    if (imgRef.current?.complete) {
+      if (imgRef.current.naturalWidth > 0) {
+        setLoaded(true);
+      } else {
+        setFailed(true);
+      }
+    }
+  }, [src]);
 
   return (
     <div className={`relative w-full overflow-hidden bg-slate-900/80 ${className}`}>
@@ -23,6 +34,7 @@ const LazyImage = ({ src, alt, className = "h-56" }) => {
         </div>
       ) : (
         <img
+          ref={imgRef}
           src={src}
           alt={alt}
           loading="lazy"
