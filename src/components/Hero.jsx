@@ -159,11 +159,11 @@ const Hero = () => {
       </div>
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[1480px]">
-        <div className="grid grid-cols-1 items-center gap-10 sm:gap-14 lg:grid-cols-12 lg:gap-10 xl:gap-14">
+        <div className="flex flex-col items-center gap-10 sm:gap-14 lg:grid lg:grid-cols-12 lg:gap-10 xl:gap-14">
           
           {/* ================= TOP ON MOBILE / RIGHT ON DESKTOP: PORTRAIT & HUD ================= */}
           <motion.div
-            className="flex w-full justify-center lg:order-2 lg:col-span-6 xl:col-span-6 lg:justify-end"
+            className="order-1 flex w-full justify-center lg:order-2 lg:col-span-6 xl:col-span-6 lg:justify-end"
             initial={{ opacity: 0, y: 30, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
@@ -300,7 +300,7 @@ const Hero = () => {
           </motion.div>
 
           {/* ================= BELOW ON MOBILE / LEFT ON DESKTOP: TEXT & ACTIONS ================= */}
-          <div className="flex flex-col items-center text-center lg:order-1 lg:col-span-6 xl:col-span-6 lg:items-start lg:text-left">
+          <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:col-span-6 xl:col-span-6 lg:items-start lg:text-left">
             
             {/* STATUS BADGE */}
             <motion.div
