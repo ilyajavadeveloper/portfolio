@@ -162,7 +162,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 items-center gap-10 sm:gap-14 lg:grid-cols-12 lg:gap-10 xl:gap-14">
           
           {/* ================= LEFT COLUMN: TEXT, TERMINAL & ACTIONS ================= */}
-          <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:col-span-7 xl:col-span-6 lg:items-start lg:text-left">
+          <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:col-span-6 xl:col-span-6 lg:items-start lg:text-left">
             
             {/* STATUS BADGE */}
             <motion.div
@@ -390,7 +390,7 @@ const Hero = () => {
 
           {/* ================= RIGHT COLUMN: EXPANDED WIDE PORTRAIT & HUD CARD ================= */}
           <motion.div
-            className="order-1 flex w-full justify-center lg:order-2 lg:col-span-5 xl:col-span-6 lg:justify-end"
+            className="order-1 flex w-full justify-center lg:order-2 lg:col-span-6 xl:col-span-6 lg:justify-end"
             initial={{ opacity: 0, y: 30, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
@@ -403,14 +403,14 @@ const Hero = () => {
                 rotateY,
                 transformStyle: "preserve-3d",
               }}
-              /* Significantly widened container: from old 270px/440px up to 340px-600px */
-              className="group relative w-full max-w-[340px] xs:max-w-[390px] sm:max-w-[450px] md:max-w-[490px] lg:max-w-[510px] xl:max-w-[560px] 2xl:max-w-[600px]"
+              /* Significantly widened container: up to 420px on mobile, 560px-660px on desktop */
+              className="group relative w-full max-w-[370px] xs:max-w-[420px] sm:max-w-[490px] md:max-w-[530px] lg:max-w-[560px] xl:max-w-[620px] 2xl:max-w-[660px]"
             >
               {/* Dynamic Multi-Color Ambient Backlight Glow */}
-              <div className="pointer-events-none absolute -inset-6 rounded-[52px] bg-gradient-to-tr from-sky-500/25 via-blue-500/15 to-indigo-600/30 opacity-80 blur-2xl transition duration-700 group-hover:opacity-100 group-hover:blur-3xl sm:-inset-10 sm:blur-3xl" />
+              <div className="pointer-events-none absolute -inset-8 rounded-[56px] bg-gradient-to-tr from-sky-500/25 via-blue-500/15 to-indigo-600/30 opacity-80 blur-2xl transition duration-700 group-hover:opacity-100 group-hover:blur-3xl sm:-inset-12 sm:blur-3xl" />
 
               {/* Outer Cyber Glass Frame */}
-              <div className="relative overflow-hidden rounded-[30px] border border-white/20 bg-gradient-to-b from-white/15 via-white/[0.05] to-black/40 p-2.5 shadow-[0_30px_90px_rgba(0,0,0,0.8)] backdrop-blur-2xl sm:rounded-[40px] sm:p-3.5">
+              <div className="relative overflow-hidden rounded-[32px] border border-white/20 bg-gradient-to-b from-white/15 via-white/[0.05] to-black/40 p-2.5 shadow-[0_30px_90px_rgba(0,0,0,0.8)] backdrop-blur-2xl sm:rounded-[42px] sm:p-3.5">
                 
                 {/* Top Frame HUD Bar */}
                 <div className="mb-2.5 flex items-center justify-between px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/60 sm:text-xs">
@@ -429,7 +429,7 @@ const Hero = () => {
                 </div>
 
                 {/* Image Container */}
-                <div className="relative overflow-hidden rounded-[24px] sm:rounded-[32px]">
+                <div className="relative overflow-hidden rounded-[26px] sm:rounded-[34px]">
                   
                   {/* Subtle Tech Corner Markers */}
                   <div className="pointer-events-none absolute top-3 left-3 z-20 font-mono text-xs font-bold text-sky-400/70 drop-shadow">
@@ -439,17 +439,17 @@ const Hero = () => {
                     +
                   </div>
 
-                  {/* Main Portrait Image: Centered face positioned higher up */}
+                  {/* Main Portrait Image: Centered face positioned higher up, larger frame */}
                   <img
                     src={heroPortrait}
                     alt="Ilya Hvostenko portrait"
-                    style={{ objectPosition: "50% 68%" }}
-                    className="h-[390px] xs:h-[430px] sm:h-[470px] md:h-[510px] lg:h-[540px] xl:h-[580px] 2xl:h-[620px] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
+                    style={{ objectPosition: "50% 64%" }}
+                    className="h-[430px] xs:h-[470px] sm:h-[520px] md:h-[560px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
                     draggable={false}
                   />
 
                   {/* Sleek Atmospheric Vignette for telemetry readability - only at bottom */}
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
 
                   {/* Bottom Embedded Telemetry Card */}
                   <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2.5 rounded-2xl border border-white/20 bg-black/75 p-2.5 shadow-lg backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:p-3.5">
