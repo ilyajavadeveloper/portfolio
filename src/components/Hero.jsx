@@ -428,48 +428,44 @@ const Hero = () => {
                   </span>
                 </div>
 
-                {/* Image Container with Corner Tech Crosshairs */}
+                {/* Image Container */}
                 <div className="relative overflow-hidden rounded-[24px] sm:rounded-[32px]">
                   
-                  {/* Precision Tech Crosshairs at Corners */}
-                  <div className="pointer-events-none absolute top-3 left-3 z-20 font-mono text-xs font-bold text-sky-400/80 drop-shadow">
+                  {/* Subtle Tech Corner Markers */}
+                  <div className="pointer-events-none absolute top-3 left-3 z-20 font-mono text-xs font-bold text-sky-400/70 drop-shadow">
                     +
                   </div>
-                  <div className="pointer-events-none absolute top-3 right-3 z-20 font-mono text-xs font-bold text-sky-400/80 drop-shadow">
-                    +
-                  </div>
-                  <div className="pointer-events-none absolute bottom-16 left-3 z-20 font-mono text-xs font-bold text-sky-400/80 drop-shadow">
-                    +
-                  </div>
-                  <div className="pointer-events-none absolute bottom-16 right-3 z-20 font-mono text-xs font-bold text-sky-400/80 drop-shadow">
+                  <div className="pointer-events-none absolute top-3 right-3 z-20 font-mono text-xs font-bold text-sky-400/70 drop-shadow">
                     +
                   </div>
 
-                  {/* Main Portrait Image: Wider, taller, beautifully framed */}
+                  {/* Main Portrait Image: Centered face positioned higher up */}
                   <img
                     src={heroPortrait}
                     alt="Ilya Hvostenko portrait"
-                    className="h-[360px] xs:h-[400px] sm:h-[460px] md:h-[500px] lg:h-[530px] xl:h-[570px] 2xl:h-[610px] w-full object-cover object-top transition duration-700 group-hover:scale-[1.025]"
+                    style={{ objectPosition: "50% 68%" }}
+                    className="h-[390px] xs:h-[430px] sm:h-[470px] md:h-[510px] lg:h-[540px] xl:h-[580px] 2xl:h-[620px] w-full object-cover transition duration-700 group-hover:scale-[1.025]"
                     draggable={false}
                   />
 
-                  {/* Sleek Atmospheric Vignette for telemetry readability */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
+                  {/* Sleek Atmospheric Vignette for telemetry readability - only at bottom */}
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
 
                   {/* Bottom Embedded Telemetry Card */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 rounded-2xl border border-white/20 bg-black/70 p-3.5 shadow-lg backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-sky-400/40 bg-sky-500/20 text-sky-300 shadow-[0_0_15px_rgba(56,189,248,0.3)]">
-                        <Cpu size={22} />
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2.5 rounded-2xl border border-white/20 bg-black/75 p-2.5 shadow-lg backdrop-blur-xl sm:bottom-4 sm:left-4 sm:right-4 sm:p-3.5">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-sky-400/40 bg-sky-500/20 text-sky-300 shadow-[0_0_15px_rgba(56,189,248,0.3)] sm:h-11 sm:w-11">
+                        <Cpu size={19} className="sm:hidden" />
+                        <Cpu size={22} className="hidden sm:block" />
                       </div>
                       <div className="text-left">
                         <div className="flex items-center gap-1.5">
-                          <p className="font-mono text-[10px] uppercase tracking-wider text-sky-300 sm:text-[11px]">
+                          <p className="font-mono text-[9px] uppercase tracking-wider text-sky-300 sm:text-[11px]">
                             Full-Stack & Systems
                           </p>
                           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                         </div>
-                        <p className="text-xs font-bold text-white sm:text-sm">
+                        <p className="text-[11px] font-bold text-white sm:text-sm">
                           Web · Mobile · Architecture
                         </p>
                       </div>
@@ -478,10 +474,10 @@ const Hero = () => {
                     <a
                       href="#contact"
                       onClick={(e) => scrollToSection(e, "contact")}
-                      className="group/btn inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white transition duration-300 hover:border-white/50 hover:bg-white hover:text-black active:scale-95"
+                      className="group/btn inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white transition duration-300 hover:border-white/50 hover:bg-white hover:text-black active:scale-95 sm:h-10 sm:w-10"
                       aria-label="Contact Ilya"
                     >
-                      <ChevronRight size={18} className="transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+                      <ChevronRight size={17} className="transition-transform duration-300 group-hover/btn:translate-x-0.5" />
                     </a>
                   </div>
                 </div>
