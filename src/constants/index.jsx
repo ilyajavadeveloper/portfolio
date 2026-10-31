@@ -271,7 +271,7 @@ export const PROJECTS = [
         category: "landing",
         description:
             "Luxury bespoke tailoring & textile art atelier website for designer Galina Khvostenko (Ashdod, Israel). Direct inquiry online boutique with bag, wishlist, custom size guide and gift certificate designer. Real-time bespoke cost & turnaround calculator, 4-step couture journey, curated lookbook with dual grid/editorial views, interactive Google Maps geolocation with Waze & Easy.co.il deep-links, multi-channel booking (WhatsApp, Telegram, Email), and comprehensive accessibility toolbar (נגישות / WCAG).",
-        link: "https://github.com/hvostenko-dev/hutzahav",
+        link: "https://hutzahav.vercel.app/",
         github: `${GITHUB}/hutzahav`,
         image: "/projects/hutzahav.jpg",
         technologies: [
